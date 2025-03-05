@@ -15,6 +15,8 @@ in {
     historySubstringSearch.enable = true;
 
     initExtraFirst = ''
+      eval "$(ssh-agent -s)"
+      ssh-add ~/.ssh/github    
       bindkey -e
       ${if fetch == "neofetch" then
         pkgs.neofetch + "/bin/neofetch"
