@@ -3,17 +3,17 @@
   options.theme = lib.mkOption {
     type = lib.types.attrs;
     default = {
-      rounding = 10;
-      gaps-in = 10;
-      gaps-out = 10 * 2;
-      active-opacity = 0.97;
-      inactive-opacity = 0.95;
+      rounding = 16;
+      gaps-in = 9;
+      gaps-out = 9 * 2;
+      active-opacity = 1;
+      inactive-opacity = 0.93;
       blur = true;
       border-size = 3;
       animation-speed = "fast"; # "fast" | "medium" | "slow"
       fetch = "none"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
 
-      bar = { # Hyprpanel
+      bar = {
         position = "top"; # "top" | "bottom"
         transparent = true;
         transparentButtons = false;
@@ -27,15 +27,15 @@
     stylix = {
       enable = true;
 
-      # See https://tinted-theming.github.io/tinted-gallery/ for more schemes
+      # Edited catppuccin
       base16Scheme = {
-        base00 = "0c0e0f"; # Default Background
+        base00 = "10101a"; # Default Background
         base01 =
-          "101314"; # Lighter Background (Used for status bars, line number and folding marks)
-        base02 = "313244"; # Selection Background
+          "16161f"; # Lighter Background (Used for status bars, line number and folding marks)
+        base02 = "2b2b2b"; # Selection Background
         base03 = "45475a"; # Comments, Invisibles, Line Highlighting
         base04 = "585b70"; # Dark Foreground (Used for status bars)
-        base05 = "cdd6f4"; # Default Foreground, Caret, Delimiters, Operators
+        base05 = "fcfcfc"; # Default Foreground, Caret, Delimiters, Operators
         base06 = "f5e0dc"; # Light Foreground (Not often used)
         base07 = "b4befe"; # Light Background (Not often used)
         base08 =
@@ -48,7 +48,7 @@
         base0C =
           "94e2d5"; # Support, Regular Expressions, Escape Characters, Markup Quotes
         base0D =
-          "89b4fa"; # Functions, Methods, Attribute IDs, Headings, Accent color
+          "A594FD"; # Functions, Methods, Attribute IDs, Headings, Accent color
         base0E =
           "cba6f7"; # Keywords, Storage, Selector, Markup Italic, Diff Changed
         base0F =
@@ -56,8 +56,8 @@
       };
 
       cursor = {
-        # package = pkgs.bibata-cursors;
-        # name = "Bibata-Modern-Ice";
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Ice";
         size = 24;
       };
 
@@ -90,8 +90,8 @@
       image = pkgs.fetchurl {
         url =
           "https://github.com/anotherhadi/nixy-wallpapers/blob/main/wallpapers/"
-          + "a-lake-surrounded-by-mountains.png" + "?raw=true";
-        sha256 = "sha256-5VHprxEVOkqyecnsurUx1tmhwE+3v0dhwmhpBPDTOgU=";
+          + "3.png" + "?raw=true";
+        sha256 = "sha256-fT2ah18IAxoy3hzlLl9SkqhchzfVvZneUrZWzntMo40=";
       };
 
     };
