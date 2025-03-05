@@ -12,6 +12,7 @@
     ../../nixos/users.nix
     ../../nixos/utils.nix
     # ../../nixos/docker.nix
+    # ../../nixos/sddm.nix
     ../../nixos/steam.nix
 
     # You should let those lines as is

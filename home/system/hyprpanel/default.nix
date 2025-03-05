@@ -88,6 +88,7 @@ in {
       "menus.clock.weather.location" = "${location}";
       "menus.clock.weather.unit" = "metric";
       "menus.dashboard.powermenu.confirmation" = false;
+      "menus.dashboard.powermenu.avatar.image" = "~/.face.icon";
 
       "menus.dashboard.shortcuts.left.shortcut1.icon" = "";
       "menus.dashboard.shortcuts.left.shortcut1.command" = "zen";
@@ -109,6 +110,7 @@ in {
         "screenshot region swappy";
       "menus.dashboard.shortcuts.right.shortcut3.tooltip" = "Screenshot";
 
+      "scalingPriority" = "hyprland";
       "theme.bar.menus.monochrome" = true;
       "wallpaper.enable" = false;
       "theme.bar.menus.background" = "${background}";
