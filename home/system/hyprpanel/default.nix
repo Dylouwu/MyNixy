@@ -37,15 +37,8 @@ in {
         "*" = {
           "left" = [ "dashboard" "workspaces" "windowtitle" ];
           "middle" = [ "media" "cava" ];
-          "right" = [
-            "systray"
-            "volume"
-            "bluetooth"
-            "battery"
-            "network"
-            "clock"
-            "notifications"
-          ];
+          "right" =
+            [ "systray" "volume" "battery" "network" "clock" "notifications" ];
         };
       };
     };
@@ -77,7 +70,7 @@ in {
       "bar.launcher.icon" = "";
       "theme.bar.transparent" = "${if transparent then "true" else "false"}";
       "bar.workspaces.show_numbered" = false;
-      "bar.workspaces.workspaces" = 5;
+      "bar.workspaces.workspaces" = 1;
       "bar.workspaces.hideUnoccupied" = false;
       "bar.windowtitle.label" = true;
       "bar.volume.label" = false;

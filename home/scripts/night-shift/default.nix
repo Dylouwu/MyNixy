@@ -10,7 +10,7 @@
 #- - `night-shift-status-icon` checks if Night-Shift is active. (icon)
 { pkgs, ... }:
 let
-  value = "4500"; # Default value for night-shift temperature
+  value = "5000"; # Default value for night-shift temperature
 
   night-shift-on = pkgs.writeShellScriptBin "night-shift-on"
     # bash 

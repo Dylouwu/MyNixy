@@ -18,7 +18,13 @@ in {
     allowReboot = false;
   };
 
-  time.timeZone = config.var.timeZone;
+  time = {
+
+    timeZone = config.var.timeZone;
+
+    hardwareClockInLocalTime = true;
+
+  };
   i18n.defaultLocale = config.var.defaultLocale;
   i18n.extraLocaleSettings = {
     LC_ADDRESS = config.var.extraLocale;

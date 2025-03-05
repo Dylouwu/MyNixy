@@ -49,17 +49,13 @@ in {
       "$shiftMod" = "SUPER_SHIFT";
 
       exec-once = [
-        "${pkgs.bitwarden}/bin/bitwarden"
         "dbus-update-activation-environment --systemd --all"
+        "night-shift-on"
       ];
 
       monitor = [
-        "eDP-2,highres,0x0,1"
-        "DP-7, disable"
-        "DP-8, disable"
-        "DP-9, disable"
-        "HDMI-A-1,3440x1440@99.98,auto,1"
-        "desc:United Microelectr Corporation UMC SHARP,3840x2160,auto,2"
+        "eDP-2,2560x1440@240,0x0,1.25"
+        "HDMI-A-1,2560x1440@360,-2048x0,1.25, bitdepth, 10"
         ",prefered,auto,1"
       ];
 
@@ -140,14 +136,8 @@ in {
       windowrulev2 =
         [ "float, tag:modal" "pin, tag:modal" "center, tag:modal" ];
 
-      windowrule = [
-        "workspace 6, discord"
-        "workspace 7, spotify"
-        "workspace 8, io.github.alainm23.planify"
-        "fullscreen, io.github.alainm23.planify"
-        "workspace 9, Proton Mail"
-        "fullscreen, Proton Mail"
-      ];
+      windowrule =
+        [ "fullscreen, io.github.alainm23.planify" "fullscreen, Proton Mail" ];
 
       layerrule = [ "noanim, launcher" "noanim, ^ags-.*" ];
 
@@ -155,7 +145,8 @@ in {
         kb_layout = keyboardLayout;
 
         kb_options = "caps:escape";
-        follow_mouse = 1;
+        follow_mouse = 2;
+        float_switch_override_focus = 0;
         sensitivity = 0.5;
         repeat_delay = 300;
         repeat_rate = 50;

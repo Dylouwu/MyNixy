@@ -10,15 +10,15 @@
     ../../home/programs/shell
     ../../home/programs/fetch
     ../../home/programs/git
-    ../../home/programs/spicetify
-    ../../home/programs/nextcloud
+    # ../../home/programs/spicetify
+    # ../../home/programs/nextcloud
     ../../home/programs/thunar
     ../../home/programs/lazygit
     ../../home/programs/zen
-    ../../home/programs/duckduckgo-colorscheme
+    # ../../home/programs/duckduckgo-colorscheme
     ../../home/programs/discord
-
-    # Scripts
+    ../../home/programs/zellij
+    # scripts
     ../../home/scripts # All scripts
 
     # System (Desktop environment like stuff)
@@ -34,7 +34,7 @@
     ../../home/system/udiskie
     ../../home/system/clipman
 
-    ./secrets # CHANGEME: You should probably remove this line, this is where I store my secrets
+    # ./secrets # CHANGEME: You should probably remove this line, this is where I store my secrets
   ];
 
   home = {
