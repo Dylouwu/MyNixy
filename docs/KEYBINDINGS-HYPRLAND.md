@@ -13,6 +13,7 @@
 | Zen Browser | SUPER + B |
 | Bitwarden | SUPER + K |
 | Lock | SUPER + L |
+| Discord | SUPER + D |
 | Powermenu | SUPER + X |
 | Launcher | SUPER + SPACE |
 | Quickmenu | SUPER + C |
@@ -21,6 +22,7 @@
 | Close window | SUPER + Q |
 | Toggle Floating | SUPER + T |
 | Toggle Fullscreen | SUPER + F |
+| Toggle Fullscreen | F11 |
 | Move focus left | SUPER + left |
 | Move focus Right | SUPER + right |
 | Move focus Up | SUPER + up |
