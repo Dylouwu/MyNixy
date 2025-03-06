@@ -54,12 +54,15 @@
       curtail # Compress images
 
       # Dev
+      clang
+      libcxx
       go
       nodejs
       python3
       jq
       just
       pnpm
+      zulu
 
       # Utils
       zip
@@ -74,14 +77,16 @@
       cbonsai
       pipes
       cmatrix
+      modrinth-app
+      everest-mons
 
       # Backup
-      firefox
+      # firefox
       vscode
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard
-    file.".face.icon" = { source = ./profile_picture.png; };
+    file.".face.icon" = { source = ./purin.jpg; };
 
     # Don't touch this
     stateVersion = "24.05";

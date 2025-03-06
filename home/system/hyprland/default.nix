@@ -54,8 +54,8 @@ in {
       ];
 
       monitor = [
-        "eDP-2,2560x1440@240,0x0,1.25"
-        "HDMI-A-1,2560x1440@360,-2048x0,1.25, bitdepth, 10"
+        "eDP-2,2560x1440@240,0x0,1"
+        "HDMI-A-1,2560x1440@360,-2560x0,1, bitdepth, 10"
         ",prefered,auto,1"
       ];
 
@@ -72,10 +72,6 @@ in {
         "QT_QPA_PLATFORM=wayland,xcb"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
-        # "GTK_THEME,FlatColor:dark"
-        # "GTK2_RC_FILES,/home/hadi/.local/share/themes/FlatColor/gtk-2.0/gtkrc"
-        "__GL_GSYNC_ALLOWED,0"
-        "__GL_VRR_ALLOWED,0"
         "DISABLE_QT5_COMPAT,0"
         "DIRENV_LOG_FORMAT,"
         "WLR_DRM_NO_ATOMIC,1"
@@ -100,6 +96,8 @@ in {
         border_size = border-size;
         layout = "master";
       };
+
+      render.explicit_sync = 0;
 
       decoration = {
         active_opacity = active-opacity;
