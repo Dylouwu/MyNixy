@@ -18,4 +18,6 @@
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
       "/home/dilounix/.steam/root/compatibilitytools.d";
   };
+
+  programs.gamemode.enable = true;
 }

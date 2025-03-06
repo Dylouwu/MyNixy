@@ -8,7 +8,7 @@
 { pkgs, ... }:
 let
   id = "home"; # ID of the connection
-  password-file = "/home/hadi/.config/vpn-password";
+  password-file = "/home/dilounix/.config/vpn-password";
 
   openvpn-up = pkgs.writeShellScriptBin "openvpn-up"
     # bash 
