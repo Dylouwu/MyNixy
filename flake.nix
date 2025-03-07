@@ -46,6 +46,7 @@
           modules = [
             {
               nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
+
               _module.args = { inherit inputs; };
             }
             inputs.nixos-hardware.nixosModules.omen-16-n0005ne # CHANGEME: check https://github.com/NixOS/nixos-hardware
