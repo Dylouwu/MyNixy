@@ -52,6 +52,9 @@
       protonmail-desktop
       textpieces # Manipulate texts
       curtail # Compress images
+      modrinth-app
+      everest-mons
+      osu-lazer-bin
 
       # Dev
       clang
@@ -77,8 +80,6 @@
       cbonsai
       pipes
       cmatrix
-      modrinth-app
-      everest-mons
 
       # Backup
       # firefox
