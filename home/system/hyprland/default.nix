@@ -54,8 +54,8 @@ in {
       ];
 
       monitor = [
-        "eDP-2,2560x1440@240,0x0,1"
-        "HDMI-A-1,2560x1440@360,-2560x0,1, bitdepth, 10"
+        "eDP-2,2560x1440@240,0x0,1.25"
+        "HDMI-A-1,2560x1440@360,-2048x0,1.25, bitdepth, 10"
         ",prefered,auto,1"
       ];
 
@@ -139,13 +139,15 @@ in {
 
       layerrule = [ "noanim, launcher" "noanim, ^ags-.*" ];
 
+      xwayland = { force_zero_scaling = true; };
+
       input = {
         kb_layout = keyboardLayout;
 
         kb_options = "caps:escape";
         follow_mouse = 2;
         float_switch_override_focus = 0;
-        sensitivity = 0;
+        sensitivity = -0.5;
         repeat_delay = 300;
         repeat_rate = 50;
         numlock_by_default = true;
@@ -154,6 +156,12 @@ in {
           natural_scroll = true;
           clickfinger_behavior = true;
         };
+
+      };
+
+      device = {
+        name = "elan07c7:00-04f3:3298-touchpad";
+        sensitivity = 0.3;
       };
 
     };
