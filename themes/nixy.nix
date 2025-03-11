@@ -31,7 +31,7 @@
       base16Scheme = {
         base00 = "10101a"; # Default Background
         base01 =
-          "16161f"; # Lighter Background (Used for status bars, line number and folding marks)
+          "1c1c24"; # Lighter Background (Used for status bars, line number and folding marks)
         base02 = "2b2b2b"; # Selection Background
         base03 = "45475a"; # Comments, Invisibles, Line Highlighting
         base04 = "585b70"; # Dark Foreground (Used for status bars)
