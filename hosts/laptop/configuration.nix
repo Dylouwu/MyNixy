@@ -7,7 +7,7 @@
     ../../nixos/fonts.nix
     ../../nixos/home-manager.nix
     ../../nixos/nix.nix
-    ../../nixos/systemd-boot.nix
+    ../../nixos/boot.nix
     ../../nixos/tuigreet.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
@@ -20,6 +20,7 @@
     ./variables.nix
   ];
 
+  stylix.targets.grub.enable = false;
   home-manager.users."${config.var.username}" = import ./home.nix;
 
   # Don't touch this
