@@ -35,6 +35,7 @@
       url = "github:KZDKM/Hyprspace";
       inputs.hyprland.follows = "hyprland";
     };
+    minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
   };
 
   outputs = inputs@{ nixpkgs, ... }: {
@@ -51,6 +52,7 @@
             }
             inputs.nixos-hardware.nixosModules.omen-16-n0005ne # CHANGEME: check https://github.com/NixOS/nixos-hardware
             inputs.home-manager.nixosModules.home-manager
+            inputs.minegrub-world-sel-theme.nixosModules.default
             inputs.stylix.nixosModules.stylix
             ./hosts/laptop/configuration.nix # CHANGEME: change the path to match your host folder
           ];
