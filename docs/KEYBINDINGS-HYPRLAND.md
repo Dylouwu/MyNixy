@@ -14,10 +14,11 @@
 | Bitwarden | SUPER + K |
 | Lock | SUPER + L |
 | Discord | SUPER + D |
+| Steam | SUPER + S |
 | Powermenu | SUPER + X |
 | Launcher | SUPER + SPACE |
 | Quickmenu | SUPER + C |
-| Toggle HyprFocus | SHIFT + SUPER + SPACE |
+| "$shiftMod,SPACE, exec, hyprfocus-toggle"  |  |
 | Planify | SUPER + P |
 | Close window | SUPER + Q |
 | Toggle Floating | SUPER + T |
