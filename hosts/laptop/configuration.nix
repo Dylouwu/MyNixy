@@ -8,11 +8,11 @@
     ../../nixos/home-manager.nix
     ../../nixos/nix.nix
     ../../nixos/boot.nix
-    ../../nixos/tuigreet.nix
+    # ../../nixos/tuigreet.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
     # ../../nixos/docker.nix
-    # ../../nixos/sddm.nix
+    ../../nixos/sddm.nix
     ../../nixos/steam.nix
 
     # You should let those lines as is
