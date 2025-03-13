@@ -2,11 +2,7 @@
 let
   sddm-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "pixel_sakura";
-    themeConfig = if lib.hasSuffix "sakura_static.png" config.stylix.image then
-      { }
-    else {
-      Background = "${toString config.stylix.image}";
-    };
+    themeConfig = { };
   };
 in {
   services.displayManager = {
