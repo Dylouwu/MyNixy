@@ -15,7 +15,6 @@
     ../../home/programs/thunar
     ../../home/programs/lazygit
     ../../home/programs/zen
-    # ../../home/programs/duckduckgo-colorscheme
     ../../home/programs/discord
     ../../home/programs/zellij
     # scripts
@@ -45,13 +44,12 @@
       # Apps
       bitwarden # Password manager
       vlc # Video player
-      blanket # White-noise app
+      # blanket # White-noise app
       obsidian # Note taking app
       planify # Todolists
-      gnome-calendar # Calendar
-      protonmail-desktop
-      textpieces # Manipulate texts
+      # textpieces # Manipulate texts
       curtail # Compress images
+      vscode
       modrinth-app
       everest-mons
       osu-lazer-bin
@@ -75,15 +73,8 @@
       btop
       fastfetch
 
-      # Just cool
-      peaclock
-      cbonsai
-      pipes
-      cmatrix
-
       # Backup
       # firefox
-      vscode
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard
