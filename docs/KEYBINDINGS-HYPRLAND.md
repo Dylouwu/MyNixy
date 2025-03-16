@@ -18,7 +18,6 @@
 | Powermenu | SUPER + X |
 | Launcher | SUPER + SPACE |
 | Quickmenu | SUPER + C |
-| "$shiftMod,SPACE, exec, hyprfocus-toggle"  |  |
 | Planify | SUPER + P |
 | Close window | SUPER + Q |
 | Toggle Floating | SUPER + T |
