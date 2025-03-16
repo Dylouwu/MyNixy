@@ -12,7 +12,6 @@
       "$mod,SPACE, exec, menu" # Launcher
       "$mod,C, exec, quickmenu" # Quickmenu
 
-      # "$shiftMod,SPACE, exec, hyprfocus-toggle" # Toggle HyprFocus
       "$mod,P, exec, ${pkgs.planify}/bin/io.github.alainm23.planify" # Planify
 
       "$mod,Q, killactive," # Close window
