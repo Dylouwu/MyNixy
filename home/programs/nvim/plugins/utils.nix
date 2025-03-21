@@ -18,7 +18,6 @@
           highlight.enable = true;
         };
       };
-      vim-be-good.enable = true;
     };
   };
 }

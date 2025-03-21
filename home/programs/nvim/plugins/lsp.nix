@@ -5,20 +5,12 @@
       enable = true;
       servers = {
         bashls.enable = true;
-        clangd.enable = true;
         gopls.enable = true;
         ts_ls.enable = true;
         nixd.enable = true;
         tailwindcss.enable = true;
         html.enable = true;
         svelte.enable = true;
-      };
-      keymaps.lspBuf = {
-        "gd" = "definition";
-        "gD" = "references";
-        "gt" = "type_definition";
-        "gi" = "implementation";
-        "K" = "hover";
       };
     };
     none-ls = {
