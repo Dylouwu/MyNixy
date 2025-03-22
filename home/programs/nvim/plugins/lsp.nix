@@ -5,6 +5,8 @@
       enable = true;
       servers = {
         bashls.enable = true;
+        clangd.enable = true;
+        pyright.enable = true;
         gopls.enable = true;
         ts_ls.enable = true;
         nixd.enable = true;
