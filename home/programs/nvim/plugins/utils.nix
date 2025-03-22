@@ -10,7 +10,22 @@
       flash.enable = true;
       tmux-navigator.enable = true;
       todo-comments.enable = true;
-      lualine = { enable = true; };
+      lualine = {
+        enable = true;
+        settings = {
+          sections = {
+            lualine_a = [ "mode" ];
+            lualine_b = [ "filename" ];
+            lualine_c = [ "" ];
+            lualine_x = [ "" ];
+            lualine_y = [ "encoding" "fileformat" "filetype" ];
+            lualine_z =
+              [ { __unkeyed-1 = "location"; } { __unkeyed-1 = "%L"; } ];
+          };
+
+        };
+
+      };
       treesitter = {
         enable = true;
         nixGrammars = true;
