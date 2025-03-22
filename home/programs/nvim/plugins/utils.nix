@@ -5,7 +5,14 @@
       WhichKeySeparator.bg = "#${config.lib.stylix.colors.base00}";
     };
     plugins = {
-      bufferline.enable = true;
+      bufferline = {
+        enable = true;
+        settings = {
+          options = {
+            always_show_bufferline = false;
+          };
+        };
+      };
       copilot-vim.enable = true;
       flash.enable = true;
       tmux-navigator.enable = true;
