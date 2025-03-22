@@ -13,17 +13,12 @@
     stylix.url = "github:danth/stylix";
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    nixcord.url = "github:kaylorben/nixcord";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
@@ -40,7 +35,6 @@
   outputs = inputs@{ nixpkgs, ... }: {
     nixosConfigurations = {
       nixy =
-        # CHANGEME: This should match the 'hostname' in your variables.nix file
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [

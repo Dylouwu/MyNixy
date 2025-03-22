@@ -25,7 +25,7 @@
             lualine_b = [ "filename" ];
             lualine_c = [ "" ];
             lualine_x = [ "" ];
-            lualine_y = [ "encoding" "fileformat" "filetype" ];
+            lualine_y = [ "encoding" "filetype" ];
             lualine_z =
               [ { __unkeyed-1 = "location"; } { __unkeyed-1 = "%L"; } ];
           };
