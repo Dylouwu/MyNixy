@@ -5,7 +5,6 @@
       mockDevIcons = true;
       modules = {
         icons = { };
-        # TODO: Learn how to use this
         bracketed = { };
         git = { };
         diff = { };
