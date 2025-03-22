@@ -16,7 +16,7 @@
     ../../home/programs/lazygit
     ../../home/programs/zen
     ../../home/programs/discord
-    ../../home/programs/tailscale
+    # ../../home/programs/tailscale
     ../../home/programs/zellij
     # scripts
     ../../home/scripts # All scripts
@@ -54,6 +54,8 @@
       modrinth-app
       everest-mons
       osu-lazer-bin
+      resources
+      
 
       # Dev
       clang

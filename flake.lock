@@ -1523,17 +1523,17 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1741435523,
-        "narHash": "sha256-Shxqg85pIfNOX0j9qQK8LoxdTKDvZJhxW/l5Wg9Vcgo=",
-        "ref": "refs/heads/main",
-        "rev": "b51557c01c0334d0fff4ab5eaf73e98656496e44",
-        "revCount": 78,
-        "type": "git",
-        "url": "https://git.sr.ht/~canasta/zen-browser-flake/"
+        "lastModified": 1742614294,
+        "narHash": "sha256-bZbYlP/xqGyW2aVle742dFbc0npFnwJBzcEnXNywJgY=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "7fa9ec4e14d89e568ebaac302049980df7cf0cc9",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://git.sr.ht/~canasta/zen-browser-flake/"
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "type": "github"
       }
     }
   },
