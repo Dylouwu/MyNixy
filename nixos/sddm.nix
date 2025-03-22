@@ -1,4 +1,4 @@
-{ pkgs, inputs, config, lib, ... }:
+{ pkgs, inputs, ... }:
 let
   sddm-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "pixel_sakura";
@@ -22,6 +22,5 @@ in {
 
   environment.systemPackages = [ sddm-astronaut ];
 
-  # To prevent getting stuck at shutdown
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 }
