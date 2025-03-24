@@ -34,22 +34,22 @@
 
   outputs = inputs@{ nixpkgs, ... }: {
     nixosConfigurations = {
-      nixy =
-        nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            {
-              nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
+      nixy = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          {
+            nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
 
-              _module.args = { inherit inputs; };
-            }
-            inputs.nixos-hardware.nixosModules.omen-16-n0005ne # CHANGEME: check https://github.com/NixOS/nixos-hardware
-            inputs.home-manager.nixosModules.home-manager
-            inputs.minegrub-world-sel-theme.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-            ./hosts/laptop/configuration.nix # CHANGEME: change the path to match your host folder
-          ];
-        };
+            _module.args = { inherit inputs; };
+          }
+          inputs.nixos-hardware.nixosModules.omen-16-n0005ne # CHANGEME: check https://github.com/NixOS/nixos-hardware
+          inputs.home-manager.nixosModules.home-manager
+          inputs.minegrub-world-sel-theme.nixosModules.default
+          inputs.stylix.nixosModules.stylix
+          inputs.sops-nix.nixosModules.sops
+          ./hosts/laptop/configuration.nix # CHANGEME: change the path to match your host folder
+        ];
+      };
     };
   };
 }
