@@ -23,6 +23,7 @@ let
   position = config.theme.bar.position;
 
   location = config.var.location;
+  weather-key = "/home/dilounix/.weather.json";
 in {
 
   imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
@@ -69,6 +70,7 @@ in {
       "theme.bar.border_radius" = "${toString rounding}px";
       "bar.launcher.icon" = "";
       "theme.bar.transparent" = "${if transparent then "true" else "false"}";
+      "bar.battery.hideLabelWhenFull" = true;
       "bar.workspaces.show_numbered" = false;
       "bar.workspaces.workspaces" = 1;
       "bar.workspaces.hideUnoccupied" = false;
@@ -85,6 +87,7 @@ in {
       "theme.osd.radius" = "${toString rounding}px";
       "theme.osd.margins" = "0px 0px 0px 10px";
       "theme.osd.muted_zero" = true;
+      "menus.clock.weather.key" = "${weather-key}";
       "menus.clock.weather.location" = "${location}";
       "menus.clock.weather.unit" = "metric";
       "menus.dashboard.powermenu.confirmation" = false;
@@ -109,6 +112,8 @@ in {
       "menus.dashboard.shortcuts.right.shortcut3.command" =
         "screenshot region swappy";
       "menus.dashboard.shortcuts.right.shortcut3.tooltip" = "Screenshot";
+      "menus.dashboard.directories.enabled" = false;
+      "menus.dashboard.stats.enable_gpu" = false;
 
       "scalingPriority" = "hyprland";
       "theme.bar.menus.monochrome" = true;
