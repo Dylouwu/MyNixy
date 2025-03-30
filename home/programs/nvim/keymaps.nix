@@ -3,7 +3,7 @@
     plugins.which-key = {
       enable = true;
       settings = {
-        delay = 600;
+        delay = 500;
         icons = {
           breadcrumb = "»";
           group = "+";
@@ -25,7 +25,7 @@
           {
             __unkeyed-1 = "<leader>c";
             mode = "n";
-            group = "+code";
+            group = "+copilot";
           }
         ];
         win = {
@@ -150,6 +150,53 @@
         key = "<leader>wd";
         action = "<cmd>close<cr>";
         options.desc = "Close";
+      }
+
+      # copilot
+      {
+        key = "<leader>ce";
+        action = "<cmd>Copilot enable<cr>";
+        options.desc = "Enable";
+      }
+      {
+        key = "<leader>cd";
+        action = "<cmd>Copilot disable<cr>";
+        options.desc = "Disable";
+      }
+      {
+        key = "<leader>cs";
+        action = "<cmd>Copilot status<cr>";
+        options.desc = "Status";
+      }
+      {
+        key = "<leader>cp";
+        action = "<cmd>Copilot<cr>";
+        options.desc = "Completions for current buffer";
+      }
+      {
+        key = "<leader>ca";
+        action = "<cmd>Copilot auth<cr>";
+        options.desc = "Authenticate Copilot";
+      }
+      {
+        key = "<leader>cr";
+        action = "<cmd>Copilot restart<cr>";
+        options.desc = "Restart";
+      }
+      {
+        key = "<leader>cl";
+        action = "<cmd>Copilot log<cr>";
+        options.desc = "Logs";
+      }
+      {
+        key = "<leader>ch";
+        action = "<cmd>Copilot help<cr>";
+        options.desc = "Help";
+      }
+      {
+        key = "<leader>cv";
+        action = "<cmd>Copilot version<cr>";
+        options.desc = "Version";
       }
     ];
   };

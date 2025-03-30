@@ -5,7 +5,7 @@
       FloatermBorder.fg = "#${config.lib.stylix.colors.base01}";
     };
     keymaps = [{
-      key = "<leader>cn";
+      key = "<leader>n";
       action = "<cmd>FloatermNew --title=nixy nixy || sleep 10 <cr>";
       options.desc = "Nixy";
     }];
