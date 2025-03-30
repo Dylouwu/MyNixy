@@ -13,6 +13,7 @@
     stylix.url = "github:danth/stylix";
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    anyrun.url = "github:fufexan/anyrun/launch-prefix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
