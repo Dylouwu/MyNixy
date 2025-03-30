@@ -18,7 +18,6 @@
     ../../home/programs/discord
     # ../../home/programs/tailscale
     ../../home/programs/zellij
-    ../../home/programs/anyrun
     # scripts
     ../../home/scripts # All scripts
 
