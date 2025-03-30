@@ -154,9 +154,9 @@
 
       # copilot
       {
-        key = "<leader>ce";
-        action = "<cmd>Copilot enable<cr>";
-        options.desc = "Enable";
+        key = "<leader>cc";
+        action = "<cmd>Copilot<cr>";
+        options.desc = "Completions";
       }
       {
         key = "<leader>cd";
@@ -164,14 +164,15 @@
         options.desc = "Disable";
       }
       {
+        key = "<leader>ce";
+        action = "<cmd>Copilot enable<cr>";
+        options.desc = "Enable";
+      }
+
+      {
         key = "<leader>cs";
         action = "<cmd>Copilot status<cr>";
         options.desc = "Status";
-      }
-      {
-        key = "<leader>cp";
-        action = "<cmd>Copilot<cr>";
-        options.desc = "Completions for current buffer";
       }
       {
         key = "<leader>ca";
