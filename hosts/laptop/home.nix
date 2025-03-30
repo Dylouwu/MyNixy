@@ -18,6 +18,7 @@
     ../../home/programs/discord
     # ../../home/programs/tailscale
     ../../home/programs/zellij
+    ../../home/programs/anyrun
     # scripts
     ../../home/scripts # All scripts
 
@@ -28,7 +29,6 @@
     ../../home/system/hyprpanel
     ../../home/system/hyprpaper
     ../../home/system/wofi
-    ../../home/system/batsignal
     ../../home/system/zathura
     ../../home/system/mime
     ../../home/system/udiskie
