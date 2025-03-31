@@ -14,7 +14,7 @@ in {
     syntaxHighlighting = {
       enable = true;
       highlighters =
-        [ "main" "brackets" "pattern" "cursor" "regexp" "root" "line" ];
+        [ "main" "brackets" "pattern" "regexp" "root" "line" ];
     };
     historySubstringSearch.enable = true;
 
