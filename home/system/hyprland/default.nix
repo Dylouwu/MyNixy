@@ -129,12 +129,6 @@ in {
         new_window_takes_over_fullscreen = 2;
       };
 
-      windowrulev2 =
-        [ "float, tag:modal" "pin, tag:modal" "center, tag:modal" ];
-
-      windowrule =
-        [ "fullscreen, io.github.alainm23.planify" "fullscreen, Proton Mail" ];
-
       layerrule = [ "noanim, launcher" "noanim, ^ags-.*" ];
 
       xwayland = { force_zero_scaling = true; };
