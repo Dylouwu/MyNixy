@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, lib, pkgs, ... }: {
   programs.nixvim = {
     nixpkgs.config.allowUnfree = true; # For copilot
     highlightOverride = {
@@ -7,13 +7,12 @@
     plugins = {
       bufferline = {
         enable = true;
-        settings = {
-          options = {
-            always_show_bufferline = false;
-          };
-        };
+        settings = { options = { always_show_bufferline = false; }; };
       };
-      copilot-vim.enable = true;
+      copilot-vim = {
+        enable = true;
+        settings.node_command = lib.getExe pkgs.nodejs_20;
+      };
       flash.enable = true;
       tmux-navigator.enable = true;
       todo-comments.enable = true;
