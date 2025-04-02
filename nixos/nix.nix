@@ -1,7 +1,7 @@
 { config, inputs, ... }:
 let autoGarbageCollector = config.var.autoGarbageCollector;
 in {
-    security.sudo.extraRules = [{
+  security.sudo.extraRules = [{
     users = [ config.var.username ];
     commands = [{
       command = "/run/current-system/sw/bin/nixos-rebuild";
