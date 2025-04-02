@@ -34,6 +34,7 @@
 
   outputs = inputs@{ nixpkgs, ... }: {
     nixosConfigurations = {
+      # This is my laptop configuration
       nixy = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -48,6 +49,17 @@
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
           ./hosts/laptop/configuration.nix # CHANGEME: change the path to match your host folder
+        ];
+      };
+      # This is my server configuration
+      hyrule = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          { _module.args = { inherit inputs; }; }
+          inputs.home-manager.nixosModules.home-manager
+          inputs.stylix.nixosModules.stylix
+          inputs.sops-nix.nixosModules.sops
+          ./hosts/server/configuration.nix
         ];
       };
     };

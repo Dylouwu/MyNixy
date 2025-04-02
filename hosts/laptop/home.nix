@@ -10,7 +10,6 @@
     ../../home/programs/shell
     ../../home/programs/fetch
     ../../home/programs/git
-    # ../../home/programs/spicetify
     # ../../home/programs/nextcloud
     ../../home/programs/thunar
     ../../home/programs/lazygit
@@ -18,6 +17,7 @@
     ../../home/programs/discord
     # ../../home/programs/tailscale
     ../../home/programs/zellij
+
     # scripts
     ../../home/scripts # All scripts
 
@@ -44,16 +44,16 @@
       # Apps
       bitwarden # Password manager
       vlc # Video player
-      # blanket # White-noise app
-      obsidian # Note taking app
-      planify # Todolists
-      # textpieces # Manipulate texts
       curtail # Compress images
       vscode
       modrinth-app
       everest-mons
       osu-lazer-bin
       resources
+      # blanket # White-noise app
+      # obsidian # Note taking app
+      # planify # Todolists
+      # textpieces # Manipulate texts
 
       # Dev
       clang
@@ -69,8 +69,6 @@
       # Utils
       zip
       unzip
-      optipng
-      pfetch
       btop
       fastfetch
 
