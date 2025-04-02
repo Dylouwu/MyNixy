@@ -21,7 +21,7 @@ in {
       #bash 
       ''
         eval "$(ssh-agent -s)" > /dev/null 2>&1
-        ssh-add ~/.ssh/config > /dev/null 2>&1
+        ssh-add ~/.ssh/github > /dev/null 2>&1
         bindkey -e
         ${if fetch == "neofetch" then
           pkgs.neofetch + "/bin/neofetch"
