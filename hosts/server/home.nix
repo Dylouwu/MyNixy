@@ -29,7 +29,6 @@
       jq
       just
       pnpm
-      zulu
 
       # Utils
       zip
