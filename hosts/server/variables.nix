@@ -1,15 +1,10 @@
 { config, lib, ... }: {
-  imports = [
-    # Choose your theme here:
-    ../../themes/nixy.nix
-  ];
+  imports = [ ../../themes/nixy.nix ];
 
   config.var = {
     hostname = "hyrule";
     username = "dilounix";
-    configDirectory = "/home/" + config.var.username
-      + "/.config/nixos"; # The path of the nixos configuration directory
-
+    configDirectory = "/home/" + config.var.username + "/.config/nixos";
     keyboardLayout = "fr";
 
     location = "Paris";
