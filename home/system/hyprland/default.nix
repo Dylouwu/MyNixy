@@ -42,16 +42,18 @@ in {
     xwayland.enable = true;
     systemd.enable = true;
     # withUWSM = true; # One day, but not today
+    systemd.variables = [ "--all" ];
+
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
     settings = {
       "$mod" = "SUPER";
       "$shiftMod" = "SUPER_SHIFT";
 
-      exec-once = [
-        "dbus-update-activation-environment --systemd --all"
-        "night-shift-on"
-      ];
+      exec-once = [ "night-shift-on" ];
 
       monitor = [
         "eDP-2,2560x1440@240,0x0,1.25"
@@ -96,6 +98,34 @@ in {
       };
 
       render.explicit_sync = 0;
+
+      windowrulev2 = [
+        "float, tag:modal"
+        "pin, tag:modal"
+        "center, tag:modal"
+        # telegram media viewer
+        "float, title:^(Media viewer)$"
+        # Bitwarden extension
+        "float, title:^(.*Bitwarden Password Manager.*)$"
+        # gnome calculator
+        "float, class:^(org.gnome.Calculator)$"
+        "size 360 490, class:^(org.gnome.Calculator)$"
+        # make Firefox/Zen PiP window floating and sticky
+        "float, title:^(Picture-in-Picture)$"
+        "pin, title:^(Picture-in-Picture)$"
+        # idle inhibit while watching videos
+        "idleinhibit focus, class:^(mpv|.+exe|celluloid)$"
+        "idleinhibit focus, class:^(zen)$, title:^(.*YouTube.*)$"
+        "idleinhibit fullscreen, class:^(zen)$"
+        "dimaround, class:^(gcr-prompter)$"
+        "dimaround, class:^(xdg-desktop-portal-gtk)$"
+        "dimaround, class:^(polkit-gnome-authentication-agent-1)$"
+        "dimaround, class:^(zen)$, title:^(File Upload)$"
+        # fix xwayland apps
+        "rounding 0, xwayland:1"
+        "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
+        "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
+      ];
 
       decoration = {
         active_opacity = active-opacity;

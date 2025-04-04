@@ -45,6 +45,10 @@ in {
       xkb.variant = "";
     };
     gnome.gnome-keyring.enable = true;
+    psd = {
+      enable = true;
+      resyncTimer = "10m";
+    };
   };
   console.keyMap = keyboardLayout;
 
@@ -57,12 +61,18 @@ in {
   services.libinput.enable = true;
   programs.dconf.enable = true;
   services = {
-    dbus.enable = true;
+    dbus = {
+      enable = true;
+      implementation = "broker";
+      packages = with pkgs; [ gcr gnome-settings-daemon ];
+    };
     gvfs.enable = true;
     upower.enable = true;
     power-profiles-daemon.enable = true;
     udisks2.enable = true;
   };
+
+  environment.pathsToLink = [ "/share/zsh" ];
 
   # Faster rebuilding
   documentation = {
@@ -83,7 +93,26 @@ in {
     xdg-utils
     wget
     curl
+    vim
   ];
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = [ "gtk" ];
+      hyprland.default = [ "gtk" "hyprland" ];
+    };
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+  security = {
+    # allow wayland lockers to unlock the screen
+    pam.services.hyprlock.text = "auth include login";
+    # userland niceness
+    rtkit.enable = true;
+    # don't ask for password for wheel group
+    sudo.wheelNeedsPassword = false;
+  };
 
   services.logind.extraConfig = ''
     # don’t shutdown when power button is short-pressed
