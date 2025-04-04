@@ -1,4 +1,3 @@
-
 { config, ... }: {
   security.sudo.extraRules = [{
     users = [ config.var.username ];
@@ -13,6 +12,13 @@
       }
     ];
   }];
-  services.tailscale = { enable = true; };
-}
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+  };
 
+  networking.firewall = {
+    trustedInterfaces = [ "tailscale0" ];
+    checkReversePath = "loose";
+  };
+}

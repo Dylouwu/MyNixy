@@ -23,7 +23,7 @@ in {
       download-buffer-size = 524288000;
       experimental-features = [ "nix-command" "flakes" ];
       substituters = [
-        "https://cache.nixos.org/"
+        "https://cache.nixos.org/?priority=10"
         "https://hyprland.cachix.org"
         "https://nix-community.cachix.org"
         "https://cache.garnix.io"
