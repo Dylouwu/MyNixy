@@ -33,7 +33,7 @@ in {
     hyprland.enable = true;
     overwrite.enable = true;
     overlay.enable = true;
-    layout = {
+    settings.layout = {
       "bar.layouts" = {
         "*" = {
           "left" = [ "dashboard" "workspaces" "windowtitle" ];
