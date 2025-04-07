@@ -10,15 +10,15 @@
 
     ../../server-modules/adguardhome.nix
     ../../server-modules/bitwarden.nix
-    ../../server-modules/cyberchef.nix
-    ../../server-modules/fail2ban.nix
+   # ../../server-modules/cyberchef.nix
+   # ../../server-modules/fail2ban.nix
     ../../server-modules/firewall.nix
     ../../server-modules/glance.nix
-    ../../server-modules/mealie.nix
-    ../../server-modules/meilisearch.nix
-    ../../server-modules/nextcloud.nix
-    ../../server-modules/nginx.nix
-    ../../server-modules/speedtest.nix
+   # ../../server-modules/mealie.nix
+   # ../../server-modules/meilisearch.nix
+   # ../../server-modules/nextcloud.nix
+   # ../../server-modules/nginx.nix
+   # ../../server-modules/speedtest.nix
     ../../server-modules/ssh.nix
     # ../../server-modules/hoarder.nix
     # ../../server-modules/arr.nix

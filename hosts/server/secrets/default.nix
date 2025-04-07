@@ -13,9 +13,9 @@
         path = "/home/dilounix/.ssh/github";
         mode = "0600";
       };
-      cloudflare-dns-token = { path = "/etc/cloudflare/dnskey.txt"; };
-      nextcloud-pwd = { path = "/etc/nextcloud/pwd.txt"; };
-      adguard-pwd = { };
+      # cloudflare-dns-token = { path = "/etc/cloudflare/dnskey.txt"; };
+      # nextcloud-pwd = { path = "/etc/nextcloud/pwd.txt"; };
+      # adguard-pwd = { };
       # hoarder = { };
       # recyclarr = {
       #   owner = "recyclarr";
