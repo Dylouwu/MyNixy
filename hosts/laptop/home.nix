@@ -15,7 +15,7 @@
     ../../home/programs/lazygit
     ../../home/programs/zen
     ../../home/programs/discord
-    # ../../home/programs/tailscale
+    ../../home/programs/tailscale
     ../../home/programs/zellij
 
     # scripts
