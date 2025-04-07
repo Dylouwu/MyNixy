@@ -3,15 +3,18 @@ let
   hostname = config.var.hostname;
   keyboardLayout = config.var.keyboardLayout;
   configDir = config.var.configDirectory;
+  timeZone = config.var.timeZone;
+  defaultLocale = config.var.defaultLocale;
+  extraLocale = config.var.extraLocale;
+  autoUpgrade = config.var.autoUpgrade;
 in {
-
   networking.hostName = hostname;
 
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
 
   system.autoUpgrade = {
-    enable = config.var.autoUpgrade;
+    enable = autoUpgrade;
     dates = "04:00";
     flake = "${configDir}";
     flags = [ "--update-input" "nixpkgs" "--commit-lock-file" ];
@@ -19,23 +22,20 @@ in {
   };
 
   time = {
-
-    timeZone = config.var.timeZone;
-
+    timeZone = timeZone;
     hardwareClockInLocalTime = true;
-
   };
-  i18n.defaultLocale = config.var.defaultLocale;
+  i18n.defaultLocale = defaultLocale;
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = config.var.extraLocale;
-    LC_IDENTIFICATION = config.var.extraLocale;
-    LC_MEASUREMENT = config.var.extraLocale;
-    LC_MONETARY = config.var.extraLocale;
-    LC_NAME = config.var.extraLocale;
-    LC_NUMERIC = config.var.extraLocale;
-    LC_PAPER = config.var.extraLocale;
-    LC_TELEPHONE = config.var.extraLocale;
-    LC_TIME = config.var.extraLocale;
+    LC_ADDRESS = extraLocale;
+    LC_IDENTIFICATION = extraLocale;
+    LC_MEASUREMENT = extraLocale;
+    LC_MONETARY = extraLocale;
+    LC_NAME = extraLocale;
+    LC_NUMERIC = extraLocale;
+    LC_PAPER = extraLocale;
+    LC_TELEPHONE = extraLocale;
+    LC_TIME = extraLocale;
   };
 
   services = {
@@ -56,6 +56,9 @@ in {
     XDG_DATA_HOME = "$HOME/.local/share";
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
     EDITOR = "nvim";
+    TERMINAL = "kitty";
+    TERM = "kitty";
+    BROWSER = "zen";
   };
 
   services.libinput.enable = true;
@@ -72,6 +75,7 @@ in {
     udisks2.enable = true;
   };
 
+  # enable zsh autocompletion for system packages (systemd, etc)
   environment.pathsToLink = [ "/share/zsh" ];
 
   # Faster rebuilding
@@ -103,13 +107,17 @@ in {
       common.default = [ "gtk" ];
       hyprland.default = [ "gtk" "hyprland" ];
     };
+
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
+
   security = {
     # allow wayland lockers to unlock the screen
     pam.services.hyprlock.text = "auth include login";
+
     # userland niceness
     rtkit.enable = true;
+
     # don't ask for password for wheel group
     sudo.wheelNeedsPassword = false;
   };
