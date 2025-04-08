@@ -7,7 +7,6 @@
     ../../nixos/home-manager.nix
     ../../nixos/nix.nix
     ../../nixos/grub.nix
-    # ../../nixos/tuigreet.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
     # ../../nixos/docker.nix
