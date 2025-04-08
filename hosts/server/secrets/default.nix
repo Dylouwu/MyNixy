@@ -13,7 +13,7 @@
         path = "/home/dilounix/.ssh/github";
         mode = "0600";
       };
-      # cloudflare-dns-token = { path = "/etc/cloudflare/dnskey.txt"; };
+      cloudflare-dns-token = { path = "/etc/cloudflare/dnskey.txt"; };
       # nextcloud-pwd = { path = "/etc/nextcloud/pwd.txt"; };
       # adguard-pwd = { };
       # hoarder = { };
