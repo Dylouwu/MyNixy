@@ -32,7 +32,7 @@ in {
   gtk.gtk3.bookmarks = [
     "file:///home/${user}/Downloads Downloads"
     "file:///home/${user}/Pictures Pictures"
-    # "file:///home/${user}/nextcloud Nextcloud"
+    "file:///home/${user}/Nextcloud Nextcloud"
     "file:///home/${user}/.config/nixos NixOS"
     "file:///home/${user}/Projects Projects"
   ];
