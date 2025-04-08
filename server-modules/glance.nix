@@ -57,10 +57,10 @@ in {
                   type = "markets";
                   markets = [
                     {
-                      symbol = "BTC-USD";
-                      name = "Bitcoin";
+                      symbol = "SP500";
+                      name = "SP500";
                       chart-link =
-                        "https://www.tradingview.com/chart/?symbol=INDEX:BTCUSD";
+                        "https://www.tradingview.com/chart/?symbol=VANTAGE%3ASP500";
                     }
                     {
                       symbol = "SOL-USD";
@@ -90,13 +90,13 @@ in {
               widgets = [
                 {
                   type = "search";
-                  search-engine = "duckduckgo";
+                  search-engine = "google";
                 }
                 {
                   type = "server-stats";
                   servers = [{
                     type = "local";
-                    name = "Jack";
+                    name = "Hyrule";
                   }];
                 }
                 {
@@ -128,6 +128,11 @@ in {
                       title = "Mealie";
                       url = "https://mealie.dilou.me";
                       icon = "si:mealie";
+                    }
+                    {
+                      title = "CyberChef";
+                      url = "https://cyber.dilou.me";
+                      icon = "si:codechef";
                     }
                   ];
                 }
