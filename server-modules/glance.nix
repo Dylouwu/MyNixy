@@ -53,6 +53,11 @@ in {
                   location = "Paris, France";
                 }
                 {
+                  type = "twitch-channels";
+                  channels =
+                    [ "guep" "kamet0" "caliste_lol" "thebausffs" "otplol_" ];
+                }
+                {
                   type = "markets";
                   markets = [
                     {
@@ -67,12 +72,33 @@ in {
                       symbol = "EURUSD=X";
                       name = "EUR/USD";
                     }
+                    {
+                      symbol = "EURJPY=X";
+                      name = "EUR/JPY";
+                    }
                   ];
                 }
                 {
-                  type = "twitch-channels";
-                  channels =
-                    [ "guep" "kamet0" "caliste_lol" "thebausffs" "otplol_" ];
+                  type = "custom-api";
+                  title = "Steam sales";
+                  cache = "6h";
+                  url =
+                    "https://store.steampowered.com/api/featuredcategories?cc=jp";
+                  template = ''
+                                    <ul class="list list-gap-10 collapsible-container" data-collapse-after="5">
+                    {{ range .JSON.Array "specials.items" }}
+                      <li>
+                        <a class="size-h4 color-highlight block text-truncate" href="https://store.steampowered.com/app/{{ .Int "id" }}/">{{ .String "name" }}</a>
+                        <ul class="list-horizontal-text">
+                          <li>{{ .Int "final_price" | toFloat | mul 0.01 | printf "¥%.0f" }}</li>
+                          {{ $discount := .Int "discount_percent" }}
+                          <li{{ if ge $discount 40 }} class="color-positive"{{ end }}>{{ $discount }}% off</li>
+                        </ul>
+                      </li>
+                    {{ end }}
+                    </ul>
+                  '';
+
                 }
                 {
                   type = "dns-stats";
@@ -81,6 +107,7 @@ in {
                   username = "dilounix";
                   password = "\${secret:adguard-pwd}";
                 }
+
               ];
             }
             {
