@@ -204,7 +204,6 @@ in {
       };
     };
 
-    networking.firewall.allowedTCPPorts = [ 5678 ];
-
   };
+  networking.firewall.allowedTCPPorts = [ 5678 ];
 }
