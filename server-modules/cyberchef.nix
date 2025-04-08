@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   services.nginx.virtualHosts."cyber.dilou.me" = {
-    addSSL = true;
-    enableACME = true;
-    root = pkgs.cyberchef;
+    useACMEHost = "dilou.me";
+    forceSSL = true;
+    root = pkgs.cyberchef + "/share/cyberchef";
   };
 }
