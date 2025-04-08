@@ -317,6 +317,7 @@ in {
             }
           ];
           name = "Home";
+          hide-desktop-navigation = true;
         }];
         server = { port = 5678; };
       };
