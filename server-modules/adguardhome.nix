@@ -10,7 +10,6 @@ in {
     nginx.virtualHosts."${domain}" = {
       useACMEHost = "dilou.me";
       forceSSL = true;
-      default = false;
       locations."/" = {
         proxyPass =
           "http://127.0.0.1:${toString config.services.adguardhome.port}";
