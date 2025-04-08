@@ -17,16 +17,5 @@
       maxtime = "168h";
       overalljails = true;
     };
-    jails = {
-      apache-nohome-iptables.settings = {
-        filter = "apache-nohome";
-        action = ''iptables-multiport[name=HTTP, port="http,https"]'';
-        logpath = "/var/log/httpd/error_log*";
-        backend = "auto";
-        findtime = 300;
-        bantime = 300;
-        maxretry = 10;
-      };
-    };
   };
 }

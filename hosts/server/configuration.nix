@@ -11,7 +11,7 @@
     ../../server-modules/adguardhome.nix
     ../../server-modules/bitwarden.nix
     ../../server-modules/cyberchef.nix
-    # ../../server-modules/fail2ban.nix
+    ../../server-modules/fail2ban.nix
     ../../server-modules/firewall.nix
     ../../server-modules/glance.nix
     ../../server-modules/mealie.nix
