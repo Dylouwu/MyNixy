@@ -120,11 +120,6 @@ in {
                       url = "https://adguard.dilou.me";
                       icon = "si:adguard";
                     }
-                    # {
-                    #   title = "Hoarder";
-                    #   url = "https://hoarder.dilou.me";
-                    #   icon = "si:bookstack";
-                    # }
                     {
                       title = "Mealie";
                       url = "https://mealie.dilou.me";
@@ -317,48 +312,6 @@ in {
                         </ul>
                   '';
                 }
-                # {
-                #   type = "monitor";
-                #   title = "*arr";
-                #   cache = "1m";
-                #   sites = [
-                #     {
-                #       title = "Jellyfin";
-                #       url = "https://jellyfin.dilou.me";
-                #       icon = "si:jellyfin";
-                #     }
-                #     {
-                #       title = "Jellyseerr";
-                #       url = "https://jellyseerr.dilou.me";
-                #       icon = "si:odysee";
-                #     }
-                #     {
-                #       title = "Radarr";
-                #       url = "https://radarr.dilou.me";
-                #       icon = "si:radarr";
-                #     }
-                #     {
-                #       title = "Sonarr";
-                #       url = "https://sonarr.dilou.me";
-                #       icon = "si:sonarr";
-                #     }
-                #     {
-                #       title = "Prowlarr";
-                #       url = "https://prowlarr.dilou.me";
-                #       icon = "si:podcastindex";
-                #     }
-                #     {
-                #       title = "SABnzbd";
-                #       url = "https://sabnzbd.dilou.me";
-                #       icon = "si:sabanci";
-                #     }
-                #     {
-                #       title = "Transmission";
-                #       url = "https://transmission.dilou.me";
-                #       icon = "si:transmission";
-                #     }
-                #   ];
-                # }
                 { type = "hacker-news"; }
               ];
             }
