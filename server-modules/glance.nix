@@ -36,8 +36,7 @@ in {
         theme = {
           background-color = rgb-to-hsl "base00";
           primary-color = rgb-to-hsl "base0D";
-          positive-color = rgb-to-hsl "base01";
-          negative-color = rgb-to-hsl "base04";
+          positive-color = rgb-to-hsl "base0C";
           contrast-multiplier = 1.4;
         };
         pages = [{
@@ -57,22 +56,16 @@ in {
                   type = "markets";
                   markets = [
                     {
-                      symbol = "SP500";
-                      name = "SP500";
-                      chart-link =
-                        "https://www.tradingview.com/chart/?symbol=VANTAGE%3ASP500";
+                      symbol = "SPY";
+                      name = "S&P 500";
                     }
                     {
-                      symbol = "SOL-USD";
-                      name = "Solana";
-                      chart-link =
-                        "https://www.tradingview.com/chart/?symbol=INDEX:SOLUSD";
+                      symbol = "^FCHI";
+                      name = "CAC 40";
                     }
                     {
-                      symbol = "ETH-USD";
-                      name = "Ethereum";
-                      chart-link =
-                        "https://www.tradingview.com/chart/?symbol=INDEX:ETHUSD";
+                      symbol = "EURUSD=X";
+                      name = "EUR/USD";
                     }
                   ];
                 }
