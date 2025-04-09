@@ -18,10 +18,7 @@
     ../../server-modules/meilisearch.nix
     ../../server-modules/nextcloud.nix
     ../../server-modules/nginx.nix
-    # ../../server-modules/speedtest.nix
     ../../server-modules/ssh.nix
-    # ../../server-modules/hoarder.nix
-    # ../../server-modules/arr.nix
 
     # You should let those lines as is
     ./hardware-configuration.nix
