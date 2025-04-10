@@ -56,6 +56,7 @@
       # This is my server configuration
       hyrule = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           { _module.args = { inherit inputs; }; }
           inputs.home-manager.nixosModules.home-manager

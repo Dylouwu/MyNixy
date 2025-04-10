@@ -1,7 +1,6 @@
 { config, ... }: {
   services.nginx = {
     enable = true;
-    enableStream = true;
 
     virtualHosts."default" = {
       default = true;
