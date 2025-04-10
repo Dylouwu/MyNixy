@@ -30,6 +30,7 @@
       url = "github:KZDKM/Hyprspace";
       inputs.hyprland.follows = "hyprland";
     };
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
   };
 
