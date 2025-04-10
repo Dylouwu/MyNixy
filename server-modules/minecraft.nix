@@ -10,6 +10,7 @@
     servers = {
       paradisum = {
         enable = true;
+        enableReload = true;
         package = pkgs.paperServers.paper-1_21_4;
         jvmOpts =
           "-Xms16G -Xmx16G -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxGCPauseMillis=50 -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:G1HeapRegionSize=32M -XX:G1ReservePercent=20 -XX:InitiatingHeapOccupancyPercent=15";
@@ -28,8 +29,6 @@
           white-list = true;
         };
         whitelist = { Pur1rin = "97f095e9-0b9d-4435-a65c-2285461bacbe"; };
-        enableReload = true;
-        extraReload = true;
       };
     };
   };
