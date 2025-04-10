@@ -2,7 +2,7 @@
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
   services.minecraft-servers = {
-    enable = true;
+    enable = false;
     eula = true;
     openFirewall = true;
     dataDir = "/var/lib/minecraft";
@@ -11,9 +11,9 @@
       paradisum = {
         enable = true;
         enableReload = true;
-        package = pkgs.paperServers.paper-1_21_4;
-        jvmOpts =
-          "-Xms16G -Xmx16G -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxGCPauseMillis=50 -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:G1HeapRegionSize=32M -XX:G1ReservePercent=20 -XX:InitiatingHeapOccupancyPercent=15";
+        package = pkgs.paperServers.paper-1_21_1;
+        #jvmOpts =
+        #  "-Xms16G -Xmx16G -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxGCPauseMillis=50 -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:G1HeapRegionSize=32M -XX:G1ReservePercent=20 -XX:InitiatingHeapOccupancyPercent=15";
         serverProperties = {
           allow-nether = false;
           difficulty = 2;
