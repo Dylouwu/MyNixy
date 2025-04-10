@@ -7,16 +7,7 @@
       locations."/" = { return = 444; };
     };
 
-    streamConfig = ''
-      upstream minecraft {
-        server 127.0.0.1:25565;
-      }
 
-      server {
-        listen 25565;
-        proxy_pass minecraft;
-      }
-    '';
   };
 
   security.acme = {
