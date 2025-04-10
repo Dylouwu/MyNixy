@@ -162,7 +162,7 @@ in {
                 {
                   type = "custom-api";
                   title = "Minecraft Server";
-                  url = "https://api.mcstatus.io/v2/status/java/mc.hypixel.net";
+                  url = "https://api.mcstatus.io/v2/status/java/mc.dilou.me";
                   cache = "1m";
                   template = ''
                     <div style="display:flex; align-items:center; gap:12px;">
