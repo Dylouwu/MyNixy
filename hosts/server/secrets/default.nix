@@ -18,9 +18,7 @@
       adguard-pwd = { };
       tailscale-api-key = { };
       minecraft-api-key = {
-        owner = "minecraft";
         path = "/etc/minecraft/api-key.txt";
-        mode = "0600";
       };
       # hoarder = { };
       # recyclarr = {
