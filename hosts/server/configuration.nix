@@ -3,10 +3,9 @@
     ../../nixos/home-manager.nix
     ../../nixos/nix.nix
     ../../nixos/systemd-boot.nix
+    ../../nixos/tailscale.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
-    ../../nixos/docker.nix
-    ../../nixos/tailscale.nix
 
     ../../server-modules/adguardhome.nix
     ../../server-modules/bitwarden.nix
@@ -17,7 +16,7 @@
     ../../server-modules/glance.nix
     ../../server-modules/mealie.nix
     ../../server-modules/meilisearch.nix
-    ../../server-modules/minecraft.nix
+    # ../../server-modules/minecraft.nix # CHANGEME: Uncomment this line to enable the Minecraft server
     ../../server-modules/nextcloud.nix
     ../../server-modules/nginx.nix
     ../../server-modules/ssh.nix
