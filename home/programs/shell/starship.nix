@@ -31,6 +31,11 @@ in {
         style = "";
       };
 
+      hostname = {
+        format = "[$hostname]($style) in ";
+        style = "green dimmed";
+      };
+
       git_branch = {
         symbol = "[](${background-alt}) ";
         style = "fg:${accent} bg:${background-alt}";
