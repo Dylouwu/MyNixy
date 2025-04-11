@@ -208,7 +208,9 @@ in {
                       {{ if .JSON.Bool "online" }}
                         <button onclick="fetch('https://mc.dilou.me/api/server/stop', { 
                             method: 'POST', 
-                            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_SECRET' } 
+                            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer \${
+                              "secret:minecraft-api-key"
+                            }' }
                         }).then(() => location.reload());" 
                         style="padding: 8px 16px;">
                           Turn Off Server
@@ -216,7 +218,9 @@ in {
                       {{ else }}
                         <button onclick="fetch('https://mc.dilou.me/api/server/start', { 
                             method: 'POST', 
-                            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_SECRET' } 
+                            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer \${
+                              "secret:minecraft-api-key"
+                            }' } 
                         }).then(() => location.reload());" 
                         style="padding: 8px 16px;">
                           Turn On Server
@@ -356,5 +360,8 @@ in {
       };
     };
 
+  };
+  systemd.services.glance.serviceConfig = {
+    SupplementaryGroups = [ config.users.groups.keys.name ];
   };
 }
