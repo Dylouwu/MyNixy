@@ -16,7 +16,7 @@
     ../../server-modules/glance.nix
     ../../server-modules/mealie.nix
     ../../server-modules/meilisearch.nix
-    # ../../server-modules/minecraft.nix # CHANGEME: Uncomment this line to enable the Minecraft server
+    ../../server-modules/minecraft.nix
     ../../server-modules/nextcloud.nix
     ../../server-modules/nginx.nix
     ../../server-modules/ssh.nix

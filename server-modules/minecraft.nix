@@ -9,6 +9,7 @@
 
     servers = {
       paradisum = {
+        autoStart = false;
         enable = true;
         enableReload = true;
         package = pkgs.paperServers.paper-1_21_1;
