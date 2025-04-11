@@ -7,7 +7,11 @@
       locations."/" = { return = 444; };
     };
 
-
+    virtualHosts."*.dilou.me" = {
+      useACMEHost = "dilou.me";
+      forceSSL = true;
+      locations."/" = { return = 444; };
+    };
   };
 
   security.acme = {
