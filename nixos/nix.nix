@@ -9,11 +9,13 @@ in {
         options = [ "NOPASSWD" ];
       }
       {
-        command = "sudo systemctl start minecraft-server-paradisum.service";
+        command =
+          "/run/current-system/sw/bin/systemctl start minecraft-server-paradisum.service";
         options = [ "NOPASSWD" ];
       }
       {
-        command = "sudo systemctl stop minecraft-server-paradisum.service";
+        command =
+          "/run/current-system/sw/bin/systemctl stop minecraft-server-paradisum.service";
         options = [ "NOPASSWD" ];
       }
     ];
