@@ -424,11 +424,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1744411534,
-        "narHash": "sha256-IuCESQ4JQtjg6jeBGIEhN0LU0iAMJQhdJlp6DSjU4qk=",
+        "lastModified": 1744412224,
+        "narHash": "sha256-bTGqM73SbxI+3XRUhhmQgj0xMrtLVlF5/Qo6rdTtd0c=",
         "owner": "Dylouwu",
         "repo": "glance-minecraft-power",
-        "rev": "59cbb5ed5f05d6c1f09d9b4cf1440608e45d5431",
+        "rev": "5fca7add3d8aed96eb50deaf69753474fddea398",
         "type": "github"
       },
       "original": {
