@@ -165,53 +165,66 @@ in {
                   url = "https://api.mcstatus.io/v2/status/java/mc.dilou.me";
                   cache = "1m";
                   template = ''
-                    <div style="display:flex; align-items:center; gap:12px;">
-                      <div style="width:40px; height:40px; flex-shrink:0; border-radius:4px; display:flex; justify-content:center; align-items:center; overflow:hidden;">
-                        {{ if .JSON.Bool "online" }}
-                          <img src="{{ .JSON.String "icon" | safeURL }}" width="64" height="64" style="object-fit:contain;">
-                        {{ else }}
-                          <!-- Offline icon -->
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:32px; height:32px; opacity:0.5;">
-                            <path fill-rule="evenodd" d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Z" clip-rule="evenodd" />
-                          </svg>
-                        {{ end }}
-                      </div>
-                      <div style="flex-grow:1; min-width:0;">
-                        <a class="size-h4 block text-truncate color-highlight">
-                          {{ .JSON.String "host" }}
-                          {{ if .JSON.Bool "online" }}
-                            <span style="width:8px; height:8px; border-radius:50%; background-color: var(--color-positive); display:inline-block; vertical-align:middle;" data-popover-type="text" data-popover-text="Online"></span>
-                          {{ else }}
-                            <span style="width:8px; height:8px; border-radius:50%; background-color: var(--color-negative); display:inline-block; vertical-align:middle;" data-popover-type="text" data-popover-text="Offline"></span>
-                          {{ end }}
-                        </a>
-                        <ul class="list-horizontal-text">
-                          <li>
-                            {{ if .JSON.Bool "online" }}
-                              <span>{{ .JSON.String "version.name_clean" }}</span>
-                            {{ else }}
-                              <span>Offline</span>
-                            {{ end }}
-                          </li>
-                          {{ if .JSON.Bool "online" }}
-                          <li>
-                            <p style="display:inline-flex; align-items:center;">
-                              <!-- Player count and icon etc. -->
-                              {{ .JSON.Int "players.online" | formatNumber }}/{{ .JSON.Int "players.max" | formatNumber }} players
-                            </p>
-                          </li>
-                          {{ end }}
-                        </ul>
-                        <!-- Add the control button here -->
-                        <div style="margin-top:8px;">
-                          {{ if .JSON.Bool "online" }}
-                            <button onclick="fetch('https://mc.dilou.me/api/minecraft/control?action=stop', { method:'POST', headers:{ 'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_SECRET' } }).then(() => location.reload());" style="padding: 8px 16px;">Turn Off Server</button>
-                          {{ else }}
-                            <button onclick="fetch('https://mc.dilou.me/api/minecraft/control?action=start', { method:'POST', headers:{ 'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_SECRET' } }).then(() => location.reload());" style="padding: 8px 16px;">Turn On Server</button>
-                          {{ end }}
-                        </div>
-                      </div>
+                                        <div style="display:flex; align-items:center; gap:12px;">
+                                          <div style="width:40px; height:40px; flex-shrink:0; border-radius:4px; display:flex; justify-content:center; align-items:center; overflow:hidden;">
+                                            {{ if .JSON.Bool "online" }}
+                                              <img src="{{ .JSON.String "icon" | safeURL }}" width="64" height="64" style="object-fit:contain;">
+                                            {{ else }}
+                                              <!-- Offline icon -->
+                                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:32px; height:32px; opacity:0.5;">
+                                                <path fill-rule="evenodd" d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Z" clip-rule="evenodd" />
+                                              </svg>
+                                            {{ end }}
+                                          </div>
+                                          <div style="flex-grow:1; min-width:0;">
+                                            <a class="size-h4 block text-truncate color-highlight">
+                                              {{ .JSON.String "host" }}
+                                              {{ if .JSON.Bool "online" }}
+                                                <span style="width:8px; height:8px; border-radius:50%; background-color: var(--color-positive); display:inline-block; vertical-align:middle;" data-popover-type="text" data-popover-text="Online"></span>
+                                              {{ else }}
+                                                <span style="width:8px; height:8px; border-radius:50%; background-color: var(--color-negative); display:inline-block; vertical-align:middle;" data-popover-type="text" data-popover-text="Offline"></span>
+                                              {{ end }}
+                                            </a>
+                                            <ul class="list-horizontal-text">
+                                              <li>
+                                                {{ if .JSON.Bool "online" }}
+                                                  <span>{{ .JSON.String "version.name_clean" }}</span>
+                                                {{ else }}
+                                                  <span>Offline</span>
+                                                {{ end }}
+                                              </li>
+                                              {{ if .JSON.Bool "online" }}
+                                              <li>
+                                                <p style="display:inline-flex; align-items:center;">
+                                                  <!-- Player count and icon etc. -->
+                                                  {{ .JSON.Int "players.online" | formatNumber }}/{{ .JSON.Int "players.max" | formatNumber }} players
+                                                </p>
+                                              </li>
+                                              {{ end }}
+                                            </ul>
+                                     
+                    <!-- Add the control button here -->
+                    <div style="margin-top:8px;">
+                      {{ if .JSON.Bool "online" }}
+                        <button onclick="fetch('https://mc.dilou.me/api/server/stop', { 
+                            method: 'POST', 
+                            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_SECRET' } 
+                        }).then(() => location.reload());" 
+                        style="padding: 8px 16px;">
+                          Turn Off Server
+                        </button>
+                      {{ else }}
+                        <button onclick="fetch('https://mc.dilou.me/api/server/start', { 
+                            method: 'POST', 
+                            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer YOUR_SECRET' } 
+                        }).then(() => location.reload());" 
+                        style="padding: 8px 16px;">
+                          Turn On Server
+                        </button>
+                      {{ end }}
                     </div>
+                                          </div>
+                                        </div>
                   '';
                 }
                 {
