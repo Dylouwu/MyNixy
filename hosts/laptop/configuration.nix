@@ -1,18 +1,18 @@
 { config, ... }: {
   imports = [
     # Mostly system related configuration
-    ../../nixos/nvidia.nix # CHANGEME: Remove this line if you don't have an Nvidia GPU
     ../../nixos/audio.nix
+    ../../nixos/docker.nix
     ../../nixos/fonts.nix
+    ../../nixos/grub.nix
     ../../nixos/home-manager.nix
     ../../nixos/nix.nix
-    ../../nixos/grub.nix
-    ../../nixos/users.nix
-    ../../nixos/utils.nix
-    # ../../nixos/docker.nix
+    ../../nixos/nvidia.nix
     ../../nixos/sddm.nix
     ../../nixos/steam.nix
     ../../nixos/tailscale.nix
+    ../../nixos/users.nix
+    ../../nixos/utils.nix
 
     # You should let those lines as is
     ./hardware-configuration.nix
