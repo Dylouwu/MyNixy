@@ -63,7 +63,7 @@
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
-          inputs.glance-minecraft-power.nixosModules.default
+          inputs.glance-minecraft-power.nixosModules.glance-minecraft-power
           ./hosts/server/configuration.nix
         ];
       };

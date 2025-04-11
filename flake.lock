@@ -425,11 +425,11 @@
         "sops-nix": "sops-nix"
       },
       "locked": {
-        "lastModified": 1744399044,
-        "narHash": "sha256-KedkSg1Lvb373wN15QSABjzC7xAky4ImpsNIZUASJUM=",
+        "lastModified": 1744399823,
+        "narHash": "sha256-psuCk7jEoCRYKP75p9OPu8Qb3iKBShkELcK86+5uOcA=",
         "owner": "Dylouwu",
         "repo": "glance-minecraft-power",
-        "rev": "89911ff3cdce0695505a35a24304232aeedbc49e",
+        "rev": "929e1047084a524b8c13cd63bcced80fca81884a",
         "type": "github"
       },
       "original": {

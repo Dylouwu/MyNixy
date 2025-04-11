@@ -14,6 +14,7 @@
     ../../server-modules/fail2ban.nix
     ../../server-modules/firewall.nix
     ../../server-modules/glance.nix
+    ../../server-modules/glance-minecraft-power.nix
     ../../server-modules/mealie.nix
     ../../server-modules/meilisearch.nix
     ../../server-modules/minecraft.nix
