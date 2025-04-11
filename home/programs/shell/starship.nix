@@ -9,6 +9,7 @@ in {
     settings = {
       add_newline = true;
       format = lib.concatStrings [
+        "$nix_shell"
         "$hostname"
         "$directory"
         "$git_branch"
@@ -22,6 +23,12 @@ in {
         success_symbol = "[❯](${accent})";
         error_symbol = "[❯](red)";
         vimcmd_symbol = "[❮](cyan)";
+      };
+
+      nix_shell = {
+        format = "[$symbol]($style) ";
+        symbol = "🐚";
+        style = "";
       };
 
       git_branch = {
