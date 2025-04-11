@@ -19,8 +19,8 @@
       tailscale-api-key = { };
       minecraft-api-key = {
         owner = "minecraft";
-        group = "minecraft";
-        mode = "0400";
+        path = "/etc/minecraft/api-key.txt";
+        mode = "0600";
       };
       # hoarder = { };
       # recyclarr = {
