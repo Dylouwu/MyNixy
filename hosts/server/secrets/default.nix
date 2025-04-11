@@ -17,6 +17,11 @@
       nextcloud-pwd = { path = "/etc/nextcloud/pwd.txt"; };
       adguard-pwd = { };
       tailscale-api-key = { };
+      minecraft-api-key = {
+        owner = "minecraft";
+        group = "minecraft";
+        mode = "0400";
+      };
       # hoarder = { };
       # recyclarr = {
       #   owner = "recyclarr";

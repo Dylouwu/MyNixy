@@ -32,6 +32,7 @@
     };
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
+    glance-minecraft-power.url = "github:Dylouwu/glance-minecraft-power";
   };
 
   outputs = inputs@{ nixpkgs, ... }: {
@@ -62,6 +63,7 @@
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
+          inputs.glance-minecraft-power.nixosModules.default
           ./hosts/server/configuration.nix
         ];
       };
