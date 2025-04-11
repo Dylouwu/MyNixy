@@ -60,7 +60,6 @@
       libcxx
       go
       nodejs
-      python3
       jq
       just
       pnpm

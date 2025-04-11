@@ -102,6 +102,7 @@ in {
       note = "notes";
 
       nix-shell = "nix-shell --command zsh";
+      nix-develop = "nix develop --command zsh";
 
       # git
       g = "lazygit";
