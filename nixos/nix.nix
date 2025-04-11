@@ -2,7 +2,7 @@
 let autoGarbageCollector = config.var.autoGarbageCollector;
 in {
   security.sudo.extraRules = [{
-    users = [ config.var.username ];
+    users = [ config.var.username "minecraft" ];
     commands = [
       {
         command = "/run/current-system/sw/bin/nixos-rebuild";
