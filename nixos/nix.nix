@@ -3,10 +3,20 @@ let autoGarbageCollector = config.var.autoGarbageCollector;
 in {
   security.sudo.extraRules = [{
     users = [ config.var.username ];
-    commands = [{
-      command = "/run/current-system/sw/bin/nixos-rebuild";
-      options = [ "NOPASSWD" ];
-    }];
+    commands = [
+      {
+        command = "/run/current-system/sw/bin/nixos-rebuild";
+        options = [ "NOPASSWD" ];
+      }
+      {
+        command = "sudo systemctl start minecraft-server-paradisum.service";
+        options = [ "NOPASSWD" ];
+      }
+      {
+        command = "sudo systemctl stop minecraft-server-paradisum.service";
+        options = [ "NOPASSWD" ];
+      }
+    ];
   }];
   nixpkgs.config = {
     allowUnfree = true;
