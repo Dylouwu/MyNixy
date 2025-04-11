@@ -5,8 +5,8 @@ in {
     meilisearch = {
       enable = true;
       listenPort = 7700;
-      # masterKeyEnvironmentFile= "";
     };
+
     nginx.virtualHosts."${domain}" = {
       useACMEHost = "dilou.me";
       forceSSL = true;
