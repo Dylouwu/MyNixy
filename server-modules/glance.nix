@@ -156,20 +156,20 @@ in {
                       title = "CyberChef";
                       url = "https://cyber.dilou.me";
                       icon = "si:codechef";
-                    }
-                  ];
-                }
+                  }
+                ];
+              }
 
-                {
-                  type = "custom-api";
-                  title = "Minecraft Server";
-                  url = "https://api.mcstatus.io/v2/status/java/mc.dilou.me";
-                  cache = "1m";
+              {
+                type = "custom-api";
+                title = "Minecraft Server";
+                url = "https://api.mcstatus.io/v2/status/java/mc.dilou.me";
+                cache = "1m";
 
-                  template = ''
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                      <div style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 4px;
-                                  display: flex; justify-content: center; align-items: center; overflow: hidden;">
+                template = ''
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 4px;
+                                display: flex; justify-content: center; align-items: center; overflow: hidden;">
                         {{ if .JSON.Bool "online" }}
                           <img src="{{ .JSON.String "icon" | safeURL }}" width="64" height="64" style="object-fit: contain;">
                         {{ else }}
@@ -218,7 +218,7 @@ in {
                         <!-- Control button -->
                         <div style="margin-top: 8px;">
                           {{ if .JSON.Bool "online" }}
-                            <button onclick="fetch('https://mc.dilou.me:5000/api/server/stop', { 
+                            <button onclick="fetch('http://localhost:5000/api/server/stop', { 
                                                   method: 'POST', 
                                                   headers: { 
                                                     'Content-Type': 'application/json', 
@@ -229,7 +229,7 @@ in {
                               Turn Off Server
                             </button>
                           {{ else }}
-                            <button onclick="fetch('https://mc.dilou.me:5000/api/server/start', { 
+                            <button onclick="fetch('http://localhost:5000/api/server/start', { 
                                                   method: 'POST', 
                                                   headers: { 
                                                     'Content-Type': 'application/json',
