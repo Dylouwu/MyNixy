@@ -222,7 +222,9 @@ in {
                                                     method: 'POST', 
                                                     headers: { 
                                                       'Content-Type': 'application/json', 
-                                                      'Authorization': 'Bearer secret:glance-api-key'
+                                                      'Authorization': 'Bearer \${
+                                                        "secret:glance-api-key"
+                                                      }'
                                                     }
                                                   }).then(() => location.reload());" 
                                       style="padding: 8px 16px;">
@@ -233,7 +235,9 @@ in {
                                                     method: 'POST', 
                                                     headers: { 
                                                       'Content-Type': 'application/json',
-                                                      'Authorization': 'Bearer secret:glance-api-key'
+                                                      'Authorization': 'Bearer \${
+                                                        "secret:glance-api-key"
+                                                      }'
                                                     }
                                                   }).then(() => location.reload());" 
                                       style="padding: 8px 16px;">
