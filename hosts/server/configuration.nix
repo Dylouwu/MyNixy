@@ -8,6 +8,7 @@
     ../../nixos/utils.nix
 
     ../../server-modules/adguardhome.nix
+    ../../server-modules/api.nix
     ../../server-modules/bitwarden.nix
     ../../server-modules/cloudflare.nix
     ../../server-modules/cyberchef.nix
