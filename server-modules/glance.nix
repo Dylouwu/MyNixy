@@ -361,7 +361,4 @@ in {
     };
 
   };
-  systemd.services.glance.serviceConfig = {
-    SupplementaryGroups = [ config.users.groups.keys.name ];
-  };
 }
