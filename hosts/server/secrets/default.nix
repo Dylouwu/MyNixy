@@ -22,11 +22,7 @@
         path = "/etc/minecraft/api-key.txt";
         mode = "0600";
       };
-      glance-api-key = {
-        owner = "glance";
-        path = "/etc/glance/api-key.txt";
-        mode = "0600";
-      };
+      glance-api-key = { };
       # hoarder = { };
       # recyclarr = {
       #   owner = "recyclarr";
