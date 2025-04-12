@@ -1,22 +1,29 @@
 let domain = "api.dilou.me";
 in {
-  virtualHosts."${domain}" = {
-    useACMEHost = "${domain}";
+  services.nginx.virtualHosts."${domain}" = {
+    useACMEHost = "dilou.me";
     forceSSL = true;
     locations."/mc" = {
-      proxyPass =
-        "http://localhost:5000"; # Forward requests to backend on port 5000
-      proxySetHeader = {
-        "X-Real-IP" = "$remote_addr";
-        "X-Forwarded-For" = "$proxy_add_x_forwarded_for";
-        "X-Forwarded-Proto" = "$scheme";
-        "Host" = "$host";
-      };
-      addHeader = {
-        "Access-Control-Allow-Origin" = "*";
-        "Access-Control-Allow-Methods" = "GET, POST, OPTIONS";
-        "Access-Control-Allow-Headers" = "Authorization, Content-Type";
-      };
+      proxyPass = "http://localhost:5000";
+      recommendedProxySettings = true;
+
+      extraConfig = ''
+        # CORS headers
+        add_header 'Access-Control-Allow-Origin' '*' always;
+        add_header 'Access-Control-Allow-Methods' 'POST, OPTIONS' always;
+        add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type' always;
+
+        # Handle preflight requests
+        if ($request_method = 'OPTIONS') {
+          add_header 'Access-Control-Allow-Origin' '*';
+          add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+          add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type';
+          add_header 'Access-Control-Max-Age' 1728000;
+          add_header 'Content-Type' 'text/plain charset=UTF-8';
+          add_header 'Content-Length' 0;
+          return 204;
+        }
+      '';
     };
   };
 }
