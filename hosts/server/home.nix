@@ -10,6 +10,7 @@
     ../../home/programs/fetch
     ../../home/programs/git
     ../../home/programs/lazygit
+    ../../home/programs/zellij
 
     # Scripts
     ../../home/scripts # All scripts
