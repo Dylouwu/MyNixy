@@ -48,7 +48,7 @@
           }];
           "bukkit.yml".value = {
             spawn-limits = {
-              monster = 40;
+              monsters = 40;
               animals = 10;
               water-animals = 4;
               water-ambient = 4;
