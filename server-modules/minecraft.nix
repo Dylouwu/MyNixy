@@ -41,8 +41,77 @@
             level = 4;
             bypassesPlayerLimit = true;
           }];
+          "bukkit.yml".value = {
+            spawn-limits = {
+              monster = 40;
+              animals = 10;
+              water-animals = 4;
+              water-ambient = 4;
+              water-underground-creature = 6;
+              axolotls = 4;
+              ambient = 4;
+            };
+            ticks-per = {
+              animal-spawns = 400;
+              monster-spawns = 10;
+              water-ambient-spawns = 400;
+              water-underground-creature-spawns = 400;
+              water-animals-spawns = 400;
+              ambient-spawns = 400;
+              axolotl-spawns = 400;
+            };
+          };
           "spigot.yml".value = {
+            world-settings = {
+              default = {
+                mob-spawn-range = 4;
+                entity-activation-range = {
+                  animals = 24;
+                  monsters = 32;
+                  raiders = 48;
+                  misc = 16;
+                  water = 16;
+                  villagers = 24;
+                  flying-monsters = 48;
+                };
+                entity-tracking-range = {
+                  players = 96;
+                  animals = 64;
+                  monsters = 64;
+                  misc = 32;
+                  other = 64;
+                };
+              };
+            };
             messages.unknown-command = "Unknown command, dummy!";
+          };
+          "config/paper-world-defaults.yml".value = {
+            chunk = {
+              max-auto-save-chunks-per-tick = 10;
+              prevent-moving-into-unloaded-chunks = true;
+              entity-per-chunk-save-limit = {
+                area_effect_cloud = 8;
+                arrow = 16;
+                breeze_wind_charge = 8;
+                dragon_fireball = 3;
+                egg = 8;
+                ender_pearl = 8;
+                experience_bottle = 3;
+                experience_orb = 16;
+                eye_of_ender = 8;
+                fireball = 8;
+                firework_rocket = 8;
+                llama_spit = 3;
+                potion = 8;
+                shulker_bullet = 8;
+                small_fireball = 8;
+                snowball = 8;
+                spectral_arrow = 16;
+                trident = 16;
+                wind_charge = 8;
+                wither_skull = 4;
+              };
+            };
           };
         };
         whitelist = { Pur1rin = "97f095e9-0b9d-4435-a65c-2285461bacbe"; };
