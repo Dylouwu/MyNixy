@@ -22,6 +22,7 @@
           enable-command-block = true;
           enforce-whitelist = true;
           gamemode = "survival";
+          max-chained-neighbor-updates = 100000;
           max-players = 30;
           motd = "Welcome to Paradisum SMP !";
           player-idle-timeout = 15;
@@ -30,11 +31,16 @@
           view-distance = 12;
           white-list = true;
         };
+        whitelist = { Pur1rin = "97f095e9-0b9d-4435-a65c-2285461bacbe"; };
+
         symlinks = {
           "cache/mojang_1.21.1.jar" =
             "${pkgs.vanillaServers.vanilla-1_21_1}/lib/minecraft/server.jar";
+          "mods" = /home/dilounix/.config/nixos/src/paradisum/mods;
         };
+
         files = {
+          "server-icon.png" = /home/dilounix/.config/nixos/src/cherry.png;
           "ops.json".value = [{
             name = "Pur1rin";
             uuid = "97f095e9-0b9d-4435-a65c-2285461bacbe";
@@ -62,6 +68,7 @@
             };
           };
           "spigot.yml".value = {
+            commands.spam-exclusions = [ ];
             world-settings = {
               default = {
                 mob-spawn-range = 4;
@@ -81,13 +88,34 @@
                   misc = 32;
                   other = 64;
                 };
+                merge-radius = {
+                  item = 2.0;
+                  exp = 2.0;
+                };
               };
             };
             messages.unknown-command = "Unknown command, dummy!";
           };
+          "config/paper-global.yml".value = {
+            item-validation.book-size.page-max = 1024;
+            packet-limiter.overrides = {
+              ServerboundCommandSuggestionPacket = {
+                action = "DROP";
+                interval = 1.0;
+                max-packet-rate = 15.0;
+              };
+              ServerboundPlaceRecipePacket = {
+                action = "DROP";
+                interval = 4.0;
+                max-packet-rate = 5.0;
+              };
+            };
+            misc.max-joins-per-tick = 3;
+          };
           "config/paper-world-defaults.yml".value = {
             chunk = {
               max-auto-save-chunks-per-tick = 10;
+              whitelist = { Pur1rin = "97f095e9-0b9d-4435-a65c-2285461bacbe"; };
               prevent-moving-into-unloaded-chunks = true;
               entity-per-chunk-save-limit = {
                 area_effect_cloud = 8;
@@ -112,9 +140,112 @@
                 wither_skull = 4;
               };
             };
+            collisions = {
+              max-entity-collisions = 4;
+              fix-climbing-bypassing-cramming-rule = true;
+            };
+            misc = {
+              update-pathfinding-on-block-update = false;
+              redstone-implementation = "ALTERNATE_CURRENT";
+            };
+            entities = {
+              armor-stands = {
+                tick = false;
+                do-collision-entity-lookups = false;
+              };
+              spawning = {
+                non-player-arrow-despawn-rate = 100;
+                creative-arrow-despawn-rate = 100;
+                alt-item-despawn-rate = {
+                  enabled = true;
+                  items = {
+                    cobblestone = 600;
+                    netherrack = 600;
+                    sand = 600;
+                    red_sand = 600;
+                    gravel = 600;
+                    dirt = 600;
+                    short_grass = 600;
+                    kelp = 600;
+                    bamboo = 600;
+                    sugar_cane = 600;
+                    twisting_vines = 600;
+                    weeping_vines = 600;
+                    oak_leaves = 600;
+                    spruce_leaves = 600;
+                    birch_leaves = 600;
+                    jungle_leaves = 600;
+                    acacia_leaves = 600;
+                    dark_oak_leaves = 600;
+                    mangrove_leaves = 600;
+                    cherry_leaves = 600;
+                    azalea_leaves = 600;
+                    cactus = 600;
+                    diorite = 600;
+                    granite = 600;
+                    andesite = 600;
+                  };
+                };
+                despawn-ranges = {
+                  ambient = {
+                    hard = 88;
+                    soft = 36;
+                  };
+                  axolotls = {
+                    hard = 88;
+                    soft = 36;
+                  };
+                  creature = {
+                    hard = 88;
+                    soft = 36;
+                  };
+                  misc = {
+                    hard = 88;
+                    soft = 36;
+                  };
+                  monster = {
+                    hard = 88;
+                    soft = 36;
+                  };
+                  underground_water_creature = {
+                    hard = 88;
+                    soft = 36;
+                  };
+                  water_ambient = {
+                    hard = 88;
+                    soft = 36;
+                  };
+                  water_creature = {
+                    hard = 88;
+                    soft = 36;
+                  };
+                };
+              };
+            };
+            environment = {
+              optimize-explosions = true;
+              treasure-maps.find-already-discovered = {
+                loot-tables = true;
+                villager-trade = true;
+              };
+            };
+            tick-rates = {
+              grass-spread = 4;
+              mob-spawner = 2;
+              behavior.villager = {
+                validatenearbypoi = 60;
+                acquirepoi = 120;
+              };
+              sensor.villager = {
+                secondarypoisensor = 80;
+                nearestbedsensor = 80;
+                villagerbabiessensor = 40;
+                playersensor = 40;
+                nearestlivingentitysensor = 40;
+              };
+            };
           };
         };
-        whitelist = { Pur1rin = "97f095e9-0b9d-4435-a65c-2285461bacbe"; };
       };
     };
   };
