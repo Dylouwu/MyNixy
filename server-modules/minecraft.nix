@@ -36,11 +36,10 @@
         symlinks = {
           "cache/mojang_1.21.1.jar" =
             "${pkgs.vanillaServers.vanilla-1_21_1}/lib/minecraft/server.jar";
-          "mods" = /home/dilounix/.config/nixos/src/paradisum/mods;
         };
 
         files = {
-          "server-icon.png" = /home/dilounix/.config/nixos/src/cherry.png;
+          "server-icon.png" = ./server-icon.png; # NOT DECLARATIVE
           "ops.json".value = [{
             name = "Pur1rin";
             uuid = "97f095e9-0b9d-4435-a65c-2285461bacbe";
