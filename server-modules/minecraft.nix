@@ -23,12 +23,27 @@
           enforce-whitelist = true;
           gamemode = "survival";
           max-players = 30;
-          motd = "SMP";
+          motd = "Welcome to Paradisum SMP !";
           player-idle-timeout = 15;
           spawn-protection = 0;
-          simulation-distance = 12;
+          simulation-distance = 5;
           view-distance = 12;
           white-list = true;
+        };
+        symlinks = {
+          "cache/mojang_1.21.1.jar" =
+            "${pkgs.vanillaServers.vanilla-1_21_1}/lib/minecraft/server.jar";
+        };
+        files = {
+          "ops.json".value = [{
+            name = "Pur1rin";
+            uuid = "97f095e9-0b9d-4435-a65c-2285461bacbe";
+            level = 4;
+            bypassesPlayerLimit = true;
+          }];
+          "spigot.yml".value = {
+            messages.unknown-command = "Unknown command, dummy!";
+          };
         };
         whitelist = { Pur1rin = "97f095e9-0b9d-4435-a65c-2285461bacbe"; };
       };
