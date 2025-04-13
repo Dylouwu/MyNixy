@@ -39,7 +39,7 @@
         };
 
         files = {
-          "server-icon.png" = ./server-icon.png; # NOT DECLARATIVE
+          "server-icon.png" = ../src/cherry.png;
           "ops.json".value = [{
             name = "Pur1rin";
             uuid = "97f095e9-0b9d-4435-a65c-2285461bacbe";
