@@ -17,7 +17,7 @@
         package = pkgs.paperServers.paper-1_21_1;
         restart = "no";
         serverProperties = {
-          allow-nether = false;
+          allow-nether = true;
           difficulty = 2;
           enable-command-block = true;
           enforce-whitelist = true;
