@@ -23,7 +23,7 @@
         mode = "0600";
       };
       glance-api-key = { };
-      github-token = { path = "/home/dilounix/.conifg/nix/nix.conf"; };
+      github-token = { path = "/home/dilounix/.config/nix/nix.conf"; };
       # hoarder = { };
       # recyclarr = {
       #   owner = "recyclarr";
