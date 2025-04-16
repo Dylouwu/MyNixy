@@ -11,8 +11,11 @@ let
   keyboardLayout = config.var.keyboardLayout;
 in {
 
-  imports =
-    [ ./animations.nix ./bindings.nix ./polkitagent.nix ./hyprspace.nix ];
+  imports = [
+    ./animations.nix
+    ./bindings.nix
+    ./polkitagent.nix 
+  ];
 
   home.packages = with pkgs; [
     qt5.qtwayland

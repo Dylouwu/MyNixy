@@ -26,10 +26,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
-    };
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     glance-minecraft-power.url = "github:Dylouwu/glance-minecraft-power";
