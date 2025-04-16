@@ -48,6 +48,10 @@ in {
           done
         }
 
+        function n4c() {
+          nix develop --no-write-lock-file --refresh "github:anotherhadi/nix4cyber#''${1:-all}"
+        }
+
         zle     -N             sesh-sessions
         bindkey -M emacs '\es' sesh-sessions
         bindkey -M vicmd '\es' sesh-sessions
@@ -95,6 +99,8 @@ in {
       ssh = "kitty +kitten ssh";
       cat =
         "bat --theme=base16 --color=always --paging=never --tabs=2 --wrap=never --plain";
+      obsidian-no-gpu =
+        "env ELECTRON_OZONE_PLATFORM_HINT=auto obsidian --ozone-platform=x11";
       wireguard-import = "nmcli connection import type wireguard file";
 
       notes =
