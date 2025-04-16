@@ -51,7 +51,7 @@
       osu-lazer-bin
       resources
       # blanket # White-noise app
-      # obsidian # Note taking app
+      obsidian # Note taking app
       # planify # Todolists
       # textpieces # Manipulate texts
 

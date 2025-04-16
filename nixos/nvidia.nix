@@ -4,27 +4,30 @@ let
     config.boot.kernelPackages.nvidiaPackages.beta; # stable, latest, beta, etc.
 in {
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [
-    "nvidia"
-    "displayLink"
-    "nvidia_modeset"
-    "nvidia_uvm"
-    "nvidia_drm"
-  ]; # or "nvidiaLegacy470 etc.
-  boot.kernelParams =
-    lib.optionals (lib.elem "nvidia" config.services.xserver.videoDrivers) [
-      "nvidia-drm.modeset=1"
-      "nvidia_drm.fbdev=1"
-      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
-    ];
+  services.xserver.videoDrivers = [ "nvidia" ]; # or "nvidiaLegacy470 etc.
+
+  boot.kernelParams = [
+    "nvidia-drm.modeset=1" # Enable mode setting for Wayland
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1" # Improves resume after sleep
+    "nvidia.NVreg_RegistryDwords=PowerMizerEnable=0x1;PerfLevelSrc=0x2222;PowerMizerLevel=0x3;PowerMizerDefault=0x3;PowerMizerDefaultAC=0x3" # Performance/power optimizations
+  ];
+
+  boot.blacklistedKernelModules = [ "nouveau" ];
+
   environment.variables = {
-    GBM_BACKEND = "nvidia-drm"; # If crash in firefox, remove this line
-    LIBVA_DRIVER_NAME = "nvidia"; # hardware acceleration
-    NVD_BACKEND = "direct";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     __GL_GSYNC_ALLOWED = "1";
     __GL_VRR_ALLOWED = "0";
+    GBM_BACKEND = "nvidia-drm"; # If crash in firefox, remove this line
+    LIBVA_DRIVER_NAME = "nvidia"; # hardware acceleration
+    NVD_BACKEND = "direct";
+    WLR_NO_HARDWARE_CURSORS = "1"; # Fix for cursors on Wayland
+    NIXOS_OZONE_WL = "1"; # Wayland support for Electron apps
+    WLR_DRM_NO_ATOMIC = "1"; # Fix for some issues with Hyprland
+    MOZ_ENABLE_WAYLAND = "1"; # Wayland support for firefox
+    XDG_SESSION_TYPE = "wayland";
   };
+
   nixpkgs.config = {
     nvidia.acceptLicense = true;
     allowUnfreePredicate = pkg:
@@ -39,11 +42,12 @@ in {
     nvidia = {
       open = false;
       nvidiaSettings = true;
-      powerManagement.enable =
-        true; # This can cause sleep/suspend to fail and saves entire VRAM to /tmp/
+      powerManagement = {
+        enable = true;
+      }; # This can cause sleep/suspend to fail and saves entire VRAM to /tmp/
       modesetting.enable = true;
       package = nvidiaDriverChannel;
-
+      forceFullCompositionPipeline = true;
       prime = {
         # offload = {
         #   enable = true;
@@ -70,6 +74,9 @@ in {
         libvdpau-va-gl
         mesa
         egl-wayland
+        vulkan-loader
+        vulkan-validation-layers
+        libva
       ];
     };
   };
@@ -79,4 +86,11 @@ in {
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
     ];
   };
+
+  # Additional useful packages
+  environment.systemPackages = with pkgs; [
+    vulkan-tools
+    glxinfo
+    libva-utils # VA-API debugging tools
+  ];
 }
