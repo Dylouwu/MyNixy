@@ -24,14 +24,18 @@
           gamemode = "survival";
           max-chained-neighbor-updates = 100000;
           max-players = 30;
-          motd = "\\u00a78\\u00a7l      \\u00a7m--<\\u00a7d\\u00a7l\\u00a7m-----\\u00a7r\\u00a7l \\u00a7b\\u00a7lParadisum\\u00a7r\\u00a7l \\u00a7d\\u00a7l\\u00a7m-----\\u00a78\\u00a7l\\u00a7m>--\\u00a7r\\n\\u00a7e     \\u228f\\u00a76\\u26ab\\u00a7e\\u2290 \\u00a7f\\u00a7l\\u00a76\\u00a7l\\u00a7nWelcome\\u00a7f\\u00a7l ! 1.21.5 Private SMP\\u00a7e \\u228f\\u00a76\\u26ab\\u00a7e\\u2290";
+          motd =
+            "\\u00a78\\u00a7l      \\u00a7m--<\\u00a7d\\u00a7l\\u00a7m-----\\u00a7r\\u00a7l \\u00a7b\\u00a7lParadisum\\u00a7r\\u00a7l \\u00a7d\\u00a7l\\u00a7m-----\\u00a78\\u00a7l\\u00a7m>--\\u00a7r\\n\\u00a7e     \\u228f\\u00a76\\u26ab\\u00a7e\\u2290 \\u00a7f\\u00a7l\\u00a76\\u00a7l\\u00a7nWelcome\\u00a7f\\u00a7l ! 1.21.5 Private SMP\\u00a7e \\u228f\\u00a76\\u26ab\\u00a7e\\u2290";
           player-idle-timeout = 15;
           spawn-protection = 0;
           simulation-distance = 5;
           view-distance = 12;
           white-list = true;
         };
-        whitelist = { Pur1rin = "97f095e9-0b9d-4435-a65c-2285461bacbe"; };
+        whitelist = {
+          Pur1rin = "97f095e9-0b9d-4435-a65c-2285461bacbe";
+          Pikimo = "ee7137da-817a-4c59-81b9-965f03b723e9";
+        };
 
         symlinks = {
           "cache/mojang_1.21.1.jar" =
@@ -114,7 +118,6 @@
           "config/paper-world-defaults.yml".value = {
             chunk = {
               max-auto-save-chunks-per-tick = 10;
-              whitelist = { Pur1rin = "97f095e9-0b9d-4435-a65c-2285461bacbe"; };
               prevent-moving-into-unloaded-chunks = true;
               entity-per-chunk-save-limit = {
                 area_effect_cloud = 8;
