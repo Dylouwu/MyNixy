@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        " ##",
+        "$  "
+    ],
+    "key": {
+        "#": "minecraft:gold_ingot",
+        "$": "minecraft:iron_ingot"
+    },
+    "result": {
+        "id": "minecraft:carrot_on_a_stick",
+        "components": {
+            "minecraft:unbreakable": {},
+            "minecraft:damage": 1,
+            "minecraft:item_name": "Wrench",
+            "minecraft:rarity": "common",
+            "minecraft:custom_data": {
+                "redstone_terracotta_wrench": {
+                    "wrench": true
+                }
+            }
+        }
+    }
+}
