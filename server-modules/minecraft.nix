@@ -28,8 +28,8 @@
             "\\u00a78\\u00a7l      \\u00a7m--<\\u00a7d\\u00a7l\\u00a7m-----\\u00a7r\\u00a7l \\u00a7b\\u00a7lParadisum\\u00a7r\\u00a7l \\u00a7d\\u00a7l\\u00a7m-----\\u00a78\\u00a7l\\u00a7m>--\\u00a7r\\n\\u00a7e     \\u228f\\u00a76\\u26ab\\u00a7e\\u2290 \\u00a7f\\u00a7l\\u00a76\\u00a7l\\u00a7nWelcome\\u00a7f\\u00a7l ! 1.21.5 Private SMP\\u00a7e \\u228f\\u00a76\\u26ab\\u00a7e\\u2290";
           player-idle-timeout = 15;
           spawn-protection = 0;
-          simulation-distance = 4;
-          view-distance = 10;
+          simulation-distance = 5;
+          view-distance = 12;
           white-list = true;
         };
         whitelist = {
@@ -43,6 +43,7 @@
           BriocheSucree = "554c22ba-e518-4206-8e1a-8d99d067d720";
           HadrienAka = "5d65b248-a2da-4109-bfdf-9051417d9a6a";
           warrameur12 = "bf4d52a5-53ef-4b1b-9ac0-b805db20b537";
+          Rettleti = "bf4d52a5-53ef-4b1b-9ac0-b805db20b537";
           lulu5587 = "f15a6b3d-93bf-4c00-ac87-3e911ea9bb37";
         };
 
@@ -52,6 +53,10 @@
         };
 
         files = {
+          "world/datapacks" = builtins.path {
+            path = ../src/datapacks;
+            name = "datapacks";
+          };
           "server-icon.png" = ../src/cherry.png;
           "ops.json".value = [{
             name = "Pur1rin";
@@ -235,9 +240,12 @@
             };
             environment = {
               optimize-explosions = true;
-              treasure-maps.find-already-discovered = {
-                loot-tables = true;
-                villager-trade = true;
+              treasure-maps = {
+                enabled = false;
+                find-already-discovered = {
+                  loot-tables = true;
+                  villager-trade = true;
+                };
               };
             };
             tick-rates = {
