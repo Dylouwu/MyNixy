@@ -57,7 +57,7 @@ let
       elif [[ $1 == "update" ]];then
         cd ${configDirectory} && nix flake update
       elif [[ $1 == "gc" ]];then
-        cd ${configDirectory} && sudo nix-collect-garbage -d
+        cd ${configDirectory} && sudo nix-collect-garbage -d && nix-collect-garbage -d
       elif [[ $1 == "cb" ]];then
         sudo /run/current-system/bin/switch-to-configuration boot
       elif [[ $1 == "listgen" ]];then

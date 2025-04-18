@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ lib, pkgs, config, ... }:
 let
   nvidiaDriverChannel =
     config.boot.kernelPackages.nvidiaPackages.beta; # stable, latest, beta, etc.
@@ -6,11 +6,11 @@ in {
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ]; # or "nvidiaLegacy470 etc.
 
-  boot.kernelParams = [
-    "nvidia-drm.modeset=1" # Enable mode setting for Wayland
-    "nvidia.NVreg_PreserveVideoMemoryAllocations=1" # Improves resume after sleep
-    "nvidia.NVreg_RegistryDwords=PowerMizerEnable=0x1;PerfLevelSrc=0x2222;PowerMizerLevel=0x3;PowerMizerDefault=0x3;PowerMizerDefaultAC=0x3" # Performance/power optimizations
-  ];
+  boot.kernelParams = lib.mkDefault (config.boot.kernelParams ++ [
+    "nvidia-drm.modeset=1"
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+    "nvidia.NVreg_RegistryDwords=PowerMizerEnable=0x1;PerfLevelSrc=0x2222;…"
+  ]);
 
   boot.blacklistedKernelModules = [ "nouveau" ];
 
