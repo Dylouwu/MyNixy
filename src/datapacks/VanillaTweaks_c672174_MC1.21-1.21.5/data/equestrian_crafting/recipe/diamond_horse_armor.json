@@ -1,0 +1,20 @@
+{
+	"result": {
+		"id": "minecraft:diamond_horse_armor"
+	},
+	"type": "crafting_shaped",
+	"pattern": [
+		"  #",
+		"###",
+		"#_#"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:diamond"
+		},
+		"_": {
+			"item": "minecraft:saddle"
+		}
+	},
+	"group": "horse_armor"
+}
