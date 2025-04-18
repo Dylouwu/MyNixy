@@ -1,4 +1,4 @@
-{ lib, pkgs, config, ... }:
+{ pkgs, config, ... }:
 let
   nvidiaDriverChannel =
     config.boot.kernelPackages.nvidiaPackages.beta; # stable, latest, beta, etc.
@@ -30,13 +30,7 @@ in {
 
   nixpkgs.config = {
     nvidia.acceptLicense = true;
-    allowUnfreePredicate = pkg:
-      builtins.elem (lib.getName pkg) [
-        "cudatoolkit"
-        "nvidia-persistenced"
-        "nvidia-settings"
-        "nvidia-x11"
-      ];
+    allowUnfree = true;
   };
   hardware = {
     nvidia = {
