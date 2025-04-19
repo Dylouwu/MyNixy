@@ -48,6 +48,7 @@
           Cinyu202 = "8b94b50d-136e-4477-b240-58aae8e957b0";
           Jujuhilo = "251b583b-4a2f-40ed-92df-8f3f7ad701a7";
           PablitoChangJose = "029a7510-65b1-4f48-a5f4-2482b62a2f4d";
+          qmiho = "a5b83881-bc45-449e-9136-09209ac42c86";
         };
 
         symlinks = {
