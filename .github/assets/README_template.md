@@ -4,7 +4,7 @@
 
 <br>
 
-# Nixy
+# MyNixy
 
 <br>
 <div align="center">
@@ -30,7 +30,7 @@
 **[Nixy](https://github.com/anotherhadi/nixy)** is a **Hyprland** NixOS configuration with **home-manager**, **secrets**, and **custom theming** all in one place.
 It's a simple way to manage your system configuration and dotfiles.
 
-MyNixy is a Nixy fork, which is a NixOS configuration that I use on my personal laptop and server.
+MyNixy is a Nixy fork, which is a NixOS configuration that I use on my personal laptop and server, with added features and modules to make it more suitable for my needs.
 
 **Nixy key points:**
 
@@ -113,11 +113,11 @@ git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 ```
 
-## Non-declarative things 😿
+## 😿 Non-declarative things
 
-- Zen and its settings, logins (which can both be alternatively synced with a firefox account (or a password manager for the logins)), mods and extensions must be installed manually from the browser directly.
+- Zen and its settings, logins (which can both be alternatively synced with a firefox account, or a password manager for the logins), mods and extensions must be installed manually from the browser directly.
 - Tailscale, Discord, Github Copilot, and other softwares
-- Steam launch options (included in `nixos/steam.nix` )
+- Steam launch options (included in `nixos/steam.nix`)
 - Modrinth modpacks, JVM arguments, and other Minecraft-related things
 - And maybe more ☔
 
