@@ -47,13 +47,9 @@
       curtail # Compress images
       vscode
       modrinth-app
-      everest-mons
       osu-lazer-bin
       resources
-      # blanket # White-noise app
       obsidian # Note taking app
-      # planify # Todolists
-      # textpieces # Manipulate texts
 
       # Dev
       clang
@@ -71,8 +67,8 @@
       btop
       fastfetch
 
-      # Backup
-      # firefox
+      # Backup browser
+      firefox
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard
