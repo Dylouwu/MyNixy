@@ -79,11 +79,11 @@ Those are the system-level configurations. (audio, gpu, bootloader, session mana
 ### 💻 /hosts
 
 This directory contains host-specific configurations. Each host includes:
-
-    - `configuration.nix` for system-wide settings
-    - `home.nix` for user-level configuration
-    - `variables.nix` for global variables
-    - `secrets/` for sensitive data
+    
+- `configuration.nix` for system-wide settings
+- `home.nix` for user-level configuration
+- `variables.nix` for global variables
+- `secrets/` for sensitive data
 
 ### 💾 server-modules
 
