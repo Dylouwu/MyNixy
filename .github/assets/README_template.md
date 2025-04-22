@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/anotherhadi/nixy/main/.github/assets/logo.png" width="120px" />
+    <img src="https://raw.githubusercontent.com/Dylouwu/MyNixy/main/.github/assets/logo.png" width="120px" />
 </div>
 
 <br>
@@ -8,16 +8,16 @@
 
 <br>
 <div align="center">
-    <a href="https://github.com/anotherhadi/nixy/stargazers">
-        <img src="https://img.shields.io/github/stars/anotherhadi/nixy?color={primarycolor}&labelColor={backgroundcolor}&style=for-the-badge&logo=starship&logoColor={primarycolor}">
+    <a href="https://github.com/Dylouwu/MyNixy/stargazers">
+        <img src="https://img.shields.io/github/stars/Dylouwu/MyNixy?color={primarycolor}&labelColor={backgroundcolor}&style=for-the-badge&logo=starship&logoColor={primarycolor}">
     </a>
-    <a href="https://github.com/anotherhadi/nixy/">
-        <img src="https://img.shields.io/github/repo-size/anotherhadi/nixy?color={primarycolor}&labelColor={backgroundcolor}&style=for-the-badge&logo=github&logoColor={primarycolor}">
+    <a href="https://github.com/Dylouwu/MyNixy/">
+        <img src="https://img.shields.io/github/repo-size/Dylouwu/MyNixy?color={primarycolor}&labelColor={backgroundcolor}&style=for-the-badge&logo=github&logoColor={primarycolor}">
     </a>
     <a href="https://nixos.org">
         <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor={backgroundcolor}&logo=NixOS&logoColor={primarycolor}&color={primarycolor}">
     </a>
-    <a href="https://github.com/anotherhadi/nixy/blob/main/LICENSE">
+    <a href="https://github.com/Dylouwu/MyNixy/blob/main/LICENSE">
         <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&colorA={backgroundcolor}&colorB={primarycolor}&logo=unlicense&logoColor={primarycolor}"/>
     </a>
 </div>
@@ -26,15 +26,15 @@
 **Nixy** is a **Hyprland** NixOS configuration with **home-manager**, **secrets**, and **custom theming** all in one place.
 It's a simple way to manage your system configuration and dotfiles.
 
-I'm Hadi, a french developer, student in infosec, enthusiastic about nix, golang & blockchains.
-This is my own, **keyboard-centric**, and **minimalistic** NixOS configuration.
-I enable vim-like keybindings everywhere I can, and I use a lot of custom scripts to make my life easier.
+MyNixy is a nixy fork, which is a NixOS configuration that I use on my laptop and my server.
+
+A big shoutout to @anotherhadi for making nixy and many other awesome projects, I highly recommend checking them out.
 
 **Nixy key points:**
 
 - Hypr-ecosystem first (hyprland, hyprlock, hyprpanel, hypridle, ...)
 - Stylix/base16 themes
-- Vim-like keybindings everywhere (hyprland, qutebrowser, nvim, ...)
+- Vim-like keybindings everywhere (hyprland, nvim, ...)
 
 ## Table of Content
 
@@ -42,10 +42,7 @@ I enable vim-like keybindings everywhere I can, and I use a lot of custom script
 
 ## Gallery
 
-![Nixy helper, peaclock](.github/assets/nixy/1.png)
-![Qutebrowser, pipes, shell](.github/assets/nixy/2.png)
 ![nvim, lazygit](.github/assets/nixy/3.png)
-![spotify, cava](.github/assets/nixy/4.png)
 
 ## Architecture
 
@@ -61,12 +58,7 @@ Those are the dotfiles and configuration files for user-level configuration
 
 ### 🐧 nixos
 
-Those are the system-level configurations. (audio, bluetooth, gpu, bootloader, ...)
-
-### 🎨 themes
-
-Those are the themes used in the system configuration. The `stylix` folder contains the [stylix](https://github.com/danth/stylix) defined themes, the `var` folder contains the variables not handled by stylix.
-See avaiable themes in [THEMES.md](docs/THEMES.md)
+Those are the system-level configurations. (audio, gpu, bootloader, session manager, ...)
 
 ### 💻 hosts
 
@@ -78,7 +70,7 @@ Each host contains a `configuration.nix` for system-level configuration, a `home
 1. Clone the repo
 
 ```sh
-git clone https://github.com/anotherhadi/nixy ~/.config/nixos
+git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 ```
 
 2. Copy the `hosts/laptop` folder, rename it to your system name, and change the variables inside the `variables.nix` file
@@ -100,10 +92,8 @@ sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 
 ## Documentation
 
-- [THEMES](docs/THEMES.md): How themes work and how to create your own
 - [SCRIPTS](docs/SCRIPTS.md): Scripts that are available
 - [KEYBINDINGS-HYPRLAND](docs/KEYBINDINGS-HYPRLAND.md): Keybindings available in Hyprland
-- [WALLPAPERS](https://github.com/anotherhadi/nixy-wallpapers): A collection of wallpapers for Nixy.
+- [WALLPAPERS](https://github.com/anotherhadi/awesome-wallpapers): A collection of wallpapers for Nixy.
 
-- [CONTRIBUTING](docs/CONTRIBUTING.md): How to contribute
 - [LICENSE](LICENSE): MIT License
