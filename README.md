@@ -24,28 +24,50 @@
 </div>
 <br>
 
-**Nixy** is a **Hyprland** NixOS configuration with **home-manager**, **secrets**, and **custom theming** all in one place.
+**A big shoutout to [@anotherhadi](https://www.github.com/anotherhadi) for making Nixy and many other awesome projects, I highly recommend checking his work out!**
+
+## What is MyNixy?
+
+**[Nixy](https://github.com/anotherhadi/nixy)** is a **Hyprland** NixOS configuration with **home-manager**, **secrets**, and **custom theming** all in one place.
 It's a simple way to manage your system configuration and dotfiles.
 
-MyNixy is a nixy fork, which is a NixOS configuration that I use on my laptop and my server.
-
-A big shoutout to @anotherhadi for making nixy and many other awesome projects, I highly recommend checking them out.
+MyNixy is a Nixy fork, which is a NixOS configuration that I use on my personal laptop and server.
 
 **Nixy key points:**
 
 - Hypr-ecosystem first (hyprland, hyprlock, hyprpanel, hypridle, ...)
-- Stylix/base16 themes
-- Vim-like keybindings everywhere (hyprland, nvim, ...)
+- Home-manager support
+- Secret handling with [sops](https://https://github.com/Mic92/sops-nix)
+- Nvidia GPU support (optimus-manager, nvidia-prime, ...)
+- Stylix/base16 custom theming
+
+**MyNixy major additions:**
+
+- **A fully customizable and optimized Minecraft Paper server**, which can be started and stopped directly from the glance dashboard through API calls.
+- New server modules : Cyberchef, Fail2ban, Autosleep, ...
+- Gaming integration with Steam x Proton, Osu-Lazer, Modrinth (Minecraft Open-Source launcher).
+
+Other small modifications include:
+
+- Minecraft themed grub instead of relying on systemd-boot
+- Zellij over tmux
+- Copilot shortcuts
+- C++ environment with clangd
+- Removed bluetooth module
+- And many more to come ! Feel free to check the repository issues for more information about the next features to come.
 
 ## Table of Content
 
+- [What is MyNixy?](#what-is-mynixy)
 - [Table of Content](#table-of-content)
 - [Gallery](#gallery)
 - [Architecture](#architecture)
   - [🏠 home](#-home)
   - [🐧 nixos](#-nixos)
   - [💻 hosts](#-hosts)
+  - [💾 server-modules](#-server-modules)
 - [Installation](#installation)
+- [Non-declarative things 😿](#non-declarative-things-)
 - [Documentation](#documentation)
 
 ## Gallery
@@ -73,6 +95,10 @@ Those are the system-level configurations. (audio, gpu, bootloader, session mana
 Those are the host-specific configurations.
 Each host contains a `configuration.nix` for system-level configuration, a `home.nix` for user-level configuration, and a `variables.nix` for config wide variables.
 
+### 💾 server-modules
+
+Those are the server modules that are used to add features to the server. These include a nextcloud environment, a glance dashboard, ssh connection support, and more. 
+
 ## Installation
 
 1. Clone the repo
@@ -97,6 +123,14 @@ git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 ```sh
 sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 ```
+
+## Non-declarative things 😿
+
+- Zen and its settings, logins (which can both be alternatively synced with a firefox account (or a password manager for the logins)), mods and extensions must be installed manually from the browser directly.
+- Tailscale, Discord, Github Copilot, and other softwares
+- Steam launch options (included in `nixos/steam.nix` )
+- Modrinth modpacks, JVM arguments, and other Minecraft-related things
+- And maybe more ☔
 
 ## Documentation
 
