@@ -90,7 +90,7 @@ This module provides a set of scripts to control the volume of the default audio
 
 ## System
 
-Usefull quick scripts
+Useful quick scripts
 
 - `menu` - Open wofi with drun mode. (wofi)
 - `powermenu` - Open power dropdown menu. (wofi)
