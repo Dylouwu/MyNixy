@@ -5,7 +5,7 @@
 
 <br>
 
-# Nixy
+# MyNixy
 
 <br>
 <div align="center">
@@ -26,26 +26,23 @@
 
 **A big shoutout to [@anotherhadi](https://www.github.com/anotherhadi) for making Nixy and many other awesome projects, I highly recommend checking his work out!**
 
-## What is MyNixy?
+**[Nixy](https://github.com/anotherhadi/nixy) simplifies and unifies** the Hyprland ecosystem with a modular, easily customizable setup. It provides a structured way to manage your system configuration and dotfiles with minimal effort. It includes *home-manager, secrets, and custom theming* all in one place.
 
-**[Nixy](https://github.com/anotherhadi/nixy)** is a **Hyprland** NixOS configuration with **home-manager**, **secrets**, and **custom theming** all in one place.
-It's a simple way to manage your system configuration and dotfiles.
+**MyNixy** is a Nixy fork, which is a NixOS configuration that I use on my personal laptop and server, with added **features** and **modules** to make it more suitable for my needs.
 
-MyNixy is a Nixy fork, which is a NixOS configuration that I use on my personal laptop and server.
+**Nixy features:**
 
-**Nixy key points:**
-
-- Hypr-ecosystem first (hyprland, hyprlock, hyprpanel, hypridle, ...)
-- Home-manager support
-- Secret handling with [sops](https://https://github.com/Mic92/sops-nix)
-- Nvidia GPU support (optimus-manager, nvidia-prime, ...)
-- Stylix/base16 custom theming
+- 💻 Hyprland-centric: Preconfigured Hyprland ecosystem (Hyprlock, Hyprpanel, etc.)
+- 🏠 Home-manager support
+- 🔏 Secret handling with [sops](https://https://github.com/Mic92/sops-nix)
+- 🏔️ Nvidia GPU support (optimus-manager, nvidia-prime, ...)
+- 🎨 Consistent Theming: Base16 & Stylix-powered themes
 
 **MyNixy major additions:**
 
-- **A fully customizable and optimized Minecraft Paper server**, which can be started and stopped directly from the glance dashboard through API calls.
-- New server modules : Cyberchef, Fail2ban, Autosleep, ...
-- Gaming integration with Steam x Proton, Osu-Lazer, Modrinth (Minecraft Open-Source launcher).
+- 🕹️ **A fully customizable and optimized Minecraft Paper server**, which can be started and stopped directly from the glance dashboard through API calls.
+- 💾 New server modules : Cyberchef, Fail2ban, Autosleep, ...
+- 🎮 Gaming integration with Steam x Proton, Osu-Lazer, Modrinth (Minecraft Open-Source launcher).
 
 Other small modifications include:
 
@@ -58,16 +55,15 @@ Other small modifications include:
 
 ## Table of Content
 
-- [What is MyNixy?](#what-is-mynixy)
 - [Table of Content](#table-of-content)
 - [Gallery](#gallery)
 - [Architecture](#architecture)
   - [🏠 home](#-home)
-  - [🐧 nixos](#-nixos)
-  - [💻 hosts](#-hosts)
+  - [🐧 /nixos](#-nixos)
+  - [💻 /hosts](#-hosts)
   - [💾 server-modules](#-server-modules)
 - [Installation](#installation)
-- [Non-declarative things 😿](#non-declarative-things-)
+- [😿 Non-declarative things](#-non-declarative-things)
 - [Documentation](#documentation)
 
 ## Gallery
@@ -78,7 +74,7 @@ Other small modifications include:
 
 ### 🏠 home
 
-Those are the dotfiles and configuration files for user-level configuration
+Contains **dotfiles and settings** that apply to your user environment.
 
 **Subfolders:**
 
@@ -86,34 +82,42 @@ Those are the dotfiles and configuration files for user-level configuration
 - `scripts` is a folder full of bash scripts (see [SCRIPTS.md](docs/SCRIPTS.md))
 - `system` is some "desktop environment" configuration
 
-### 🐧 nixos
+### 🐧 /nixos
 
 Those are the system-level configurations. (audio, gpu, bootloader, session manager, ...)
 
-### 💻 hosts
+### 💻 /hosts
 
-Those are the host-specific configurations.
-Each host contains a `configuration.nix` for system-level configuration, a `home.nix` for user-level configuration, and a `variables.nix` for config wide variables.
+This directory contains host-specific configurations. Each host includes:
+    
+- `configuration.nix` for system-wide settings
+- `home.nix` for user-level configuration
+- `variables.nix` for global variables
+- `secrets/` for sensitive data
 
 ### 💾 server-modules
 
-Those are the server modules that are used to add features to the server. These include a nextcloud environment, a glance dashboard, ssh connection support, and more. 
+Those are the server modules that are used to add features to the server. These include a nextcloud environment, a glance dashboard, ssh connection support, and more.
 
 ## Installation
 
-1. Clone the repo
+1. [Fork](https://github.com/Dylouwu/MyNixy/fork) this repository and clone it to your machine:
 
 ```sh
 git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 ```
 
-2. Copy the `hosts/laptop` folder, rename it to your system name, and change the variables inside the `variables.nix` file
-3. Add your `hardware-configuration.nix` to your new host's folder
-4. Add your 'nixosConfigurations' inside `flake.nix`
+2. Copy the `hosts/laptop` folder, rename it to match your system's hostname, and update `variables.nix` with your device settings.
+3. Copy your `hardware-configuration.nix` into your new host's folder to ensure proper hardware support.
+4. Register your new host in `flake.nix` by adding it under nixosConfigurations.
 
 > [!Important]
-> I added few `# CHANGEME` comments in the files to help you find what to change. Be sure to check them up.
-> You can use `rg "CHANGEME"` to find them all with ripgrep.
+> `# CHANGEME` comments are placed throughout the configuration to indicate necessary modifications.
+> Use the following command to quickly locate them:
+>
+> ```sh
+> rg "CHANGEME" ~/.config/nixos
+> ```
 
 > [!TIP]
 > When you add new files, don't forget to run `git add .` to add them to the git repository
@@ -124,11 +128,11 @@ git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 ```
 
-## Non-declarative things 😿
+## 😿 Non-declarative things
 
-- Zen and its settings, logins (which can both be alternatively synced with a firefox account (or a password manager for the logins)), mods and extensions must be installed manually from the browser directly.
+- Zen and its settings, logins (which can both be alternatively synced with a firefox account, or a password manager for the logins), mods and extensions must be installed manually from the browser directly.
 - Tailscale, Discord, Github Copilot, and other softwares
-- Steam launch options (included in `nixos/steam.nix` )
+- Steam launch options (included in `nixos/steam.nix`)
 - Modrinth modpacks, JVM arguments, and other Minecraft-related things
 - And maybe more ☔
 
