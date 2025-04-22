@@ -1,3 +1,10 @@
+# - ## System
+#- 
+#- Useful quick scripts
+#-
+#- - `menu` - Open wofi with drun mode. (wofi)
+#- - `powermenu` - Open power dropdown menu. (wofi)
+#- - `lock` - Lock the screen. (hyprlock)
 { pkgs, ... }:
 let
   menu = pkgs.writeShellScriptBin "menu"
