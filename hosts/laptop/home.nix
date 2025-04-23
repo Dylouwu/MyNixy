@@ -50,6 +50,7 @@
       osu-lazer-bin
       resources
       obsidian # Note taking app
+      gnome-text-editor # Text editor
 
       # Dev
       clang
