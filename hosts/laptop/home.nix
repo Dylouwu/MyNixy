@@ -55,6 +55,7 @@
       clang
       libcxx
       go
+      air
       nodejs
       jq
       just

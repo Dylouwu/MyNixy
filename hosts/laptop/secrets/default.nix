@@ -11,7 +11,6 @@
       weather-key = { path = "/home/dilounix/.weather.json"; };
       github-token = { path = "/home/dilounix/.config/nix/nix.conf"; };
       #gitlab-key = { path = "/home/dilounix/.ssh/gitlab"; };
-      #jack-key = { path = "/home/dilounix/.ssh/jack"; };
       #pia = { path = "/home/dilounix/.config/pia/pia.ovpn"; };
 
     };
