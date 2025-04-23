@@ -68,6 +68,7 @@
       unzip
       btop
       fastfetch
+      hashcat
 
       # Backup browser
       firefox
