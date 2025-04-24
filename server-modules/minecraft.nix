@@ -51,6 +51,7 @@
           qmiho = "a5b83881-bc45-449e-9136-09209ac42c86";
           Baiocch = "e89c1a21-7fea-4599-907c-c1f1b03bed94";
           Arc_a_Nain = "97938b8f-4390-42da-ba8c-a93d33444e22";
+          zouu = "cf4c6d5e-0cbc-4574-b839-7c2efc3ee6d1";
         };
 
         symlinks = {
