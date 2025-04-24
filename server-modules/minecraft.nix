@@ -28,7 +28,7 @@
             "\\u00a78\\u00a7l      \\u00a7m--<\\u00a7d\\u00a7l\\u00a7m-----\\u00a7r\\u00a7l \\u00a7b\\u00a7lParadisum\\u00a7r\\u00a7l \\u00a7d\\u00a7l\\u00a7m-----\\u00a78\\u00a7l\\u00a7m>--\\u00a7r\\n\\u00a7e     \\u228f\\u00a76\\u26ab\\u00a7e\\u2290 \\u00a7f\\u00a7l\\u00a76\\u00a7l\\u00a7nWelcome\\u00a7f\\u00a7l ! 1.21.5 Private SMP\\u00a7e \\u228f\\u00a76\\u26ab\\u00a7e\\u2290";
           player-idle-timeout = 30;
           spawn-protection = 0;
-          simulation-distance = 5;
+          simulation-distance = 6;
           view-distance = 12;
           white-list = true;
         };
@@ -73,13 +73,13 @@
           }];
           "bukkit.yml".value = {
             spawn-limits = {
-              monsters = 40;
-              animals = 10;
-              water-animals = 4;
-              water-ambient = 4;
+              monsters = 60;
+              animals = 15;
+              water-animals = 6;
+              water-ambient = 6;
               water-underground-creature = 6;
-              axolotls = 4;
-              ambient = 4;
+              axolotls = 10;
+              ambient = 6;
             };
             ticks-per = {
               animal-spawns = 400;
@@ -95,7 +95,7 @@
             commands.spam-exclusions = [ ];
             world-settings = {
               default = {
-                mob-spawn-range = 4;
+                mob-spawn-range = 5;
                 entity-activation-range = {
                   animals = 24;
                   monsters = 32;
@@ -113,8 +113,8 @@
                   other = 64;
                 };
                 merge-radius = {
-                  item = 2.0;
-                  exp = 2.0;
+                  item = 1.5;
+                  exp = 1.5;
                 };
               };
             };
