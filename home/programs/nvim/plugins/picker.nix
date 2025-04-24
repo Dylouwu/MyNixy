@@ -110,11 +110,6 @@
         action = "<cmd>lua Snacks.picker.notifications()<cr>";
         options.desc = "Notification History";
       }
-      {
-        key = "<leader>fe";
-        action = "<cmd>lua Snacks.pickers.icons()<cr>";
-        options.desc = "Emoji";
-      }
 
       # Git
       {
