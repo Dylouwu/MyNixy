@@ -52,6 +52,7 @@
           Baiocch = "e89c1a21-7fea-4599-907c-c1f1b03bed94";
           Arc_a_Nain = "97938b8f-4390-42da-ba8c-a93d33444e22";
           zouu = "cf4c6d5e-0cbc-4574-b839-7c2efc3ee6d1";
+          Evo_Termii = "62fb868b-4031-451b-a8f7-5eec12a48c10";
         };
 
         symlinks = {
@@ -73,17 +74,17 @@
           }];
           "bukkit.yml".value = {
             spawn-limits = {
-              monsters = 60;
-              animals = 15;
-              water-animals = 6;
-              water-ambient = 6;
+              monsters = 40;
+              animals = 10;
+              water-animals = 4;
+              water-ambient = 4;
               water-underground-creature = 6;
-              axolotls = 10;
-              ambient = 6;
+              axolotls = 6;
+              ambient = 3;
             };
             ticks-per = {
               animal-spawns = 400;
-              monster-spawns = 10;
+              monster-spawns = 1;
               water-ambient-spawns = 400;
               water-underground-creature-spawns = 400;
               water-animals-spawns = 400;
