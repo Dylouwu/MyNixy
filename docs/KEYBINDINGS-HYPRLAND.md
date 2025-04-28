@@ -39,7 +39,6 @@
 | Clipboard picker with wofi | SHIFT + SUPER + C |
 | Emoji picker with wofi | SHIFT + SUPER + E |
 | Toggle night shift | SUPER + F2 |
-| Toggle night shift | SUPER + F3 |
 | Move Window (mouse) | SUPER + mouse:272 |
 | Resize Window (mouse) | SUPER + R |
 | Toggle Mute | XF86AudioMute |
