@@ -69,6 +69,7 @@
       btop
       fastfetch
       hashcat
+      haiti 
 
       # Backup browser
       firefox
