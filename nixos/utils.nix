@@ -21,9 +21,7 @@ in {
     allowReboot = false;
   };
 
-  time = {
-    timeZone = timeZone;
-  };
+  time = { timeZone = timeZone; };
   i18n.defaultLocale = defaultLocale;
   i18n.extraLocaleSettings = {
     LC_ADDRESS = extraLocale;
@@ -34,7 +32,7 @@ in {
     LC_NUMERIC = extraLocale;
     LC_PAPER = extraLocale;
     LC_TELEPHONE = extraLocale;
-    LC_TIME = extraLocale;
+    LC_TIME = defaultLocale;
   };
 
   services = {
@@ -107,9 +105,7 @@ in {
       hyprland.default = [ "gtk" "hyprland" ];
     };
 
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   security = {
