@@ -68,7 +68,6 @@
       unzip
       btop
       fastfetch
-      hashcat
       haiti 
 
       # Backup browser
