@@ -27,7 +27,7 @@ in {
         {
           # Day-Month-Date
           monitor = "";
-          text = ''cmd[update:1000] echo -e "$(date +"%A, %B %d")"'';
+          text = ''cmd[update:1000] echo -e "$(date +"%A %d %B")"'';
           color = foreground;
           font_size = 28;
           font_family = font + " Bold";
@@ -38,7 +38,7 @@ in {
         # Time
         {
           monitor = "";
-          text = ''cmd[update:1000] echo "<span>$(date +"%I:%M")</span>"'';
+          text = ''cmd[update:1000] echo "<span>$(date +"%H:%M")</span>"'';
           color = foreground;
           font_size = 160;
           font_family = "steelfish outline regular";
@@ -76,7 +76,7 @@ in {
         font_color = foreground;
         fade_on_empty = false;
         font_family = font + " Bold";
-        placeholder_text = "<i>🔒 Enter Password</i>";
+        placeholder_text = "🪷 Welcome 🪷";
         hide_input = false;
         position = "0, -250";
         halign = "center";
