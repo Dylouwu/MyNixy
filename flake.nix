@@ -64,7 +64,7 @@
         ];
       };
 
-      devShells."x86_64-linux" =
+      devShells."x86_64-linux".default =
         let pkgs = nixpkgs.legacyPackages."x86_64-linux";
         in pkgs.mkShell {
           name = "mynixy-dev-shell";
