@@ -33,7 +33,7 @@ let
       	pkill wofi
       	exit
       fi
-      
+
       # Create the menu options
       options=(
         "󰌾 Lock"
@@ -42,15 +42,15 @@ let
         "󰑐 Reboot"
         "󰿅 Shutdown"
       )
-      
+
       # Create a named pipe for communication
       fifo=$(mktemp -u)
       mkfifo "$fifo"
-      
+
       # Start wofi and capture its output
       printf '%s\n' "''${options[@]}" | wofi -p "Powermenu" --dmenu > "$fifo" &
       wofi_pid=$!
-      
+
       # Start background monitor to close wofi when it loses focus
       {
         sleep 0.2
@@ -64,14 +64,14 @@ let
         done
       } &
       monitor_pid=$!
-      
+
       # Read selection from the pipe
       read -r selected < "$fifo"
       rm "$fifo"
-      
+
       # Kill the monitor process
       kill $monitor_pid 2>/dev/null
-      
+
       # Process selection
       if [[ $selected ]]; then
         selected=''${selected:2}
@@ -101,7 +101,7 @@ let
       	pkill wofi
       	exit
       fi
-      
+
       # Create the menu options
       options=(
         "󰅶 Caffeine"
@@ -110,15 +110,15 @@ let
         "󰈊 Hyprpicker"
         "󰖂 Toggle VPN"
       )
-      
+
       # Create a named pipe for communication
       fifo=$(mktemp -u)
       mkfifo "$fifo"
-      
+
       # Start wofi and capture its output
       printf '%s\n' "''${options[@]}" | wofi -p "Quickmenu" --dmenu > "$fifo" &
       wofi_pid=$!
-      
+
       # Start background monitor to close wofi when it loses focus
       {
         sleep 0.2
@@ -132,14 +132,14 @@ let
         done
       } &
       monitor_pid=$!
-      
+
       # Read selection from the pipe
       read -r selected < "$fifo"
       rm "$fifo"
-      
+
       # Kill the monitor process
       kill $monitor_pid 2>/dev/null
-      
+
       # Process selection
       if [[ $selected ]]; then
         selected=''${selected:2}
@@ -155,9 +155,6 @@ let
             ;;
           "Hyprpicker")
             sleep 0.2 && ${pkgs.hyprpicker}/bin/hyprpicker -a
-            ;;
-          "Toggle VPN")
-            openvpn-toggle
             ;;
         esac
       fi
