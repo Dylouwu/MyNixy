@@ -63,22 +63,6 @@
           ./hosts/server/configuration.nix
         ];
       };
-
-      devShells."x86_64-linux".default =
-        let pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        in pkgs.mkShell {
-          name = "mynixy-dev-shell";
-          nativeBuildInputs = with pkgs; [
-            alejandra
-            git
-            sops # For editing secrets
-            age # For key management
-          ];
-          shellHook = ''
-            echo "Entered Nixy dev environment."
-            echo "Use 'alejandra .' to format Nix files."
-          '';
-        };
     };
   };
 }
