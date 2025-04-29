@@ -3,7 +3,7 @@
 
   config.var = {
     hostname = "hyrule";
-    username = "dilounix";
+    username = "dilounix"; # CHANGEME: Your username
     configDirectory = "/home/" + config.var.username + "/.config/nixos";
     keyboardLayout = "fr";
 
