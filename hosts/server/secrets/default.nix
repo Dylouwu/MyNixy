@@ -1,16 +1,18 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }:
+let username = config.var.username;
+in {
   sops = {
-    age.keyFile = "/home/dilounix/.config/sops/age/keys.txt";
+    age.keyFile = "/home/${username}/.config/sops/age/keys.txt";
     defaultSopsFile = ./secrets.yaml;
     secrets = {
       sshconfig = {
-        owner = "dilounix";
-        path = "/home/dilounix/.ssh/config";
+        owner = "${username}";
+        path = "/home/${username}/.ssh/config";
         mode = "0600";
       };
       github-key = {
-        owner = "dilounix";
-        path = "/home/dilounix/.ssh/github";
+        owner = "${username}";
+        path = "/home/${username}/.ssh/github";
         mode = "0600";
       };
       cloudflare-dns-token = { path = "/etc/cloudflare/dnskey.txt"; };
@@ -23,7 +25,7 @@
         mode = "0600";
       };
       glance-api-key = { };
-      github-token = { path = "/home/dilounix/.config/nix/nix.conf"; };
+      github-token = { path = "/home/${username}/.config/nix/nix.conf"; };
       # hoarder = { };
       # recyclarr = {
       #   owner = "recyclarr";

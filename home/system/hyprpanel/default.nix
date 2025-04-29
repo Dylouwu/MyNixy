@@ -23,7 +23,7 @@ let
   position = config.theme.bar.position;
 
   location = config.var.location;
-  weather-key = "/home/dilounix/.weather.json";
+  weather-key = "/home/${config.var.username}/.weather.json";
 in {
 
   imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
