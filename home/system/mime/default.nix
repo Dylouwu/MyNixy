@@ -34,6 +34,7 @@
         "x-scheme-handler/https" = "zen.desktop";
         "text/html" = "zen.desktop";
         "inode/directory" = "thunar.desktop";
+        "application/zip" = "xarchiver.desktop";
         "application/pdf" = "zathura.desktop";
         "image/png" = "imv-dir.desktop";
         "x-scheme-handler/chrome" = "zen.desktop";
