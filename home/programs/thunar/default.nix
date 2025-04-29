@@ -69,4 +69,36 @@ in {
       <property name="last-toolbar-items" type="string" value="menu:1,back:1,forward:0,open-parent:0,open-home:0,undo:0,redo:0,zoom-in:0,zoom-out:0,zoom-reset:0,view-as-icons:0,view-as-detailed-list:0,view-as-compact-list:0,toggle-split-view:0,location-bar:1,reload:0,search:1,uca-action-1710183590071525-1:0,new-tab:0,new-window:0,view-switcher:0"/>
     </channel>
   '';
+
+  home.file.".config/xarchiver/xarchiverrc".text = ''
+    [xarchiver]
+    preferred_format=0
+    prefer_unzip=true
+    confirm_deletion=true
+    sort_filename_content=true
+    advanced_isearch=true
+    auto_expand=true
+    store_output=true
+    icon_size=2
+    show_archive_comment=false
+    show_sidebar=true
+    show_location_bar=true
+    show_toolbar=true
+    preferred_custom_cmd=
+    preferred_temp_dir=/tmp
+    preferred_extract_dir=/tmp
+    allow_sub_dir=0
+    ensure_directory=true
+    overwrite=false
+    full_path=2
+    touch=false
+    fresh=false
+    update=false
+    store_path=false
+    updadd=true
+    freshen=false
+    recurse=true
+    solid_archive=false
+    remove_files=false
+  '';
 }
