@@ -34,6 +34,21 @@ in {
     "file:///home/${user}/.config/nixos NixOS"
   ];
 
+  xdg.configFile."Thunar/uca.xml".text = ''
+    <?xml version="1.0" encoding="UTF-8"?>
+    <actions>
+    <action>
+        <icon>utilities-terminal</icon>
+        <name>Open Terminal Here</name>
+        <unique-id>1700000000000001</unique-id> <command>kitty -d %f</command>
+        <description>Opens Kitty terminal in the selected folder</description>
+        <patterns>*</patterns>
+        <startup-notify/>
+        <directories/>
+    </action>
+    </actions>
+  '';
+
   home.file.".config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml".text = ''
     <?xml version="1.0" encoding="UTF-8"?>
 
