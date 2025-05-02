@@ -17,8 +17,8 @@
     ../../server-modules/firewall.nix
     ../../server-modules/glance.nix
     ../../server-modules/glance-minecraft-power.nix
-    ../../server-modules/mealie.nix
-    ../../server-modules/meilisearch.nix
+    # ../../server-modules/mealie.nix # broken for now
+    # ../../server-modules/meilisearch.nix # same
     ../../server-modules/minecraft.nix
     ../../server-modules/nextcloud.nix
     ../../server-modules/nginx.nix
