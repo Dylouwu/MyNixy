@@ -53,6 +53,7 @@
           Arc_a_Nain = "97938b8f-4390-42da-ba8c-a93d33444e22";
           zouu = "cf4c6d5e-0cbc-4574-b839-7c2efc3ee6d1";
           Evo_Termii = "62fb868b-4031-451b-a8f7-5eec12a48c10";
+          Pinpinnation = "fa98e9f9-c3b4-46c9-8540-bbab5157b3a4";
         };
 
         symlinks = {
