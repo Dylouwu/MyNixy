@@ -1,7 +1,7 @@
 {
   programs.nixvim = {
     globals.mapleader = " ";
-    diagnostic.config = {
+    diagnostic.settings = {
       virtual_text = true;
       virtual_improved = { current_line = "only"; };
     };
