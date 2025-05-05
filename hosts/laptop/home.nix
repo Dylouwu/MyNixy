@@ -60,6 +60,7 @@
       nodejs
       jq
       just
+      python3
       pnpm
       zulu
 
@@ -68,7 +69,7 @@
       unzip
       btop
       fastfetch
-      haiti 
+      haiti
 
       # Backup browser
       firefox
