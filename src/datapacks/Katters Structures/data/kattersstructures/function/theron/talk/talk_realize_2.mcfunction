@@ -1,1 +1,0 @@
-$data modify storage kattersstructures:temp theron.talking.msg set from storage kattersstructures:dialogue_db theron.realize.builds.$(id)

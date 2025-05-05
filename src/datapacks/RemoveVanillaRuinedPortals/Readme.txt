@@ -1,1 +1,0 @@
-Just a small datapack that removes vanilla ruined portals for generating, in case you don't like the vanilla structures, and just wanna see mine, use this :)

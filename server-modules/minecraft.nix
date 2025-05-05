@@ -63,7 +63,7 @@
 
         files = {
           "world/datapacks" = builtins.path {
-            path = ../src/datapacks;
+            path = inputs.minecraft-datapacks;
             name = "datapacks";
           };
           "server-icon.png" = ../src/cherry.png;
