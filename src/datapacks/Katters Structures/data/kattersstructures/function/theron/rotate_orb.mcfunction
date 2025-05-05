@@ -1,1 +1,0 @@
-execute as @e[type=block_display,tag=katter.theron.orb] at @s run rotate @s ~2 ~

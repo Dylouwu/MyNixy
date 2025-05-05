@@ -1,1 +1,0 @@
-return run gamerule reducedDebugInfo

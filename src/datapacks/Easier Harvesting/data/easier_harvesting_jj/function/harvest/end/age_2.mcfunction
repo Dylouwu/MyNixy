@@ -1,4 +1,0 @@
-execute if block ~ ~ ~ minecraft:cocoa[age=2,facing=east] run return run fill ~ ~ ~ ~ ~ ~ minecraft:cocoa[age=0,facing=east] replace minecraft:cocoa[age=2,facing=east]
-execute if block ~ ~ ~ minecraft:cocoa[age=2,facing=north] run return run fill ~ ~ ~ ~ ~ ~ minecraft:cocoa[age=0,facing=north] replace minecraft:cocoa[age=2,facing=north]
-execute if block ~ ~ ~ minecraft:cocoa[age=2,facing=south] run return run fill ~ ~ ~ ~ ~ ~ minecraft:cocoa[age=0,facing=south] replace minecraft:cocoa[age=2,facing=south]
-execute if block ~ ~ ~ minecraft:cocoa[age=2,facing=west] run fill ~ ~ ~ ~ ~ ~ minecraft:cocoa[age=0,facing=west] replace minecraft:cocoa[age=2,facing=west]

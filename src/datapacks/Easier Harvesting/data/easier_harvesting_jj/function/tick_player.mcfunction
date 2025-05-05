@@ -1,1 +1,0 @@
-execute if items entity @s weapon.mainhand #minecraft:hoes run function easier_harvesting_jj:search_crop/check/hoe

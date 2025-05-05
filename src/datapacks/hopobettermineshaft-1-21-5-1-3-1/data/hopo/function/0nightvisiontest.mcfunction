@@ -1,1 +1,0 @@
-effect give @p minecraft:night_vision infinite 1 true

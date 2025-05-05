@@ -29,6 +29,10 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     glance-minecraft-power.url = "github:Dylouwu/glance-minecraft-power";
+    minecraft-datapacks = {
+      url = "github:Dylouwu/minecraft-datapacks";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ nixpkgs, ... }: {

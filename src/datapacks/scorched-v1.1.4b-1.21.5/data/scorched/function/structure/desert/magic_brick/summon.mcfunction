@@ -1,1 +1,0 @@
-execute align zyx run summon minecraft:marker ~.5 ~.5 ~.5 {Tags:["scorched_asset","scorched_des_magic"]}
