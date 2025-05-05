@@ -803,6 +803,22 @@
         "type": "github"
       }
     },
+    "minecraft-datapacks": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746432861,
+        "narHash": "sha256-twycYmHdnknUfinjE9FfmAeSJ+CINLKt3HaX1s/ZPKc=",
+        "owner": "Dylouwu",
+        "repo": "minecraft-datapacks",
+        "rev": "07e84f75701bbe73365bcc6eed0f8b4d6ee06554",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Dylouwu",
+        "repo": "minecraft-datapacks",
+        "type": "github"
+      }
+    },
     "minegrub-world-sel-theme": {
       "inputs": {
         "nixpkgs": "nixpkgs_5"
@@ -1111,6 +1127,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprpanel": "hyprpanel",
+        "minecraft-datapacks": "minecraft-datapacks",
         "minegrub-world-sel-theme": "minegrub-world-sel-theme",
         "nix-minecraft": "nix-minecraft",
         "nixos-hardware": "nixos-hardware",
