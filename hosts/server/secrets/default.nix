@@ -24,6 +24,16 @@ in {
         path = "/etc/minecraft/api-key.txt";
         mode = "0600";
       };
+      signing-key = {
+        owner = "${username}";
+        path = "/home/${username}/.ssh/signing-key";
+        mode = "0600";
+      };
+      signing-key-pub = {
+        owner = "${username}";
+        path = "/home/${username}/.ssh/signing-key.pub";
+        mode = "0600";
+      };
       glance-api-key = { };
       github-token = { path = "/home/${username}/.config/nix/nix.conf"; };
       # hoarder = { };
