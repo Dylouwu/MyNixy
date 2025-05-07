@@ -6,6 +6,10 @@ in {
   programs.lazygit = {
     enable = true;
     settings = lib.mkForce {
+      disableStartupPopups = true;
+      notARepository = "skip";
+      promptToReturnFromSubprocess = false;
+      update.method = "never";
       gui = {
         theme = {
           activeBorderColor = [ accent "bold" ];
