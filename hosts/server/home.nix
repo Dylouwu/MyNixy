@@ -9,6 +9,7 @@
     ../../home/programs/shell
     ../../home/programs/fetch
     ../../home/programs/git
+    ../../home/programs/git/signature.nix
     ../../home/programs/lazygit
     ../../home/programs/zellij
 
