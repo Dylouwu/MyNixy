@@ -78,7 +78,7 @@
           }];
           "bukkit.yml".value = {
             spawn-limits = {
-              monsters = 70;
+              monsters = 40;
               animals = 15;
               water-animals = 6;
               water-ambient = 6;
@@ -113,7 +113,7 @@
                 entity-tracking-range = {
                   players = 96;
                   animals = 64;
-                  monsters = 64;
+                  monsters = 48;
                   misc = 32;
                   other = 64;
                 };
