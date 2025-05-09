@@ -216,35 +216,35 @@
                 };
                 despawn-ranges = {
                   ambient = {
-                    hard = 88;
+                    hard = 96;
                     soft = 36;
                   };
                   axolotls = {
-                    hard = 88;
+                    hard = 96;
                     soft = 36;
                   };
                   creature = {
-                    hard = 88;
+                    hard = 96;
                     soft = 36;
                   };
                   misc = {
-                    hard = 88;
+                    hard = 96;
                     soft = 36;
                   };
                   monster = {
-                    hard = 88;
+                    hard = 96;
                     soft = 36;
                   };
                   underground_water_creature = {
-                    hard = 88;
+                    hard = 96;
                     soft = 36;
                   };
                   water_ambient = {
-                    hard = 88;
+                    hard = 96;
                     soft = 36;
                   };
                   water_creature = {
-                    hard = 88;
+                    hard = 96;
                     soft = 36;
                   };
                 };
