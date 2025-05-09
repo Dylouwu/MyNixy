@@ -38,7 +38,6 @@
       btop
       fastfetch
       tailscale
-      wireguard-tools
 
     ];
 
