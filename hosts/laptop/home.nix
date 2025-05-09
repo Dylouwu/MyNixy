@@ -70,7 +70,6 @@
       unzip
       btop
       fastfetch
-      haiti
 
       # Backup browser
       firefox
