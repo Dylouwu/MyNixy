@@ -78,11 +78,11 @@
           }];
           "bukkit.yml".value = {
             spawn-limits = {
-              monsters = 40;
+              monsters = 70;
               animals = 15;
-              water-animals = 6;
-              water-ambient = 6;
-              water-underground-creature = 6;
+              water-animals = 10;
+              water-ambient = 10;
+              water-underground-creature = 10;
               axolotls = 6;
               ambient = 3;
             };
@@ -91,7 +91,7 @@
               monster-spawns = 1;
               water-ambient-spawns = 400;
               water-underground-creature-spawns = 400;
-              water-animals-spawns = 400;
+              water-spawns = 400;
               ambient-spawns = 400;
               axolotl-spawns = 400;
             };
