@@ -108,7 +108,6 @@ let
         "󰖔 Night-shift"
         " Nixy"
         "󰈊 Hyprpicker"
-        "󰖂 Toggle VPN"
       )
 
       # Create a named pipe for communication
