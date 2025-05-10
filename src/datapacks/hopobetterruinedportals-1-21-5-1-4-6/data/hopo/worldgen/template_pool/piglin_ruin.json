@@ -1,0 +1,42 @@
+{
+  "name": "hopo:piglin_ruin",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 95,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/portal1",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 95,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/portal2",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 95,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/portal3",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 95,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/portal4",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier_mcmovie"
+      }
+    }
+  ]
+}

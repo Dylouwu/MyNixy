@@ -1,0 +1,42 @@
+  {
+  "name": "hopo:patch_netherrack/tentacles",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:tentacles/1",
+        "projection": "terrain_matching",
+        "processors": "hopo:netherrackier"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:tentacles/2",
+        "projection": "terrain_matching",
+        "processors": "hopo:netherrackier"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:tentacles/3",
+        "projection": "terrain_matching",
+        "processors": "hopo:netherrackier"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:tentacles/4",
+        "projection": "terrain_matching",
+        "processors": "hopo:netherrackier"
+      }
+    }
+  ]
+}

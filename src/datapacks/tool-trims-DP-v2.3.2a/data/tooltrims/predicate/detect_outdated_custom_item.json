@@ -1,0 +1,40 @@
+{
+  "condition": "inverted",
+  "term": {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "slots": {
+            "weapon.mainhand": {
+              "items": "#tooltrims:custom_item_templates",
+              "predicates": {
+                "minecraft:custom_data": {
+                  "custom_item_version": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "slots": {
+            "player.cursor": {
+              "items": "#tooltrims:custom_item_templates",
+              "predicates": {
+                "minecraft:custom_data": {
+                  "custom_item_version": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

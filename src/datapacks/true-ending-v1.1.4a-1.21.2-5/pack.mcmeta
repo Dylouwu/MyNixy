@@ -1,0 +1,39 @@
+{
+    "pack": {
+      "pack_format": 71,
+      "supported_formats": {
+        "min_inclusive": 15,
+        "max_inclusive": 999
+      },
+      "description": [
+        {
+          "translate": "True Ending",
+          "color": "light_purple"
+        },
+        {
+          "translate": " [v1.4.27c]",
+          "color": "#707070"
+        },
+        {
+          "translate": "\n"
+        },
+        {
+          "translate": "Ender Dragon Overhaul",
+          "color": "#898f96"
+        }
+      ]
+    },
+    "overlays": {
+      "entries": [
+       
+        {
+          "directory": "1.21.5",
+          "formats": {
+            "min_inclusive": 71,
+            "max_inclusive": 9999
+          }
+        }
+      ]
+    }
+  }
+  

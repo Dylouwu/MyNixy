@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "hopo:portal/overworld/portal_deepslate",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 95,
+    "separation": 20,
+    "salt": 5272004,
+    "exclusion_zone": {
+      "other_set": "minecraft:trial_chambers",
+      "chunk_count": 10
+    }
+  }
+}

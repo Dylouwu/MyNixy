@@ -1,0 +1,2 @@
+execute if entity @s[predicate=easier_harvesting_jj:seeds] run return run item modify entity @s contents easier_harvesting_jj:remove_one
+execute if entity @s[predicate=easier_harvesting_jj:not_seeds] run item modify entity @s contents easier_harvesting_jj:remove_one

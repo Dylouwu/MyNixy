@@ -1,0 +1,48 @@
+{
+	"processors": [
+	  {
+		"processor_type": "minecraft:rule",
+		"rules": [
+		  {
+			"location_predicate": {
+			  "predicate_type": "minecraft:always_true"
+			},
+			"input_predicate": {
+			  "predicate_type": "minecraft:random_block_match",
+			  "block": "minecraft:gilded_blackstone",
+			  "probability": 0.27
+			},
+			"output_state": {
+			  "Name": "minecraft:polished_blackstone_bricks"
+			}
+		  },
+		  {
+			"location_predicate": {
+			  "predicate_type": "minecraft:always_true"
+			},
+			"input_predicate": {
+			  "predicate_type": "minecraft:random_block_match",
+			  "block": "minecraft:obsidian",
+			  "probability": 0.15
+			},
+			"output_state": {
+			  "Name": "minecraft:crying_obsidian"
+			}
+		  },
+		  {
+			"location_predicate": {
+			  "predicate_type": "minecraft:always_true"
+			},
+			"input_predicate": {
+			  "predicate_type": "minecraft:random_block_match",
+			  "block": "minecraft:netherrack",
+			  "probability": 0.05
+			},
+			"output_state": {
+			  "Name": "minecraft:nether_gold_ore"
+			}
+		  }
+		]
+	  }
+	]
+  }

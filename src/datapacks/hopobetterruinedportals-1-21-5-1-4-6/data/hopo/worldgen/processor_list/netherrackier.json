@@ -1,0 +1,87 @@
+{
+	"processors": [
+		{
+			"processor_type": "minecraft:rule",
+			"rules": [
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:always_true"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:random_block_match",
+						"block": "minecraft:netherrack",
+						"probability": 0.003
+					},
+					"output_state": {
+						"Name": "minecraft:nether_gold_ore"
+					}
+				},
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:always_true"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:random_block_match",
+						"block": "minecraft:netherrack",
+						"probability": 0.005
+					},
+					"output_state": {
+						"Name": "minecraft:gravel"
+					}
+				},
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:always_true"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:random_block_match",
+						"block": "minecraft:netherrack",
+						"probability": 0.03
+					},
+					"output_state": {
+						"Name": "minecraft:blackstone"
+					}
+				},
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:always_true"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:random_block_match",
+						"block": "minecraft:netherrack",
+						"probability": 0.024
+					},
+					"output_state": {
+						"Name": "minecraft:magma_block"
+					}
+				},
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:always_true"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:random_block_match",
+						"block": "minecraft:crimson_roots",
+						"probability": 0.8
+					},
+					"output_state": {
+						"Name": "minecraft:air"
+					}
+				},
+				{
+					"location_predicate": {
+						"predicate_type": "minecraft:always_true"
+					},
+					"input_predicate": {
+						"predicate_type": "minecraft:random_block_match",
+						"block": "minecraft:crimson_roots",
+						"probability": 0.4
+					},
+					"output_state": {
+						"Name": "minecraft:nether_sprouts"
+					}
+				}
+			]
+		}
+	]
+}

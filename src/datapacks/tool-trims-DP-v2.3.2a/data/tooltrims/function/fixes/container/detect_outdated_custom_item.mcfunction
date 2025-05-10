@@ -1,0 +1,1 @@
+execute if predicate tooltrims:detect_outdated_custom_item run function tooltrims:fixes/container/update_custom_item
