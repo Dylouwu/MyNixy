@@ -2,7 +2,7 @@
 let
   wakeHour = 8;
   wakeMinute = 0;
-  sleepHour = 1;
+  sleepHour = 2;
   sleepMinute = 0;
   timezone = "Europe/Paris";
 in {
