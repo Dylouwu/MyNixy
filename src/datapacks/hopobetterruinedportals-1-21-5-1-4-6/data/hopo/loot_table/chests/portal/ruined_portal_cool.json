@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "rolls": 2,
+            "entries": [
+                {
+                    "type": "minecraft:loot_table",
+                    "value": "hopo:chests/portal/better_ruined_portal"
+                }
+            ]
+        }
+    ],
+    "random_sequence": "hopo:chests/portal/ruined_portal_cool"
+}

@@ -1,0 +1,17 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:ancient_debris"
+    },
+    "title": "Fortunate Ancient Debris",
+    "description": "Use pickaxes enchanted with Fortune to get netherite scraps from ancient debris. This pack also updates the netherite recipe to use five scraps instead of four.",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "parent": "global:notblue",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

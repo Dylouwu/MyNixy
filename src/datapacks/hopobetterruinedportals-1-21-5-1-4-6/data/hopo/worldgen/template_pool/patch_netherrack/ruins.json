@@ -1,0 +1,105 @@
+  {
+  "name": "hopo:patch_netherrack/ruins",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 88,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "hopo:patch_netherrack/ruins_1",
+        "projection": "rigid",
+        "processors": "hopo:ruiner"
+      }
+    },
+    {
+      "weight": 38,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "hopo:patch_netherrack/ruins_2",
+        "projection": "rigid",
+        "processors": "hopo:ruiner"
+      }
+    },
+    {
+      "weight": 80,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "hopo:patch_netherrack/ruins_3",
+        "projection": "rigid",
+        "processors": "hopo:ruiner"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "hopo:patch_netherrack/ruins_4",
+        "projection": "rigid",
+        "processors": "hopo:ruiner"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "hopo:patch_netherrack/ruins_5",
+        "projection": "rigid",
+        "processors": "hopo:ruiner"
+      }
+    },
+    {
+      "weight": 20,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "hopo:patch_netherrack/ruins_6",
+        "projection": "rigid",
+        "processors": "hopo:ruiner"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "hopo:patch_netherrack/ruins_7",
+        "projection": "rigid",
+        "processors": "hopo:ruiner"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "hopo:patch_netherrack/ruins_8",
+        "projection": "rigid",
+        "processors": "hopo:ruiner"
+      }
+    },
+    {
+      "weight": 30,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "hopo:patch_netherrack/ruins_9",
+        "projection": "rigid",
+        "processors": "hopo:ruiner"
+      }
+    },
+    {
+      "weight": 30,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "hopo:patch_netherrack/ruins_10",
+        "projection": "rigid",
+        "processors": "hopo:ruiner"
+      }
+    },
+    {
+      "weight": 30,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "hopo:patch_netherrack/ruins_11",
+        "projection": "rigid",
+        "processors": "hopo:ruiner"
+      }
+    }
+  ]
+}

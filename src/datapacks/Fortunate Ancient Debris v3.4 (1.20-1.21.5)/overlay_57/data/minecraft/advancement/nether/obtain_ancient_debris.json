@@ -1,0 +1,45 @@
+{
+    "display": {
+      "icon": {
+        "id": "minecraft:ancient_debris",
+        "count": 1
+      },
+      "title": {
+        "translate": "advancements.nether.obtain_ancient_debris.title"
+      },
+      "description": {
+        "translate": "advancements.nether.obtain_ancient_debris.description"
+      }
+    },
+    "parent": "minecraft:nether/root",
+    "criteria": {
+      "ancient_debris": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:ancient_debris"
+            }
+          ]
+        }
+      },
+      "netherite_scrap": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:netherite_scrap"
+            }
+          ]
+        }
+      }
+    },
+    "requirements": [
+      [
+        "ancient_debris",
+        "netherite_scrap"
+      ]
+    ],
+    "sends_telemetry_event": true
+  }
+  

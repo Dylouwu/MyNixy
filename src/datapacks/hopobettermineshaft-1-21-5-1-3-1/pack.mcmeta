@@ -1,0 +1,10 @@
+{
+	"pack": {
+		"pack_format": 70,	
+		"supported_formats": {
+			"min_inclusive": 70,
+			"max_inclusive": 81
+		},
+		"description": "§6More and better mineshafts to explore"
+	}
+}

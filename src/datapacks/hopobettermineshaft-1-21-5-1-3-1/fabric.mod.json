@@ -1,0 +1,21 @@
+    {
+    "schemaVersion": 1,
+    "authors": ["Hoponopono"],
+    "contact": {
+    "discord": "discord.gg/CZQthZJjPc"
+},
+"custom": {
+    "modmenu": {
+        "links": {
+            "modmenu.discord": "https://discord.gg/CZQthZJjPc"
+        }
+    }
+},
+    "environment": "*",
+    "name": "Hopo Better Mineshaft",
+    "id": "hopobettermineshaft",
+    "version": "1.3.1",
+    "description": "§7A mod that makes your mineshaft exploration more fun and exciting.",
+    "license": "All Rights Reserved",
+    "icon": "icon.png"
+    }   

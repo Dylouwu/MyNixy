@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "hopo:portal/nether/piglin_ruin",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1478523,
+    "exclusion_zone": {
+      "other_set": "minecraft:nether_complexes",
+      "chunk_count": 10
+    },
+    "spacing": 33,
+    "separation": 25
+  }
+}

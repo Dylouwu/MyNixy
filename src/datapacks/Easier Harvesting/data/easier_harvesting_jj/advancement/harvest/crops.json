@@ -1,0 +1,59 @@
+{
+    "criteria": {
+        "interact": {
+            "trigger": "minecraft:player_interacted_with_entity",
+            "conditions": {
+                "item": {
+                    "items": "#minecraft:hoes"
+                },
+                "entity": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:interaction",
+                            "nbt": "{Tags:[\"easier_harvesting_jj.crop\"]}"
+                        }
+                    }
+                ]
+            }
+        },
+        "attack": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "equipment": {
+                                "mainhand": {
+                                    "items": "#minecraft:hoes"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "entity": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:interaction",
+                            "nbt": "{Tags:[\"easier_harvesting_jj.crop\"]}"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "interact",
+            "attack"
+        ]
+    ],
+    "rewards": {
+        "function": "easier_harvesting_jj:harvest/adv"
+    }
+}

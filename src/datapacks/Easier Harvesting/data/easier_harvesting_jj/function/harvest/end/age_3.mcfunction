@@ -1,0 +1,2 @@
+execute if block ~ ~ ~ minecraft:beetroots[age=3] run return run fill ~ ~ ~ ~ ~ ~ minecraft:beetroots[age=0] replace minecraft:beetroots[age=3]
+execute if block ~ ~ ~ minecraft:nether_wart[age=3] run fill ~ ~ ~ ~ ~ ~ minecraft:nether_wart[age=0] replace minecraft:nether_wart[age=3]

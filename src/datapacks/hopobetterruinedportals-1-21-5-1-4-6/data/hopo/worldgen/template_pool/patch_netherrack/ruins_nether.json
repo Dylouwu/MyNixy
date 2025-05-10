@@ -1,0 +1,132 @@
+  {
+  "name": "hopo:patch_netherrack/ruins_nether",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 70,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/ruins/1",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/ruins/2",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 75,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/ruins/3",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 80,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/ruins/4",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 69,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/ruins/5",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 11,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/ruins/6",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/ruins/7",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/ruins/8",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 77,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/ruins/9",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 80,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/ruins/10",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/ruins/11",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 66,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/path/1",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 66,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/path/2",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    },
+    {
+      "weight": 66,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "hopo:piglin_ruin/path/3",
+        "projection": "rigid",
+        "processors": "hopo:blackstonier"
+      }
+    }
+  ]
+}

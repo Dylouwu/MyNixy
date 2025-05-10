@@ -1,0 +1,1 @@
+Just a small datapack that removes vanilla mineshafts for generating, in case you don't like the vanilla structures, and just wanna see mine, use this :)
