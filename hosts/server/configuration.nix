@@ -9,7 +9,7 @@
 
     ../../server-modules/adguardhome.nix
     ../../server-modules/api.nix
-    # ../../server-modules/autosleep.nix
+    ../../server-modules/autosleep.nix
     ../../server-modules/bitwarden.nix
     ../../server-modules/cloudflare.nix
     ../../server-modules/cyberchef.nix
@@ -17,8 +17,7 @@
     ../../server-modules/firewall.nix
     ../../server-modules/glance.nix
     ../../server-modules/glance-minecraft-power.nix
-    # ../../server-modules/mealie.nix # broken for now
-    # ../../server-modules/meilisearch.nix # same
+    ../../server-modules/mealie.nix
     ../../server-modules/minecraft.nix
     ../../server-modules/nextcloud.nix
     ../../server-modules/nginx.nix
