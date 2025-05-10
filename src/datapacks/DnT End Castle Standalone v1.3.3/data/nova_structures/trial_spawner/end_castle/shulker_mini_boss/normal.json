@@ -1,0 +1,62 @@
+{
+  "ticks_between_spawn": 4,
+  "spawn_potentials": [
+    {
+      "data": {
+        "entity": {
+          "HandDropChances": [
+            0
+          ],
+          "attributes": [
+            {
+              "id": "max_health",
+              "base": 60
+            },
+            {
+              "id": "scale",
+              "base": 2
+            },
+            {
+              "id": "follow_range",
+              "base": 150
+            }
+          ],
+          "id": "minecraft:shulker",
+          "Health": 60,
+          "Tags": [
+            "shulker_miniboss"
+          ],
+          "HandItems": [
+            {
+              "components": {
+                "minecraft:enchantments": {
+                  "levels": {
+                    "nova_structures:boss_behaviour": 1
+                  }
+                }
+              },
+              "Count": 1,
+              "id": "stick"
+            },
+            {}
+          ]
+        }
+      },
+      "weight": 1
+    }
+  ],
+  "loot_tables_to_eject": [
+    {
+      "data": "nova_structures:spawners/end_castle/spawner_mini_boss",
+      "weight": 8
+    },
+    {
+      "data": "nova_structures:keys/end_castle_key",
+      "weight": 1
+    }
+  ],
+  "simultaneous_mobs": 1,
+  "simultaneous_mobs_added_per_player": 0,
+  "total_mobs_added_per_player": 0,
+  "total_mobs": 1
+}

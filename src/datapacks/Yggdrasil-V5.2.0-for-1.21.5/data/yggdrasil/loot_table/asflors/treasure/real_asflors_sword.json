@@ -1,0 +1,101 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:diamond_sword",
+					"functions": [
+						{
+							"function": "minecraft:set_name",
+							"entity": "this",
+							"target": "item_name",
+							"name": {
+								"translate": "item.yggdrasil.asflors.real_sword",
+								"fallback": "The Authentic Asflors Sword",
+								"color": "gold"
+							}
+						},
+						{
+							"function": "minecraft:enchant_randomly",
+							"options": "#yggdrasil:structure/asflors/asflors_sword",
+							"only_compatible": true
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:unbreakable": {},
+								"minecraft:custom_data": {
+									"yggdrasil": {
+										"id": "yggdrasil.asflors.treasure.real_sword"
+									}
+								}
+							}
+						},
+						{
+							"function": "minecraft:toggle_tooltips",
+							"toggles": {
+								"minecraft:unbreakable": true
+							}
+						},
+						{
+							"function": "minecraft:set_lore",
+							"entity": "this",
+							"lore": [
+								{
+									"translate": "item.yggdrasil.asflors.real_sword.lore",
+									"fallback": "Indestructible legendary weapon",
+									"color": "#707070"
+								}
+							],
+							"mode": "replace_all"
+						},
+						{
+							"function": "minecraft:set_attributes",
+							"modifiers": [
+								{
+									"id": "minecraft.attack",
+									"attribute": "minecraft:attack_damage",
+									"amount": 7,
+									"operation": "add_value",
+									"slot": "mainhand"
+								},
+								{
+									"id": "minecraft.attack_speed",
+									"attribute": "minecraft:attack_speed",
+									"amount": 1.6,
+									"operation": "add_value",
+									"slot": "mainhand"
+								},
+								{
+									"id": "yggdrasil.asflors.sword.ratio",
+									"attribute": "minecraft:sweeping_damage_ratio",
+									"amount": 0.75,
+									"operation": "add_multiplied_total",
+									"slot": "mainhand"
+								},
+								{
+									"id": "yggdrasil.asflors.sword.attack_speed",
+									"attribute": "minecraft:attack_speed",
+									"amount": 0.15,
+									"operation": "add_multiplied_base",
+									"slot": "mainhand"
+								},
+								{
+									"id": "yggdrasil.asflors.sword.damage",
+									"attribute": "minecraft:attack_damage",
+									"amount": 0.25,
+									"operation": "add_multiplied_base",
+									"slot": "mainhand"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"random_sequence": "yggdrasil:asflors/treasure"
+}

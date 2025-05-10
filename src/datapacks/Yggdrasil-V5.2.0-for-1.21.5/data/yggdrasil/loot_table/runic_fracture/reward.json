@@ -1,0 +1,33 @@
+{
+	"type": "minecraft:chest",
+	"random_sequence": "yggdrasil:runic_fracture/chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "yggdrasil:asflors/lore/chronicles_of_trials"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "yggdrasil:runic_fracture/enchanted_book/boss_trial_spawner"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:loot_table",
+					"value": "yggdrasil:asflors/key/ominous"
+				}
+			]
+		}
+	]
+}
