@@ -10,12 +10,10 @@
     ../../home/programs/shell
     ../../home/programs/fetch
     ../../home/programs/git
-    ../../home/programs/git/signature.nix
     ../../home/programs/nextcloud
     ../../home/programs/thunar
     ../../home/programs/lazygit
     ../../home/programs/zen
-    ../../home/programs/discord
     ../../home/programs/tailscale
     ../../home/programs/zellij
 
@@ -44,6 +42,7 @@
     packages = with pkgs; [
       # Apps
       bitwarden # Password manager
+      discord
       vlc # Video player
       curtail # Compress images
       vscode
@@ -70,6 +69,7 @@
       unzip
       btop
       fastfetch
+      veracrypt
 
       # Backup browser
       firefox

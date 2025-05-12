@@ -3,6 +3,7 @@ let
   username = config.var.git.username;
   email = config.var.git.email;
 in {
+  imports = [ ./signature.nix ];
   programs.git = {
     enable = true;
     userName = username;
