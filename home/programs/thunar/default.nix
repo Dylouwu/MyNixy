@@ -101,7 +101,7 @@ in {
     show_toolbar=true
     preferred_custom_cmd=
     preferred_temp_dir=/tmp
-    preferred_extract_dir=/tmp
+    preferred_extract_dir=/home/${user}/Downloads
     allow_sub_dir=0
     ensure_directory=true
     overwrite=false
