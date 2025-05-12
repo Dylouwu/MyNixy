@@ -1,4 +1,4 @@
-{ config, ... }: {
+_: {
   programs.nixvim = {
     plugins.mini = {
       enable = true;
