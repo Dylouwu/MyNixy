@@ -49,7 +49,7 @@
       modrinth-app
       osu-lazer-bin
       resources
-      obsidian # Note taking app
+      obsidian # Markdown editor
       gnome-text-editor # Text editor
 
       # Dev
