@@ -12,6 +12,7 @@
     ./plugins/snacks.nix
     ./plugins/trouble.nix
     ./plugins/utils.nix
+    ./plugins/vimbegood.nix
 
     ./options.nix
     ./keymaps.nix
