@@ -5,7 +5,7 @@
   ];
 
   config.var = {
-    hostname = "nixy";
+    hostname = "old_nixy";
     username = "dilounix"; # CHANGEME: Your username
     configDirectory = "/home/" + config.var.username
       + "/.config/nixos"; # The path of the nixos configuration directory
