@@ -99,7 +99,7 @@ Those are the server modules that are used to add features to the server. These 
 git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 ```
 
-3. Copy the `hosts/laptop` folder, rename it to match your system's hostname, and update `variables.nix` with your device settings.
+3. Update `variables.nix` with your device settings.
 4. Copy your `hardware-configuration.nix` into your new host's folder to ensure proper hardware support.
 5. Register your new host in `flake.nix` by adding it under nixosConfigurations.
 
