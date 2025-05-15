@@ -22,7 +22,7 @@ in {
 
   home.file.".config/nixos/.sops.yaml".text = ''
     keys:
-      - &primary age187l3764s2kd49mn6tmagjgmke0t5ak2lgwqnhxayfjt7dqu8ycesa68u73
+      - &primary age1sczt9uyv34veyv6lz74x3u84w0x0f2c6j4k95xgh8ruvfx77mfjsx79wum
     creation_rules:
       - path_regex: hosts/laptop/secrets/secrets.yaml$
         key_groups:
