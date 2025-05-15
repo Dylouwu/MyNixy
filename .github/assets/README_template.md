@@ -130,8 +130,8 @@ sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 ## 😿 Non-declarative things
 
 - Zen and its settings, logins (which can both be alternatively synced with a firefox account, or a password manager for the logins), mods and extensions must be installed manually from the browser directly.
-- Tailscale, Discord, Github Copilot, and other softwares
-- Steam launch options (included in `nixos/steam.nix`)
+- Tailscale, Discord, Copilot logins and settings must be done manually
+- Steam launch options (included in `nixos/steam.nix`) and game library
 - Modrinth modpacks, JVM arguments, and other Minecraft-related things
 - And maybe more ☔
 
