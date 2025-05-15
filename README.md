@@ -89,7 +89,7 @@ Those are the system-level configurations. (audio, gpu, bootloader, session mana
 ### 💻 /hosts
 
 This directory contains host-specific configurations. Each host includes:
-    
+
 - `configuration.nix` for system-wide settings
 - `home.nix` for user-level configuration
 - `variables.nix` for global variables
@@ -103,13 +103,20 @@ Those are the server modules that are used to add features to the server. These 
 
 1. [Download](https://nixos.org/download/) and [install](https://nixos.wiki/wiki/NixOS_Installation_Guide) NixOS.
 
+> [!Important]
+> Please note that if you do not have a needed package in your NixOS installation (if you installed the minimal terminal version for instance), you can use the following command to temporarily install the needed package:
+>
+> ```sh
+> nix-shell -p <package-name>
+> ```
+
 2. [Fork](https://github.com/Dylouwu/MyNixy/fork) this repository and clone it to your machine:
 
 ```sh
 git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 ```
 
-3. Copy the `hosts/laptop` folder, rename it to match your system's hostname, and update `variables.nix` with your device settings.
+3. Update `variables.nix` with your device settings.
 4. Copy your `hardware-configuration.nix` into your new host's folder to ensure proper hardware support.
 5. Register your new host in `flake.nix` by adding it under nixosConfigurations.
 
