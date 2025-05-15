@@ -91,15 +91,17 @@ Those are the server modules that are used to add features to the server. These 
 
 ## Installation
 
-1. [Fork](https://github.com/Dylouwu/MyNixy/fork) this repository and clone it to your machine:
+1. [Download](https://nixos.org/download/) and [install](https://nixos.wiki/wiki/NixOS_Installation_Guide) NixOS.
+
+2. [Fork](https://github.com/Dylouwu/MyNixy/fork) this repository and clone it to your machine:
 
 ```sh
 git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 ```
 
-2. Copy the `hosts/laptop` folder, rename it to match your system's hostname, and update `variables.nix` with your device settings.
-3. Copy your `hardware-configuration.nix` into your new host's folder to ensure proper hardware support.
-4. Register your new host in `flake.nix` by adding it under nixosConfigurations.
+3. Copy the `hosts/laptop` folder, rename it to match your system's hostname, and update `variables.nix` with your device settings.
+4. Copy your `hardware-configuration.nix` into your new host's folder to ensure proper hardware support.
+5. Register your new host in `flake.nix` by adding it under nixosConfigurations.
 
 > [!Important]
 > `# CHANGEME` comments are placed throughout the configuration to indicate necessary modifications.
@@ -112,7 +114,7 @@ git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 > [!TIP]
 > When you add new files, don't forget to run `git add .` to add them to the git repository
 
-5. Build the system
+6. Build the system
 
 ```sh
 sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
