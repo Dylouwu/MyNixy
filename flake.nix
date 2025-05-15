@@ -76,7 +76,6 @@
 
             _module.args = { inherit inputs; };
           }
-          inputs.nixos-hardware.nixosModules.asus-fa506ic # CHANGEME: check https://github.com/NixOS/nixos-hardware
           inputs.home-manager.nixosModules.home-manager
           inputs.minegrub-world-sel-theme.nixosModules.default
           inputs.stylix.nixosModules.stylix
