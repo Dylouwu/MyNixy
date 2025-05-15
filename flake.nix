@@ -64,7 +64,24 @@
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
           inputs.glance-minecraft-power.nixosModules.glance-minecraft-power
-          ./hosts/server/configuration.nix
+          ./hosts/server/configuration.nix # CHANGEME: change the path to match your host folder
+        ];
+      };
+      # This is for my old laptop
+      old = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          {
+            nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
+
+            _module.args = { inherit inputs; };
+          }
+          inputs.nixos-hardware.nixosModules.asus-fa506ic # CHANGEME: check https://github.com/NixOS/nixos-hardware
+          inputs.home-manager.nixosModules.home-manager
+          inputs.minegrub-world-sel-theme.nixosModules.default
+          inputs.stylix.nixosModules.stylix
+          inputs.sops-nix.nixosModules.sops
+          ./hosts/laptop/configuration.nix # CHANGEME: change the path to match your host folder
         ];
       };
     };
