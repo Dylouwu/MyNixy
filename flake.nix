@@ -68,7 +68,7 @@
         ];
       };
       # This is for my old laptop
-      old = nixpkgs.lib.nixosSystem {
+      old_nixy = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           {
@@ -81,7 +81,7 @@
           inputs.minegrub-world-sel-theme.nixosModules.default
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
-          ./hosts/laptop/configuration.nix # CHANGEME: change the path to match your host folder
+          ./hosts/old_laptop/configuration.nix # CHANGEME: change the path to match your host folder
         ];
       };
     };
