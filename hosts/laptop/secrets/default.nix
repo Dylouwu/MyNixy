@@ -28,10 +28,6 @@ in {
         key_groups:
           - age:
             - *primary
-      - path_regex: hosts/server/secrets/secrets.yaml$
-        key_groups:
-          - age:
-            - *primary
   '';
 
   systemd.user.services.mbsync.Unit.After = [ "sops-nix.service" ];
