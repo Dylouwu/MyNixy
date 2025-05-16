@@ -137,10 +137,35 @@ git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 ```
 
+7. Reboot your system.
+
+> [!TIP]
+> Recommended things to do after the installation:
+>
+> - Change the owner of the nixos folder to your username as such:
+>
+> ```sh
+>   sudo chown -R {username}:users ~/.config/nixos
+> ```
+>
+> - Since your fork was cloned through HTTPS, you may want to change its origin to the SSH one (making full use of the config)
+> - Change the NIX_PATH variable as such :
+>
+> ```sh
+>   export NIX_PATH=nixos-config=/home/{username}/.config/nixos
+> ```
+>
+> - Additionally, you can remove warning messages while rebuilding the system by using these commands:
+>
+> ```sh
+>   sudo rm /root/.nix-defexpr/channels
+>   sudo rm /nix/var/nix/profiles/per-user/root/channels
+> ```
+
 ## 😿 Non-declarative things
 
-- Zen and its settings, logins (which can both be alternatively synced with a firefox account, or a password manager for the logins), mods and extensions must be installed manually from the browser directly.
-- Tailscale, Discord, Copilot logins and settings must be done manually
+- Zen's settings, logins, extensions (which can be alternatively synced with a firefox account), and mods must be installed manually from the browser directly.
+- Tailscale (`sudo tailscale up`), Discord, Nextcloud, Copilot (in nvim) and other apps need their settings must be done manually
 - Steam launch options (included in `nixos/steam.nix`) and game library
 - Modrinth modpacks, JVM arguments, and other Minecraft-related things
 - And maybe more ☔
