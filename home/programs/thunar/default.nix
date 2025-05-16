@@ -97,6 +97,7 @@ in {
       };
     };
     gtk3.bookmarks = [
+      "file:///home/${user}/Documents Documents"
       "file:///home/${user}/Downloads Downloads"
       "file:///home/${user}/.config/nixos NixOS"
     ];
