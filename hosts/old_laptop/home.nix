@@ -62,6 +62,7 @@
       zulu
 
       # Utils
+      file
       zip
       unzip
       btop
