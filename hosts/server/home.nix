@@ -32,6 +32,7 @@
       pnpm
 
       # Utils
+      file
       zip
       unzip
       btop
