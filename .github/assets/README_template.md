@@ -132,18 +132,7 @@ sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 > [!TIP]
 > Recommended things to do after the installation:
 >
-> - Change the owner of the nixos folder to your username as such:
->
-> ```sh
->   sudo chown -R {username}:users ~/.config/nixos
-> ```
->
 > - Since your fork was cloned through HTTPS, you may want to change its origin to the SSH one (making full use of the config)
-> - Change the NIX_PATH variable as such :
->
-> ```sh
->   export NIX_PATH=nixos-config=/home/{username}/.config/nixos
-> ```
 >
 > - Additionally, you can remove warning messages while rebuilding the system by using these commands:
 >
