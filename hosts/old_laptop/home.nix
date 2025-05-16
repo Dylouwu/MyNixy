@@ -10,7 +10,6 @@
     ../../home/programs/shell
     ../../home/programs/fetch
     ../../home/programs/git
-    ../../home/programs/nextcloud
     ../../home/programs/thunar
     ../../home/programs/lazygit
     ../../home/programs/zen
@@ -46,8 +45,6 @@
       vlc # Video player
       curtail # Compress images
       vscode
-      modrinth-app
-      osu-lazer-bin
       resources
       obsidian # Markdown editor
       gnome-text-editor # Text editor
