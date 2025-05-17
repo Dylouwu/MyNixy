@@ -18,7 +18,6 @@
 | Powermenu | SUPER + X |
 | Launcher | SUPER + SPACE |
 | Quickmenu | SUPER + C |
-| Planify | SUPER + P |
 | Close window | SUPER + Q |
 | Toggle Floating | SUPER + T |
 | Toggle Fullscreen | SUPER + F |
