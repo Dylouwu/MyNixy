@@ -17,8 +17,8 @@ in {
       };
       cloudflare-dns-token = { path = "/etc/cloudflare/dnskey.txt"; };
       nextcloud-pwd = { path = "/etc/nextcloud/pwd.txt"; };
-      adguard-pwd = { };
-      tailscale-api-key = { };
+      adguard-pwd = { mode = "0777"; };
+      tailscale-api-key = { mode = "0777"; };
       minecraft-api-key = {
         owner = "minecraft";
         path = "/etc/minecraft/api-key.txt";
@@ -34,7 +34,7 @@ in {
         path = "/home/${username}/.ssh/signing-key.pub";
         mode = "0600";
       };
-      glance-api-key = { };
+      glance-api-key = { mode = "0777"; };
       github-token = { path = "/home/${username}/.config/nix/nix.conf"; };
       # hoarder = { };
       # recyclarr = {
