@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  domain = "home.dilou.me";
+  domain = "dilou.me";
 
   rgb-to-hsl = color:
     let
@@ -33,7 +33,7 @@ in {
     glance = {
       enable = true;
       settings = {
-        theme = {
+        theme = lib.mkForce {
           background-color = rgb-to-hsl "base00";
           primary-color = rgb-to-hsl "base0D";
           positive-color = rgb-to-hsl "base0C";
@@ -61,20 +61,26 @@ in {
                   type = "markets";
                   markets = [
                     {
-                      symbol = "SPY";
-                      name = "S&P 500";
+                      symbol = "ETH-USD";
+                      name = "Ethereum";
+                      chart-link =
+                        "https://www.tradingview.com/chart/?symbol=INDEX:ETHUSD";
                     }
                     {
-                      symbol = "^FCHI";
-                      name = "CAC 40";
+                      symbol = "EURJPY=X";
+                      name = "EUR/JPY";
                     }
                     {
                       symbol = "EURUSD=X";
                       name = "EUR/USD";
                     }
                     {
-                      symbol = "EURJPY=X";
-                      name = "EUR/JPY";
+                      symbol = "SPY";
+                      name = "S&P 500";
+                    }
+                    {
+                      symbol = "^FCHI";
+                      name = "CAC 40";
                     }
                   ];
                 }
@@ -103,7 +109,7 @@ in {
                 {
                   type = "dns-stats";
                   service = "adguard";
-                  url = "https://adguard.dilou.me";
+                  url = "https://adguard.${domain}";
                   username = "dilounix";
                   password = "\${secret:adguard-pwd}";
                 }
@@ -134,27 +140,27 @@ in {
                   sites = [
                     {
                       title = "Vaultwarden";
-                      url = "https://vault.dilou.me";
+                      url = "https://vault.${domain}";
                       icon = "si:bitwarden";
                     }
                     {
                       title = "Nextcloud";
-                      url = "https://cloud.dilou.me";
+                      url = "https://cloud.${domain}";
                       icon = "si:nextcloud";
                     }
                     {
                       title = "Adguard";
-                      url = "https://adguard.dilou.me";
+                      url = "https://adguard.${domain}";
                       icon = "si:adguard";
                     }
                     {
                       title = "Mealie";
-                      url = "https://mealie.dilou.me";
+                      url = "https://mealie.${domain}";
                       icon = "si:mealie";
                     }
                     {
                       title = "CyberChef";
-                      url = "https://cyber.dilou.me";
+                      url = "https://cyber.${domain}";
                       icon = "si:codechef";
                     }
                   ];
@@ -162,96 +168,104 @@ in {
 
                 {
                   type = "custom-api";
-                  title = "Minecraft Server";
-                  url = "https://api.mcstatus.io/v2/status/java/mc.dilou.me";
-                  cache = "1m";
-
+                  title = "Paradisum";
+                  url = "https://api.mcstatus.io/v2/status/java/mc.${domain}";
+                  cache = "30s";
                   template = ''
                     <div style="display: flex; align-items: center; gap: 12px;">
                       <div style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 4px;
                                   display: flex; justify-content: center; align-items: center; overflow: hidden;">
-                          {{ if .JSON.Bool "online" }}
-                            <img src="{{ .JSON.String "icon" | safeURL }}" width="64" height="64" style="object-fit: contain;">
-                          {{ else }}
-                            <!-- Offline icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                 style="width: 32px; height: 32px; opacity: 0.5;">
-                              <path fill-rule="evenodd"
-                                    d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                          {{ end }}
-                        </div>
-                        <div style="flex-grow: 1; min-width: 0;">
-                          <a class="size-h4 block text-truncate color-highlight">
-                            {{ .JSON.String "host" }}
-                            {{ if .JSON.Bool "online" }}
-                              <span style="width: 8px; height: 8px; border-radius: 50%;
-                                           background-color: var(--color-positive); display: inline-block;
-                                           vertical-align: middle;" data-popover-type="text" data-popover-text="Online">
-                              </span>
-                            {{ else }}
-                              <span style="width: 8px; height: 8px; border-radius: 50%;
-                                           background-color: var(--color-negative); display: inline-block;
-                                           vertical-align: middle;" data-popover-type="text" data-popover-text="Offline">
-                              </span>
-                            {{ end }}
-                          </a>
-                          <ul class="list-horizontal-text">
-                            <li>
-                              {{ if .JSON.Bool "online" }}
-                                <span>{{ .JSON.String "version.name_clean" }}</span>
-                              {{ else }}
-                                <span>Offline</span>
-                              {{ end }}
-                            </li>
-                            {{ if .JSON.Bool "online" }}
-                              <li>
-                                <p style="display: inline-flex; align-items: center;">
-                                  <!-- Player count and icon etc. -->
-                                  {{ .JSON.Int "players.online" | formatNumber }}/{{ .JSON.Int "players.max" | formatNumber }} players
-                                </p>
-                              </li>
-                            {{ end }}
-                          </ul>
-
-                          <!-- Control button -->
-                          <div style="margin-top: 8px;">
-                            {{ if .JSON.Bool "online" }}
-                              <button onclick="fetch('https://api.dilou.me/mc/server/stop', { 
-                                                    method: 'POST', 
-                                                    headers: { 
-                                                      'Content-Type': 'application/json', 
-                                                      'Authorization': 'Bearer \${
-                                                        "secret:glance-api-key"
-                                                      }'
-                                                    }
-                                                  }).then(() => location.reload());" 
-                                      style="padding: 8px 16px;">
-                                Turn Off Server
-                              </button>
-                            {{ else }}
-                              <button onclick="fetch('https://api.dilou.me/mc/server/start', { 
-                                                    method: 'POST', 
-                                                    headers: { 
-                                                      'Content-Type': 'application/json',
-                                                      'Authorization': 'Bearer \${
-                                                        "secret:glance-api-key"
-                                                      }'
-                                                    }
-                                                  }).then(() => location.reload());" 
-                                      style="padding: 8px 16px;">
-                                Turn On Server
-                              </button>
-                            {{ end }}
-                          </div>
-                        </div>
+                        {{ if .JSON.Bool "online" }}
+                          <img src="{{ .JSON.String "icon" | safeURL }}" width="64" height="64" style="object-fit: contain;">
+                        {{ else }}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style="width:32px; height:32px; opacity:0.5;">
+                            <path fill-rule="evenodd" d="M1 5.25A2.25 2.25 0 0 1 3.25 3h13.5A2.25 2.25 0 0 1 19 5.25v9.5A2.25 2.25 0 0 1 16.75 17H3.25A2.25 2.25 0 0 1 1 14.75v-9.5Zm1.5 5.81v3.69c0 .414.336.75.75.75h13.5a.75.75 0 0 0 .75-.75v-2.69l-2.22-2.219a.75.75 0 0 0-1.06 0l-1.91 1.909.47.47a.75.75 0 1 1-1.06 1.06L6.53 8.091a.75.75 0 0 0-1.06 0l-2.97 2.97ZM12 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd" />
+                          </svg>
+                        {{ end }}
                       </div>
+                      <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center;">
+                        <a class="size-h4 block text-truncate color-highlight">
+                          {{ .JSON.String "host" }}
+                          {{ if .JSON.Bool "online" }}
+                            <span style="width: 8px; height: 8px; border-radius: 50%;
+                                        background-color: var(--color-positive); display: inline-block;
+                                        vertical-align: middle;" data-popover-type="text" data-popover-text="Online">
+                            </span>
+                          {{ else }}
+                            <span style="width: 8px; height: 8px; border-radius: 50%;
+                                        background-color: var(--color-negative); display: inline-block;
+                                        vertical-align: middle;" data-popover-type="text" data-popover-text="Offline">
+                            </span>
+                          {{ end }}
+                        </a>
+                        <ul class="list-horizontal-text">
+                          <li>
+                            {{ if .JSON.Bool "online" }}
+                              <span>{{ .JSON.String "version.name_clean" }}</span>
+                            {{ else }}
+                              <span>Offline</span>
+                            {{ end }}
+                          </li>
+                          {{ if .JSON.Bool "online" }}
+                            <li>
+                              <p style="display: inline-flex; align-items: center;">
+                                <!-- Player count and icon etc. -->
+                                {{ .JSON.Int "players.online" | formatNumber }}/{{ .JSON.Int "players.max" | formatNumber }} players
+                              </p>
+                            </li>
+                          {{ end }}
+                        </ul>
+                      </div>
+
+                      <!-- Control button (moved to the right and color changes) -->
+                      <div>
+                        {{ if .JSON.Bool "online" }}
+                          <button id="server-control" onclick="fetch('https://api.${domain}/mc/server/stop', { 
+                                                                  method: 'POST', 
+                                                                  headers: { 
+                                                                    'Content-Type': 'application/json', 
+                                                                    'Authorization': 'Bearer ''${secret:glance-api-key}'
+                                                                  }
+                                                                }).then(() => { 
+                                                                  location.reload(); 
+                                                                });" 
+                                  style="padding: 8px 16px; background-color: red; color: white; border: none; border-radius: 4px;"
+                                  id="stop-button">
+                            Stop Server
+                          </button>
+                        {{ else }}
+                          <button id="server-control" onclick="fetch('https://api.${domain}/mc/server/start', { 
+                                                                  method: 'POST', 
+                                                                  headers: { 
+                                                                    'Content-Type': 'application/json',
+                                                                    'Authorization': 'Bearer ''${secret:glance-api-key}'
+                                                                  }
+                                                                }).then(() => { 
+                                                                  location.reload();
+                                                                });" 
+                                  style="padding: 8px 16px; background-color: green; color: white; border: none; border-radius: 4px;"
+                                  id="start-button">
+                            Start Server
+                          </button>
+                        {{ end }}
+                      </div>
+                    </div> 
+                    <style>
+                      /* Button dimming effect on hover */
+                      button {
+                        transition: opacity 0.3s ease;
+                      }
+
+                      button:hover {
+                        opacity: 0.7;
+                      }
+
+                    </style>
                   '';
                 }
                 {
                   type = "custom-api";
-                  title = "Tailscale devices";
+                  title = "My devices";
                   title-url = "https://login.tailscale.com/admin/machines";
                   url =
                     "https://api.tailscale.com/api/v2/tailnet/dylouwu.github/devices";
@@ -368,8 +382,8 @@ in {
         server = { port = 5678; };
       };
     };
-    nginx.virtualHosts."${domain}" = {
-      useACMEHost = "dilou.me";
+    nginx.virtualHosts."home.${domain}" = {
+      useACMEHost = "${domain}";
       forceSSL = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:${
