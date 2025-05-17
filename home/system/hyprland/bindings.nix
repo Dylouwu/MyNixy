@@ -12,8 +12,6 @@
       "$mod,SPACE, exec, menu" # Launcher
       "$mod,C, exec, quickmenu" # Quickmenu
 
-      "$mod,P, exec, ${pkgs.planify}/bin/io.github.alainm23.planify" # Planify
-
       "$mod,Q, killactive," # Close window
       "$mod,T, togglefloating," # Toggle Floating
       "$mod,F, fullscreen" # Toggle Fullscreen
