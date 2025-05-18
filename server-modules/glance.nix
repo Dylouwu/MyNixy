@@ -382,6 +382,7 @@ in {
         server = { port = 5678; };
       };
     };
+
     nginx.virtualHosts."home.${domain}" = {
       useACMEHost = "${domain}";
       forceSSL = true;
@@ -391,6 +392,13 @@ in {
           }";
       };
     };
+  };
 
+  systemd.services.glance = {
+    serviceConfig = {
+      DynamicUser = lib.mkForce false;
+      User = "glance";
+      Group = "glance";
+    };
   };
 }
