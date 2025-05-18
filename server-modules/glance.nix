@@ -29,6 +29,15 @@ let
       roundToString = value: toString (builtins.floor (value + 0.5));
     in lib.concatMapStringsSep " " roundToString [ h s l ];
 in {
+
+  users.users.glance = {
+    isSystemUser = true;
+    description = "Glance user";
+    group = "glance";
+  };
+
+  users.groups.glance = { };
+
   services = {
     glance = {
       enable = true;
@@ -402,3 +411,4 @@ in {
     };
   };
 }
+

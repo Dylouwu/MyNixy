@@ -4,19 +4,10 @@ in {
   programs.zsh.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;
-    users = {
-      ${username} = {
+    users.${username} = {
         isNormalUser = true;
         description = "${username} account";
         extraGroups = [ "networkmanager" "wheel" ];
       };
-      glance = {
-        isSystemUser = true;
-        group = "glance";
-      };
-    };
-    groups = {
-      glance = { };
-    };
   };
 } 
