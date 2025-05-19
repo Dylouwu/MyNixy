@@ -11,11 +11,7 @@ let
   keyboardLayout = config.var.keyboardLayout;
 in {
 
-  imports = [
-    ./animations.nix
-    ./bindings.nix
-    ./polkitagent.nix 
-  ];
+  imports = [ ./animations.nix ./bindings.nix ./polkitagent.nix ];
 
   home.packages = with pkgs; [
     qt5.qtwayland
@@ -60,7 +56,7 @@ in {
 
       monitor = [
         "eDP-2,2560x1440@240,0x0,1.25"
-        "HDMI-A-1,2560x1440@360,-2048x0,1.25, bitdepth, 10"
+        "HDMI-A-1,2560x1440@360,-2048x0,1.25,bitdepth,10"
         ",prefered,auto,1"
       ];
 
@@ -87,6 +83,8 @@ in {
         "AQ_DRM_DEVICES,/dev/dri/card2:/dev/dri/card1" # CHANGEME: Related to the GPU
       ];
 
+      debug = { full_cm_proto = true; };
+
       cursor = {
         no_hardware_cursors = true;
         default_monitor = "HDMI-A-1";
@@ -100,7 +98,10 @@ in {
         layout = "master";
       };
 
-      render.explicit_sync = 0;
+      render = {
+        explicit_sync = 0;
+        cm_fs_passthrough = true;
+      };
 
       windowrulev2 = [
         "float, tag:modal"
