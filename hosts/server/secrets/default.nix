@@ -8,43 +8,38 @@ in {
       sshconfig = {
         owner = "${username}";
         path = "/home/${username}/.ssh/config";
-        mode = "0600";
       };
       github-key = {
         owner = "${username}";
         path = "/home/${username}/.ssh/github";
-        mode = "0600";
       };
-      cloudflare-dns-token = { path = "/etc/cloudflare/dnskey.txt"; };
-      nextcloud-pwd = { path = "/etc/nextcloud/pwd.txt"; };
-      adguard-pwd = {
-        owner = "glance";
-        mode = "0400";
+      cloudflare-dns-token = {
+        owner = "cloudflare-dyndns";
+        path = "/etc/cloudflare/dnskey.txt";
       };
-      tailscale-api-key = {
-        owner = "glance";
-        mode = "0400";
+      nextcloud-pwd = {
+        owner = "nextcloud";
+        path = "/etc/nextcloud/pwd.txt";
       };
+      adguard-pwd = { owner = "glance"; };
+      tailscale-api-key = { owner = "glance"; };
       minecraft-api-key = {
         owner = "minecraft";
         path = "/etc/minecraft/api-key.txt";
-        mode = "0600";
       };
       signing-key = {
         owner = "${username}";
         path = "/home/${username}/.ssh/signing-key";
-        mode = "0600";
       };
       signing-key-pub = {
         owner = "${username}";
         path = "/home/${username}/.ssh/signing-key.pub";
-        mode = "0600";
       };
-      glance-api-key = {
-        owner = "glance";
-        mode = "0400";
+      glance-api-key = { owner = "glance"; };
+      github-token = {
+        owner = "${username}";
+        path = "/home/${username}/.config/nix/nix.conf";
       };
-      github-token = { path = "/home/${username}/.config/nix/nix.conf"; };
       # hoarder = { };
       # recyclarr = {
       #   owner = "recyclarr";
