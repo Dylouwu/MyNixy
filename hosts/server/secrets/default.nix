@@ -14,7 +14,6 @@ in {
         path = "/home/${username}/.ssh/github";
       };
       cloudflare-dns-token = {
-        owner = "cloudflare-dyndns";
         path = "/etc/cloudflare/dnskey.txt";
       };
       nextcloud-pwd = {
