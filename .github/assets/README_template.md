@@ -143,11 +143,18 @@ sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 
 ## 😿 Non-declarative things
 
+For laptop configurations :
+
 - Zen's settings, logins, extensions (which can be alternatively synced with a firefox account), and mods must be installed manually from the browser directly.
 - Tailscale (`sudo tailscale up`), Discord, Nextcloud, Copilot (in nvim) and other apps need their settings must be done manually
 - Steam launch options (included in `nixos/steam.nix`) and game library
 - Modrinth modpacks, JVM arguments, and other Minecraft-related things
 - And maybe more ☔
+
+For server configurations:
+
+- Most apps configurations (adguardhome, cloudflare, glance, nextcloud, etc.) are done through the web interface.
+- Some data like the nextcloud database, vaultwarden, minecraft worlds and more, need to be imported manually if you have them on your previous server, and you SHOULD backup them, algonside with your keys.
 
 ## Documentation
 
