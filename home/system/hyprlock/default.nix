@@ -8,19 +8,14 @@ in {
     enable = true;
     settings = {
       general = {
-        grace = 5;
+        ignore_empty_input = true;
         no_fade_in = false;
         disable_loading_bar = false;
+        hide_cursor = true;
       };
 
-      # BACKGROUND
       background = {
-        monitor = "";
-        blur_passes = 0;
-        contrast = 0.8916;
         brightness = 0.7172;
-        vibrancy = 0.1696;
-        vibrancy_darkness = 0.0;
       };
 
       label = [
@@ -65,7 +60,6 @@ in {
 
       # INPUT FIELD
       input-field = lib.mkForce {
-        monitor = "";
         size = "300, 60";
         outline_thickness = 2;
         dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
@@ -77,7 +71,6 @@ in {
         fade_on_empty = false;
         font_family = font + " Bold";
         placeholder_text = "🪷 Welcome 🪷";
-        hide_input = false;
         position = "0, -250";
         halign = "center";
         valign = "center";
