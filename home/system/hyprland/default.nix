@@ -170,7 +170,6 @@ in {
       input = {
         kb_layout = keyboardLayout;
 
-        kb_options = "caps:escape";
         follow_mouse = 2;
         float_switch_override_focus = 0;
         sensitivity = -0.5;
