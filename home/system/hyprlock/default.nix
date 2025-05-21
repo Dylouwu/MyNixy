@@ -9,8 +9,6 @@ in {
     settings = {
       general = {
         ignore_empty_input = true;
-        no_fade_in = false;
-        disable_loading_bar = false;
         hide_cursor = true;
       };
 
@@ -46,10 +44,6 @@ in {
           monitor = "";
           text = "    $USER";
           color = foreground;
-          outline_thickness = 2;
-          dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
-          dots_spacing = 0.2; # Scale of dots' absolute size, 0.0 - 1.0
-          dots_center = true;
           font_size = 18;
           font_family = font + " Bold";
           position = "0, -180";
