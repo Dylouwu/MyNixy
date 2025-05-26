@@ -50,6 +50,7 @@ in {
 
         function n4c() {
           nix develop --no-write-lock-file --refresh "github:nix4cyber/n4c#''${1:-all}" -c zsh
+          mkdir /tmp/$(date +"%d%m%y") && cd /tmp/$(date +"%d%m%y")
         }
 
         zle     -N             sesh-sessions
