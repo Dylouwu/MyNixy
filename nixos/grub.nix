@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   boot = {
     bootspec.enable = true;
     loader = {
@@ -44,11 +44,23 @@
     kernelParams = [
       "quiet"
       "splash"
+      "boot.shell_on_fail"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
     consoleLogLevel = 0;
     initrd.verbose = false;
+
+    plymouth = {
+      enable = true;
+      theme  = lib.mkForce "lone";
+      themePackages = with pkgs;
+        [
+          (adi1090x-plymouth-themes.override {
+            selected_themes = [ "lone" ];
+          })
+        ];
+    };
   };
 }
