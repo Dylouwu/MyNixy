@@ -118,6 +118,16 @@ git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 
 3. Update `variables.nix` with your device settings.
 4. Copy your `hardware-configuration.nix` into your new host's folder to ensure proper hardware support.
+
+> [!Important]
+> If you wish to use the `laptop` or `old_laptop` configurations, you need to change the `fileSystems."/boot"` option to `fileSystems."/boot/efi"`, as the ESP partition is mounted at `/boot/efi` in these configurations.
+> You'll also need to change the bootorder with `efibootmgr` to ensure that the NixOS EFI bootloader is the first one in the list (and you can remove the NixOS HD bootloader entry if you want to).
+>
+>```sh
+> sudo efibootmgr
+> sudo efibootmgr -b <bootnumber> -B # Remove the NixOS HD bootloader entry (e.g. 0001)
+> sudo efibootmgr -o <bootnumber>,<otherbootnumbers> # Set the NixOS EFI bootloader as the first one in the list (if not done automatically)
+
 5. Register your new host in `flake.nix` by adding it under nixosConfigurations.
 
 > [!Important]
@@ -157,6 +167,7 @@ For laptop configurations :
 
 - Zen's settings, logins, extensions (which can be alternatively synced with a firefox account), and mods must be installed manually from the browser directly.
 - Tailscale (`sudo tailscale up`), Discord, Nextcloud, Copilot (in nvim) and other apps need their settings must be done manually
+- Initial disk partitioning, including setting up the ESP at `/boot/efi` on your `hardware-configuration.nix` allowing more space for optimal early KMS (see [Installation][#installation] for more details).
 - Steam launch options (included in `nixos/steam.nix`) and game library
 - Modrinth modpacks, JVM arguments, and other Minecraft-related things
 - And maybe more ☔
