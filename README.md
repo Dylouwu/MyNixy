@@ -46,7 +46,7 @@
 
 Other small modifications include:
 
-- Minecraft themed grub instead of relying on systemd-boot
+- Minecraft-themed grub instead of relying on systemd-boot, enhanced with early KMS and Plymouth for a better boot experience.
 - Zellij over tmux
 - Copilot shortcuts
 - C++ environment with clangd
@@ -103,7 +103,7 @@ Those are the server modules that are used to add features to the server. These 
 
 1. [Download](https://nixos.org/download/) and [install](https://nixos.wiki/wiki/NixOS_Installation_Guide) NixOS.
 
-> [!Important]
+> [!Note]
 > Please note that if you do not have a needed package in your NixOS installation (if you installed the minimal terminal version for instance), you can use the following command to temporarily install the needed package:
 >
 > ```sh
@@ -130,7 +130,7 @@ git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 
 5. Register your new host in `flake.nix` by adding it under nixosConfigurations.
 
-> [!Important]
+> [!Note]
 > `# CHANGEME` comments are placed throughout the configuration to indicate necessary modifications.
 > Use the following command to quickly locate them:
 >
@@ -152,7 +152,7 @@ sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 > [!TIP]
 > Recommended things to do after the installation:
 >
-> - Since your fork was cloned through HTTPS, you may want to change its origin to the SSH one (making full use of the config)
+> - Since your fork was cloned through HTTPS, you may want to change its origin to the SSH one (making full use of the config).
 >
 > - Additionally, you can remove warning messages while rebuilding the system by using these commands:
 >
