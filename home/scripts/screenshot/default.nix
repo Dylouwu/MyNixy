@@ -30,5 +30,5 @@ let
   '';
 in {
   home.packages =
-    [ pkgs.hyprshot screenshot pkgs.slurp pkgs.grim pkgs.grimblast ];
+    [ screenshot pkgs.grim pkgs.grimblast ];
 }
