@@ -55,7 +55,7 @@ in {
       exec-once = [ "night-shift-on" ];
 
       monitor = [
-        "eDP-2,2560x1440@240,0x0,1.25"
+        "eDP-1,2560x1440@240,0x0,1.25"
         "HDMI-A-1,2560x1440@360,-2048x0,1.25,bitdepth,10"
         ",prefered,auto,1"
       ];
