@@ -6,13 +6,18 @@ in {
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ]; # or "nvidiaLegacy470 etc.
 
-  boot.kernelParams = lib.mkDefault (config.boot.kernelParams ++ [
-    "nvidia-drm.modeset=1"
-    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
-    "nvidia.NVreg_RegistryDwords=PowerMizerEnable=0x1;PerfLevelSrc=0x2222;…"
-  ]);
+  boot = {
+    kernelParams = lib.mkDefault (config.boot.kernelParams ++ [
+      "nvidia-drm.modeset=1"
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+      "nvidia.NVreg_RegistryDwords=PowerMizerEnable=0x1;PerfLevelSrc=0x2222;…"
+    ]);
 
-  boot.blacklistedKernelModules = [ "nouveau" ];
+    blacklistedKernelModules = [ "nouveau" ];
+
+    initrd.kernelModules = # for early KMS support with nvidia
+      [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
+  };
 
   environment.variables = {
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
@@ -60,7 +65,6 @@ in {
     };
     graphics = {
       enable = true;
-      package = nvidiaDriverChannel;
       enable32Bit = true;
       extraPackages = with pkgs; [
         nvidia-vaapi-driver
