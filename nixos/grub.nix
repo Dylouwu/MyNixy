@@ -2,7 +2,11 @@
   boot = {
     bootspec.enable = true;
     loader = {
-      efi.canTouchEfiVariables = true;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
+
       grub = {
         minegrub-world-sel = {
           enable = true;
