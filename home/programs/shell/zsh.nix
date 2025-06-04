@@ -3,7 +3,7 @@
 let fetch = config.theme.fetch; # neofetch, nerdfetch, pfetch
 in {
 
-  home.packages = with pkgs; [ bat ripgrep tldr sesh ];
+  home.packages = with pkgs; [ bat ripgrep tldr sesh rmtrash trash-cli ];
 
   home.sessionPath = [ "$HOME/go/bin" ];
 
@@ -38,13 +38,19 @@ in {
           sesh connect $session
         }
 
-        function chatgptlist(){
-          for arg in "$@"; do 
-              echo "$arg:"
-              echo "\`\`\`"
-              cat "$arg"
-              echo "\`\`\`" 
-              echo 
+        function chatgptfolder(){
+          echo "################################"
+          echo "###         TREE             ###"
+          echo "################################"
+          ${pkgs.eza}/bin/eza --tree -aF --icons never
+          echo -e "\n\n"
+          echo "##############################"
+          echo "###        CONTENT         ###"
+          echo "##############################"
+          find . -type f -not -path '*/.git/*' -print0 | while IFS= read -r -d "" file; do
+              echo -e "\n--- DEBUT: $file ---\n"
+              cat "$file"
+              echo -e "\n--- FIN: $file ---\n"
           done
         }
 
@@ -171,6 +177,10 @@ in {
       cat =
         "bat --theme=base16 --color=always --paging=never --tabs=2 --wrap=never --plain";
       mkdir = "mkdir -p";
+
+      rm = "${pkgs.rmtrash}/bin/rmtrash";
+      rmdir = "${pkgs.rmtrash}/bin/rmdirtrash";
+
       obsidian-no-gpu =
         "env ELECTRON_OZONE_PLATFORM_HINT=auto obsidian --ozone-platform=x11";
       wireguard-import = "nmcli connection import type wireguard file";
