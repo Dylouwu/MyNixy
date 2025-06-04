@@ -39,7 +39,6 @@
     nixosConfigurations = {
       # This is my laptop configuration
       nixy = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [
           {
             nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
@@ -56,7 +55,6 @@
       };
       # This is my server configuration
       hyrule = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           { _module.args = { inherit inputs; }; }
@@ -69,7 +67,6 @@
       };
       # This is for my old laptop
       old_nixy = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [
           {
             nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
