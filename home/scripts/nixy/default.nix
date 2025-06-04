@@ -57,7 +57,17 @@ let
       elif [[ $1 == "update" ]];then
         cd ${configDirectory} && nix flake update
       elif [[ $1 == "gc" ]];then
-        cd ${configDirectory} && sudo nix-collect-garbage -d && nix-collect-garbage -d
+        echo "Starting Nix garbage collection..."
+        cd ${configDirectory} && \
+        echo "Cleaning up system generations..." && \
+        sudo nix-collect-garbage -d && \
+        echo "Cleaning up user generations..." && \
+        nix-collect-garbage -d && \
+        echo "Collecting garbage from Nix store..." && \
+        nix-store --gc && \
+        echo "Optimizing Nix store..." && \
+        nix-store --optimise
+        echo "Nix garbage collection complete."
       elif [[ $1 == "cb" ]];then
         sudo /run/current-system/bin/switch-to-configuration boot
       elif [[ $1 == "listgen" ]];then
