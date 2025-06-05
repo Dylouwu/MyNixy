@@ -55,7 +55,6 @@ in {
         }
 
         function n4c() {
-          mkdir -p /tmp/$(date +"%d%m%y") && cd /tmp/$(date +"%d%m%y")
           nix develop --no-write-lock-file --refresh "github:nix4cyber/n4c#''${1:-all}" -c zsh
         }
 
