@@ -6,9 +6,11 @@
       "ctrl+shift+j" = "neighboring_window down";
       "ctrl+shift+k" = "neighboring_window up";
       "ctrl+shift+l" = "neighboring_window right";
+      "ctrl+f2" = "detach_window";
     };
     settings = {
       scrollback_lines = 10000;
+      enabled_layouts = "grid";
       initial_window_width = 1200;
       initial_window_height = 600;
       update_check_interval = 0;
