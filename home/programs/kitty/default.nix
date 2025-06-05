@@ -2,13 +2,10 @@
   programs.kitty = {
     enable = true;
     keybindings = {
-      # Reset existing mappings
-      "ctrl+alt+tab" = "next_tab";
-      "ctrl+alt+shift+tab" = "previous_tab";
-      # Send Ctrl Tab and Ctrl + Shift + Tab for Tmux navigation
-      "ctrl+tab" = "send_text all \\x1b[27;5;9~";
-      "ctrl+shift+tab" = "send_text all \\x1b[27;6;9~";
-      "alt+tab" = "send_text all \\x1b[27;3;9~";
+      "ctrl+shift+h" = "neighboring_window left";
+      "ctrl+shift+j" = "neighboring_window down";
+      "ctrl+shift+k" = "neighboring_window up";
+      "ctrl+shift+l" = "neighboring_window right";
     };
     settings = {
       scrollback_lines = 10000;
