@@ -155,8 +155,8 @@
       # copilot
       {
         key = "<leader>cc";
-        action = "<cmd>Copilot<cr>";
-        options.desc = "Completions";
+        action = "<cmd>Copilot panel<cr>";
+        options.desc = "Suggestions";
       }
       {
         key = "<leader>cd";
