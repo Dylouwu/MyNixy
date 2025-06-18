@@ -7,7 +7,9 @@
       "172.16.0.0/12"
       "192.168.0.0/16"
       "8.8.8.8" # whitelist a specific IP
-      "nixos.wiki" # resolve the IP via DNS
+      "100.104.157.94"
+      "100.104.210.42"
+      "100.116.106.93"
     ];
     bantime = "24h";
     bantime-increment = {
