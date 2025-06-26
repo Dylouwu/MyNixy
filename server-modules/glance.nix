@@ -58,16 +58,16 @@ in {
                   hour-format = "24h";
                   timezones = [
                     {
+                      timezone = "Asia/Tokyo";
+                      label = "Tokyo/Seoul";
+                    }                    
+                    {
                       timezone = "Europe/Dublin";
                       label = "Dublin";
                     }
                     {
-                      timezone = "Asia/Tokyo";
-                      label = "Tokyo";
-                    }
-                    {
-                      timezone = "Asia/Seoul";
-                      label = "Seoul";
+                      timezone = "America/New_York";
+                      label = "New York";
                     }
                   ];
                 }
