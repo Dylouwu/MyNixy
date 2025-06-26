@@ -16,6 +16,7 @@ in {
       cloudflare-dns-token = {
         path = "/etc/cloudflare/dnskey.txt";
       };
+      cloudflare-dns-token-without-header = {};
       nextcloud-pwd = {
         owner = "nextcloud";
         path = "/etc/nextcloud/pwd.txt";
