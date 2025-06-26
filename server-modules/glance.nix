@@ -56,6 +56,20 @@ in {
                 {
                   type = "clock";
                   hour-format = "24h";
+                  timezones = [
+                    {
+                      timezone = "Europe/Dublin";
+                      label = "Dublin";
+                    }
+                    {
+                      timezone = "Asia/Tokyo";
+                      label = "Tokyo";
+                    }
+                    {
+                      timezone = "Asia/Seoul";
+                      label = "Seoul";
+                    }
+                  ];
                 }
                 {
                   type = "weather";
@@ -411,4 +425,3 @@ in {
     };
   };
 }
-
