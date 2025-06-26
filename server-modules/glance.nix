@@ -408,7 +408,6 @@ in {
                     (sharedProperties // { subreddit = "nixos"; })
                     (sharedProperties // { subreddit = "linux"; })
                     (sharedProperties // { subreddit = "cpp"; })
-                    (sharedProperties // { subreddit = "pcgaming"; })
                     (sharedProperties // { subreddit = "games"; })
                     (sharedProperties // { subreddit = "programming"; })
                   ];
