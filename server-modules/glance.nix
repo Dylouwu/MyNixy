@@ -60,7 +60,7 @@ in {
                     {
                       timezone = "Asia/Tokyo";
                       label = "Tokyo/Seoul";
-                    }                    
+                    }
                     {
                       timezone = "Europe/Dublin";
                       label = "Dublin";
@@ -395,7 +395,30 @@ in {
                         </ul>
                   '';
                 }
-                { type = "hacker-news"; }
+                {
+                  type = "group";
+                  widgets = let
+                    sharedProperties = {
+                      type = "reddit";
+                      collapse-after = 6;
+                      limit = 12;
+                    };
+                  in [
+                    (sharedProperties // { subreddit = "cybersecurity"; })
+                    (sharedProperties // { subreddit = "nixos"; })
+                    (sharedProperties // { subreddit = "linux"; })
+                    (sharedProperties // { subreddit = "cpp"; })
+                    (sharedProperties // { subreddit = "pcgaming"; })
+                    (sharedProperties // { subreddit = "games"; })
+                    (sharedProperties // { subreddit = "programming"; })
+                  ];
+                }
+
+                {
+                  type = "hacker-news";
+                  collapse-after = 6;
+                  limit = 12;
+                }
               ];
             }
           ];
