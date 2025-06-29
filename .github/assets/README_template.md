@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/Dylouwu/MyNixy/main/.github/assets/logo.png" width="120px" />
+    <img alt="nixy logo" src="https://raw.githubusercontent.com/Dylouwu/MyNixy/main/.github/assets/logo.png" width="120px" />
 </div>
 
 <br>
@@ -62,7 +62,7 @@ Other small modifications include:
 
 ## Architecture
 
-### 🏠 home
+### 🏠 /home
 
 Contains **dotfiles and settings** that apply to your user environment.
 
@@ -72,9 +72,6 @@ Contains **dotfiles and settings** that apply to your user environment.
 - `scripts` is a folder full of bash scripts (see [SCRIPTS.md](docs/SCRIPTS.md))
 - `system` is some "desktop environment" configuration
 
-### 🐧 /nixos
-
-Those are the system-level configurations. (audio, gpu, bootloader, session manager, ...)
 
 ### 💻 /hosts
 
@@ -85,7 +82,11 @@ This directory contains host-specific configurations. Each host includes:
 - `variables.nix` for global variables
 - `secrets/` for sensitive data
 
-### 💾 server-modules
+### 🐧 /nixos
+
+Those are the system-level configurations. (audio, gpu, bootloader, session manager, ...)
+
+### 💾 /server-modules
 
 Those are the server modules that are used to add features to the server. These include a nextcloud environment, a glance dashboard, ssh connection support, and more.
 
