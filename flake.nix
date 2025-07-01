@@ -42,7 +42,6 @@
         modules = [
           {
             nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
-
             _module.args = { inherit inputs; };
           }
           inputs.nixos-hardware.nixosModules.omen-16-n0005ne # CHANGEME: check https://github.com/NixOS/nixos-hardware
@@ -70,7 +69,6 @@
         modules = [
           {
             nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
-
             _module.args = { inherit inputs; };
           }
           inputs.home-manager.nixosModules.home-manager
@@ -80,6 +78,16 @@
           ./hosts/old_laptop/configuration.nix # CHANGEME: change the path to match your host folder
         ];
       };
+      wsl = nixpkgs.lib.nixosSystem {
+        modules = [
+          { _module.args = { inherit inputs; }; }
+          inputs.home-manager.nixosModules.home-manager
+          inputs.stylix.nixosModules.stylix
+          inputs.sops-nix.nixosModules.sops
+          ./hosts/wsl/configuration.nix # CHANGEME: change the path to match your host folder
+        ];
+      };
+
     };
   };
 }
