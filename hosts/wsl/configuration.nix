@@ -17,6 +17,11 @@
 
   stylix.targets.grub.enable = false;
   home-manager.users."${config.var.username}" = import ./home.nix;
+  
+  wsl = {
+    enable = true; # Enable WSL support
+    wsl.defaultUser = config.var.username; # Set the default user for wsl
+  };
 
   # Don't touch this
   system.stateVersion = "24.05";

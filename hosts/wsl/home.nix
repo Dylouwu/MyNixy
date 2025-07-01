@@ -48,10 +48,7 @@
     # Import my profile picture, used by the hyprpanel dashboard
     file.".face.icon" = { source = ../../src/purin.jpg; };
 
-    wsl = {
-      enable = true; # Enable WSL support
-      wsl.defaultUser = config.var.username; # Set the default user for wsl
-    };
+
 
     # Don't touch this
     stateVersion = "24.05";
