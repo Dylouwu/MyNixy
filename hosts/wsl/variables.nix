@@ -5,7 +5,7 @@
   ];
 
   config.var = {
-    hostname = "nixy";
+    hostname = "wsl";
     username = "nixos"; # CHANGEME: Your username
     configDirectory = "/home/" + config.var.username
       + "/.config/nixos"; # The path of the nixos configuration directory
