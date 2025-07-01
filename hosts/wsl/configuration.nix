@@ -20,7 +20,7 @@
   
   wsl = {
     enable = true; # Enable WSL support
-    wsl.defaultUser = config.var.username; # Set the default user for wsl
+    defaultUser = config.var.username; # Set the default user for wsl
   };
 
   # Don't touch this
