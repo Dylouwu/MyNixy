@@ -11,6 +11,7 @@
     ../../nixos/xserver.nix
 
     # You should let those lines as is
+    ./hardware-configuration.nix
     ./variables.nix
   ];
 
