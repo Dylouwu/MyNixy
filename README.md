@@ -54,18 +54,9 @@ Other small modifications include:
 - Removed bluetooth module
 - And many more to come ! Feel free to check the repository issues for more information about the next features to come.
 
-## Table of Content
+## Table of Contents
 
-- [Table of Content](#table-of-content)
-- [Gallery](#gallery)
-- [Architecture](#architecture)
-  - [🏠 /home](#-home)
-  - [💻 /hosts](#-hosts)
-  - [🐧 /nixos](#-nixos)
-  - [💾 /server-modules](#-server-modules)
-- [Installation](#installation)
-- [😿 Non-declarative things](#-non-declarative-things)
-- [Documentation](#documentation)
+{md_table_of_contents}
 
 ## Gallery
 
