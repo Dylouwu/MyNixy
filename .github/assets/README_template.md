@@ -55,7 +55,7 @@ Other small modifications include:
 
 ## Table of Contents
 
-{md_table_of_contents}
+{md_table_of_content}
 
 ## Gallery
 
