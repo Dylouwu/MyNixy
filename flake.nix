@@ -79,6 +79,7 @@
           ./hosts/old_laptop/configuration.nix # CHANGEME: change the path to match your host folder
         ];
       };
+      # This is for my wsl config
       wsl = nixpkgs.lib.nixosSystem {
         modules = [
           { _module.args = { inherit inputs; }; }
