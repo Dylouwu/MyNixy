@@ -37,6 +37,7 @@
         nixGrammars = true;
         settings = {
           ensure_installed = "all";
+          ignore_install = [ "ipkg" "norg" ];
           indent.enable = true;
           highlight.enable = true;
         };
