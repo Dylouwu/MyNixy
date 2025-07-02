@@ -13,7 +13,7 @@
     ../../home/programs/zellij
 
     # Scripts
-    ../../home/scripts # All scripts
+    ../../home/scripts/nixy # Only nixy script
   ];
 
   home = {

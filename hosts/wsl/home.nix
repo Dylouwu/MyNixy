@@ -15,7 +15,7 @@
     ../../home/programs/zellij
 
     # scripts
-    ../../home/scripts # All scripts
+    ../../home/scripts/nixy # Only nixy script
 
     ./secrets # CHANGEME: You should probably remove this line, this is where I store my secrets
   ];
@@ -47,8 +47,6 @@
 
     # Import my profile picture, used by the hyprpanel dashboard
     file.".face.icon" = { source = ../../src/purin.jpg; };
-
-
 
     # Don't touch this
     stateVersion = "24.05";
