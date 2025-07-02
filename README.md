@@ -56,7 +56,16 @@ Other small modifications include:
 
 ## Table of Contents
 
-{md_table_of_contents}
+- [Table of Contents](#table-of-contents)
+- [Gallery](#gallery)
+- [Architecture](#architecture)
+  - [🏠 /home](#-home)
+  - [💻 /hosts](#-hosts)
+  - [🐧 /nixos](#-nixos)
+  - [💾 /server-modules](#-server-modules)
+- [Installation](#installation)
+- [😿 Non-declarative things](#-non-declarative-things)
+- [Documentation](#documentation)
 
 ## Gallery
 
