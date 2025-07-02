@@ -42,6 +42,7 @@
 - 🕹️ **A fully customizable and optimized Minecraft Paper server**, which can be started and stopped directly from the glance dashboard through API calls.
 - 💾 New server modules : Cyberchef, Fail2ban, Autosleep, ...
 - 🎮 Gaming integration with Steam x Proton, Osu-Lazer, Modrinth (Minecraft Open-Source launcher).
+- 📦 **A WSL2 compatible configuration** for Nixy, allowing you to run Nixy on Windows natively.
 
 Other small modifications include:
 
@@ -71,7 +72,6 @@ Contains **dotfiles and settings** that apply to your user environment.
 - `programs` is a collection of apps configured with home-manager
 - `scripts` is a folder full of bash scripts (see [SCRIPTS.md](docs/SCRIPTS.md))
 - `system` is some "desktop environment" configuration
-
 
 ### 💻 /hosts
 
@@ -143,6 +143,7 @@ sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 > [!TIP]
 > Recommended things to do after the installation:
 >
+> - Add your private age key to the `.config/sops/age/keys.txt` file to enable sops-nix support.
 > - Since your fork was cloned through HTTPS, you may want to change its origin to the SSH one (making full use of the config).
 >
 > - Additionally, you can remove warning messages while rebuilding the system by using these commands:
