@@ -53,9 +53,9 @@ Other small modifications include:
 - Removed bluetooth module
 - And many more to come ! Feel free to check the repository issues for more information about the next features to come.
 
-## Table of Content
+## Table of Contents
 
-{md_table_of_content}
+{md_table_of_contents}
 
 ## Gallery
 
