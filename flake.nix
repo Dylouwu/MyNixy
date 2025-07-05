@@ -34,6 +34,7 @@
       url = "github:Dylouwu/minecraft-datapacks";
       flake = false;
     };
+    socme.url = "path:/home/dilounix/Projects/socme";
   };
 
   outputs = inputs@{ nixpkgs, ... }: {
@@ -50,6 +51,7 @@
           inputs.minegrub-world-sel-theme.nixosModules.default
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
+          inputs.socme.nixosModules.socme-backend
           ./hosts/laptop/configuration.nix # CHANGEME: change the path to match your host folder
         ];
       };
