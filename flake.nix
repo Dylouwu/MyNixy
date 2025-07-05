@@ -35,6 +35,7 @@
       flake = false;
     };
     socme.url = "path:/home/dilounix/Projects/socme";
+    wazuh.url = "path:/home/dilounix/Projects/wazuh-nix";
   };
 
   outputs = inputs@{ nixpkgs, ... }: {
@@ -52,6 +53,7 @@
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
           inputs.socme.nixosModules.socme-backend
+          inputs.wazuh.nixosModules.wazuh
           ./hosts/laptop/configuration.nix # CHANGEME: change the path to match your host folder
         ];
       };

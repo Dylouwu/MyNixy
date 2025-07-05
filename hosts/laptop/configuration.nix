@@ -67,6 +67,15 @@
     127.0.0.1 socme-frontend.local
   '';
   services.socme-backend.enable = true;
+
+  wazuh = {
+    enable = true;
+    autostart = true;
+    version = "v4.12.0"; # Or any other version
+    webui.dashboard.port = 5601; # Can be overridden if needed
+    # ... other options you want to override
+  };
+
   home-manager.users."${config.var.username}" = import ./home.nix;
 
   # Don't touch this

@@ -994,6 +994,22 @@
     },
     "nixpkgs_11": {
       "locked": {
+        "lastModified": 1751271578,
+        "narHash": "sha256-P/SQmKDu06x8yv7i0s8bvnnuJYkxVGBWLWHaU+tt4YY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3016b4b15d13f3089db8a41ef937b13a9e33a8df",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_12": {
+      "locked": {
         "lastModified": 1742288794,
         "narHash": "sha256-Txwa5uO+qpQXrNG4eumPSD+hHzzYi/CdaM80M9XRLCo=",
         "owner": "nixos",
@@ -1260,6 +1276,7 @@
         "socme": "socme",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
+        "wazuh": "wazuh",
         "zen-browser": "zen-browser"
       }
     },
@@ -1649,6 +1666,21 @@
         "type": "github"
       }
     },
+    "wazuh": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_11"
+      },
+      "locked": {
+        "lastModified": 1751709808,
+        "narHash": "sha256-cToKqGO5/Mi1qSixzsqC3eWzqyW6pmrWeI1wrvF+hIM=",
+        "path": "/home/dilounix/Projects/wazuh-nix",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/dilounix/Projects/wazuh-nix",
+        "type": "path"
+      }
+    },
     "xdph": {
       "inputs": {
         "hyprland-protocols": [
@@ -1692,7 +1724,7 @@
     },
     "zen-browser": {
       "inputs": {
-        "nixpkgs": "nixpkgs_11"
+        "nixpkgs": "nixpkgs_12"
       },
       "locked": {
         "lastModified": 1743463070,
