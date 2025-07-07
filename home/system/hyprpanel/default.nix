@@ -36,7 +36,7 @@ in {
           "*" = {
             "left" = [ "dashboard" "workspaces" "windowtitle" ];
             "middle" = [ "media" "cava" ];
-            "right" = [ "systray" "volume" "bluetooth" "battery" "network" "clock" "notifications" ];
+            "right" = [ "systray" "volume" "battery" "network" "clock" "notifications" ];
           };
         };
       };
