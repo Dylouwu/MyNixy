@@ -31,13 +31,12 @@ in {
     enable = true;
 
     settings = {
-      layout = {
-        bar.layouts = {
-          "*" = {
-            "left" = [ "dashboard" "workspaces" "windowtitle" ];
-            "middle" = [ "media" "cava" ];
-            "right" = [ "systray" "volume" "battery" "network" "clock" "notifications" ];
-          };
+      bar.layouts = {
+        "*" = {
+          "left" = [ "dashboard" "workspaces" "windowtitle" ];
+          "middle" = [ "media" "cava" ];
+          "right" =
+            [ "systray" "volume" "battery" "network" "clock" "notifications" ];
         };
       };
 
@@ -46,26 +45,35 @@ in {
       theme.bar = {
         outer_spacing = if floating && transparent then "0px" else "8px";
         floating = floating;
-        margin_top = (if position == "top" then toString (gaps-in * 2) else "0") + "px";
-        margin_bottom = (if position == "top" then "0" else toString (gaps-in * 2)) + "px";
+        margin_top = (if position == "top" then toString (gaps-in * 2) else "0")
+          + "px";
+        margin_bottom =
+          (if position == "top" then "0" else toString (gaps-in * 2)) + "px";
         margin_sides = toString gaps-out + "px";
         border_radius = toString rounding + "px";
         transparent = transparent;
         location = position;
         dropdownGap = "4.5em";
-        background = background + (if transparentButtons && transparent then "00" else "");
+        background = background
+          + (if transparentButtons && transparent then "00" else "");
       };
 
       theme.bar.buttons = {
         y_margins = if floating && transparent then "0px" else "8px";
         spacing = "0.3em";
-        radius = (if transparent then toString rounding else toString (rounding - 8)) + "px";
+        radius =
+          (if transparent then toString rounding else toString (rounding - 8))
+          + "px";
         padding_x = "0.8rem";
         padding_y = "0.4rem";
         style = "default";
         monochrome = true;
-        text = if transparent && transparentButtons then foregroundOnWallpaper else foreground;
-        background = (if transparent then background else background-alt) + (if transparentButtons then "00" else "");
+        text = if transparent && transparentButtons then
+          foregroundOnWallpaper
+        else
+          foreground;
+        background = (if transparent then background else background-alt)
+          + (if transparentButtons then "00" else "");
         icon = accent;
         hover = background;
         workspaces = {
@@ -198,20 +206,45 @@ in {
           key = weather-key;
         };
         dashboard = {
+          directories.enabled = false;
           powermenu = {
             confirmation = false;
             avatar.image = "~/.face.icon";
           };
           shortcuts = {
             left = {
-              shortcut1 = { icon = ""; command = "zen"; tooltip = "Zen"; };
-              shortcut2 = { icon = "󰅶"; command = "caffeine"; tooltip = "Caffeine"; };
-              shortcut3 = { icon = "󰖔"; command = "night-shift"; tooltip = "Night-shift"; };
-              shortcut4 = { icon = ""; command = "menu"; tooltip = "Search Apps"; };
+              shortcut1 = {
+                icon = "";
+                command = "zen";
+                tooltip = "Zen";
+              };
+              shortcut2 = {
+                icon = "󰅶";
+                command = "caffeine";
+                tooltip = "Caffeine";
+              };
+              shortcut3 = {
+                icon = "󰖔";
+                command = "night-shift";
+                tooltip = "Night-shift";
+              };
+              shortcut4 = {
+                icon = "";
+                command = "menu";
+                tooltip = "Search Apps";
+              };
             };
             right = {
-              shortcut1 = { icon = ""; command = "hyprpicker -a"; tooltip = "Color Picker"; };
-              shortcut3 = { icon = "󰄀"; command = "screenshot region swappy"; tooltip = "Screenshot"; };
+              shortcut1 = {
+                icon = "";
+                command = "hyprpicker -a";
+                tooltip = "Color Picker";
+              };
+              shortcut3 = {
+                icon = "󰄀";
+                command = "screenshot region swappy";
+                tooltip = "Screenshot";
+              };
             };
           };
         };
