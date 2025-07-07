@@ -165,10 +165,12 @@ sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 
 ## 😿 Non-declarative things
 
+- Tailscale (`sudo tailscale up`)
+
 For laptop configurations :
 
 - Zen's settings, logins, extensions (which can be alternatively synced with a firefox account), and mods must be installed manually from the browser directly.
-- Tailscale (`sudo tailscale up`), Discord, Nextcloud, Copilot (in nvim) and other apps need their settings must be done manually
+- Discord, Nextcloud, Copilot (in nvim) and other apps need their settings must be done manually
 - Initial disk partitioning, including setting up the ESP at `/boot/efi` on your `hardware-configuration.nix` allowing more space for optimal early KMS (see [Installation](#installation) for more details).
 - Steam launch options (included in `nixos/steam.nix`) and game library
 - Modrinth modpacks, JVM arguments, and other Minecraft-related things
