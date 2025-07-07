@@ -99,7 +99,6 @@ in {
       };
 
       render = {
-        explicit_sync = 0;
         cm_fs_passthrough = true;
       };
 
