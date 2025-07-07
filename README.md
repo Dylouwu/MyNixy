@@ -121,7 +121,7 @@ git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 4. Copy your `hardware-configuration.nix` into your new host's folder to ensure proper hardware support.
 
 > [!Important]
-> If you wish to use the `laptop` or `old_laptop` configurations, you need to change the `fileSystems."/boot"` option to `fileSystems."/boot/efi"` in `hardware-configuration.nix`, as the ESP partition is mounted at `/boot/efi` in these configurations.
+> If you wish to use the `laptop` or `old_laptop` configurations, you need to change the `fileSystems."/boot"` option to `fileSystems."/boot/efi"` in `hardware-configuration.nix`, as the ESP partition is mounted at `/boot/efi` in these configurations, because /boot is usually too small to hold a initrd with early KMS support.
 > You'll also need to change the bootorder with `efibootmgr` to ensure that the NixOS EFI bootloader is the first one in the list (and you can remove the NixOS HD bootloader entry if you want to).
 >
 >```sh
