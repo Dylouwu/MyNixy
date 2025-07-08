@@ -1,6 +1,4 @@
-{ config, ... }:
-let domain = "dilou.me";
-in {
+{ config, ... }: {
   services.nginx = {
     enable = true;
 
@@ -9,8 +7,8 @@ in {
       locations."/" = { return = 444; };
     };
 
-    virtualHosts."*.${domain}" = {
-      useACMEHost = domain;
+    virtualHosts."*.${config.var.domain}" = {
+      useACMEHost = config.var.domain;
       forceSSL = true;
       locations."/" = { return = 444; };
     };
@@ -21,9 +19,9 @@ in {
     defaults.email = config.var.git.email;
   };
 
-  security.acme.certs."${domain}" = {
-    domain = domain;
-    extraDomainNames = [ "*.${domain}" ];
+  security.acme.certs."${config.var.domain}" = {
+    domain = config.var.domain;
+    extraDomainNames = [ "*.${config.var.domain}" ];
     group = "nginx";
     dnsProvider = "cloudflare";
     dnsPropagationCheck = true;

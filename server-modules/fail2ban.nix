@@ -3,7 +3,7 @@
     enable = true;
     maxretry = 5;
     ignoreIP = [
-      "100.104.157.94"
+      "100.104.157.94" # CHANGEME: Add your own IPs to ignore
       "100.104.210.42"
       "100.116.106.93"
     ];

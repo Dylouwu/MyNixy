@@ -1,7 +1,8 @@
-let domain = "api.dilou.me";
+{ config, ... }:
+let domain = "api.${config.var.domain}";
 in {
   services.nginx.virtualHosts."${domain}" = {
-    useACMEHost = "dilou.me";
+    useACMEHost = config.var.domain;
     forceSSL = true;
     locations."/mc" = {
       proxyPass = "http://localhost:5000";

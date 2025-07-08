@@ -17,6 +17,8 @@
       email = "118902463+Dylouwu@users.noreply.github.com";
     };
 
+    domain = "dilou.me";
+
     autoUpgrade = false;
     autoGarbageCollector = true;
   };

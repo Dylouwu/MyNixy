@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  domain = "dilou.me";
+  domain = config.var.domain;
 
   rgb-to-hsl = color:
     let

@@ -1,11 +1,11 @@
 { pkgs, config, ... }:
-let domain = "cloud.dilou.me";
+let domain = "cloud.${config.var.domain}";
 in {
   services = {
     nginx.virtualHosts = {
       "${domain}" = {
         # DNS-01 challenge
-        useACMEHost = "dilou.me";
+        useACMEHost = config.var.domain;
         forceSSL = true;
       };
     };
@@ -32,6 +32,5 @@ in {
       # Suggested by Nextcloud's health check.
       phpOptions."opcache.interned_strings_buffer" = "16";
     };
-
   };
 }
