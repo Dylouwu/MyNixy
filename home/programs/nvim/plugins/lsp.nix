@@ -14,6 +14,7 @@
         tailwindcss.enable = true;
         html.enable = true;
         svelte.enable = true;
+        yamlls.enable = true;
       };
     };
     none-ls = {
@@ -37,6 +38,7 @@
           shfmt.enable = true;
           golines.enable = true;
           gofumpt.enable = true;
+          yamlfmt.enable = true;
         };
       };
     };
