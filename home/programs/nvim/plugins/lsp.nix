@@ -25,10 +25,13 @@
           statix.enable = true;
         };
         formatting = {
+          asmfmt.enable = true;
+          clang_format.enable = true;
           gofmt.enable = true;
           goimports.enable = true;
           nixfmt.enable = true;
           markdownlint.enable = true;
+          just.enable = true;
           tidy.enable = true;
           shellharden.enable = true;
           shfmt.enable = true;
