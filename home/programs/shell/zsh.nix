@@ -3,7 +3,16 @@
 let fetch = config.theme.fetch; # neofetch, nerdfetch, pfetch
 in {
 
-  home.packages = with pkgs; [ bat ripgrep tldr sesh rmtrash trash-cli ];
+  home.packages = with pkgs; [
+    bat
+    bat-extras.batman
+    ripgrep
+    tldr
+    duf
+    sesh
+    rmtrash
+    trash-cli
+  ];
 
   home.sessionPath = [ "$HOME/go/bin" ];
 
@@ -27,8 +36,6 @@ in {
           pkgs.neofetch + "/bin/neofetch"
         else if fetch == "nerdfetch" then
           "nerdfetch"
-        else if fetch == "pfetch" then
-          "echo; ${pkgs.pfetch}/bin/pfetch"
         else
           ""}
 
@@ -158,24 +165,28 @@ in {
       ls = "eza --icons=always --no-quotes";
       tree = "eza --icons=always --tree --no-quotes";
       sl = "ls";
-      open = "${pkgs.xdg-utils}/bin/xdg-open";
-      icat = "${pkgs.kitty}/bin/kitty +kitten icat";
-      ssh = "kitty +kitten ssh";
+      man = "batman";
       cat =
         "bat --theme=base16 --color=always --paging=never --tabs=2 --wrap=never --plain";
       mkdir = "mkdir -p";
-
       rm = "${pkgs.rmtrash}/bin/rmtrash";
       rmdir = "${pkgs.rmtrash}/bin/rmdirtrash";
+      df = "duf";
 
-      obsidian-no-gpu =
-        "env ELECTRON_OZONE_PLATFORM_HINT=auto obsidian --ozone-platform=x11";
-      wireguard-import = "nmcli connection import type wireguard file";
-
+      ssh = "kitty +kitten ssh";
+      fetch = "clear && neofetch";
+      ip4 = "curl ifconfig.me; echo";
+      ports = "ss -tuln";
+      pysrv = "python3 -m http.server";
       tmp = "nvim /tmp/$(date | sed 's/ //g;s/\\.//g').md";
+      wireguard-import = "nmcli connection import type wireguard file";
 
       nix-shell = "nix-shell --command zsh";
       nix-develop = "nix develop --command zsh";
+
+      j = "just";
+      open = "${pkgs.xdg-utils}/bin/xdg-open";
+      icat = "${pkgs.kitty}/bin/kitty +kitten icat";
 
       # git
       g = "lazygit";
