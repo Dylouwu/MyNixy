@@ -47,7 +47,7 @@
       vscode
       resources
       obsidian # Markdown editor
-      # gnome-text-editor # Text editor
+      gnome-text-editor # Text editor
 
       # Dev
       clang

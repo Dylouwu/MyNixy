@@ -3,7 +3,7 @@ with lib;
 let
   defaultApps = {
     browser = [ "zen.desktop" ];
-    # text = [ "org.gnome.TextEditor.desktop" ];
+    text = [ "org.gnome.TextEditor.desktop" ];
     image = [ "imv-dir.desktop" ];
     audio = [ "mpv.desktop" ];
     video = [ "mpv.desktop" ];
@@ -16,7 +16,7 @@ let
   };
 
   mimeMap = {
-    # text = [ "text/plain" ];
+    text = [ "text/plain" ];
     image = [
       "image/bmp"
       "image/gif"
