@@ -125,7 +125,7 @@ in {
                   type = "dns-stats";
                   service = "adguard";
                   url = "https://adguard.${domain}";
-                  username = "dilounix";
+                  username = "Dylouwu";
                   password = "\${secret:adguard-pwd}";
                 }
 
