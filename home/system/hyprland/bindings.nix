@@ -4,7 +4,6 @@
       "$mod,RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
       "$mod,E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
       "$mod,B, exec, zen" # Zen Browser
-      "$mod,K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
       "$mod,L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
       "$mod,D, exec, ${pkgs.discord}/bin/discord" # Discord
       "$mod,S, exec, steam" # Steam
