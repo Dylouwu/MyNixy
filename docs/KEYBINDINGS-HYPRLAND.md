@@ -11,7 +11,6 @@
 | Kitty | SUPER + RETURN |
 | Thunar | SUPER + E |
 | Zen Browser | SUPER + B |
-| Bitwarden | SUPER + K |
 | Lock | SUPER + L |
 | Discord | SUPER + D |
 | Steam | SUPER + S |
