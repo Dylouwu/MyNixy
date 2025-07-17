@@ -30,14 +30,6 @@ let
     in lib.concatMapStringsSep " " roundToString [ h s l ];
 in {
 
-  users.users.glance = {
-    isSystemUser = true;
-    description = "Glance user";
-    group = "glance";
-  };
-
-  users.groups.glance = { };
-
   services = {
     glance = {
       enable = true;
@@ -449,6 +441,15 @@ in {
             toString config.services.glance.settings.server.port
           }";
       };
+    };
+  };
+
+  users = {
+    groups.glance = { };
+    users.glance = {
+      isSystemUser = true;
+      description = "Glance user";
+      group = "glance";
     };
   };
 
