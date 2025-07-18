@@ -18,6 +18,11 @@
   };
 
   networking.firewall = {
+    interfaces = {
+      "tun0" = {
+        allowedTCPPorts = [ 1234 ];
+      };
+    };
     trustedInterfaces = [ "tailscale0" ];
     checkReversePath = "loose";
   };
