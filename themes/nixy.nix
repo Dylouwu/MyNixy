@@ -48,7 +48,7 @@
         base0C =
           "94e2d5"; # Support, Regular Expressions, Escape Characters, Markup Quotes
         base0D =
-          "A594FD"; # Functions, Methods, Attribute IDs, Headings, Accent color
+          "a594fd"; # Functions, Methods, Attribute IDs, Headings, Main purple color
         base0E =
           "cba6f7"; # Keywords, Storage, Selector, Markup Italic, Diff Changed
         base0F =
@@ -86,7 +86,6 @@
         };
       };
 
-      polarity = "dark";
       image = pkgs.fetchurl {
         url =
           "https://raw.githubusercontent.com/anotherhadi/nixy-wallpapers/refs/heads/main/wallpapers/3.png";
