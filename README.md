@@ -48,8 +48,7 @@
 Other small modifications include:
 
 - Minecraft-themed grub instead of relying on systemd-boot, enhanced with early KMS and Plymouth for a better boot experience.
-- Zellij over tmux
-- Copilot shortcuts
+- New nvim shortcuts
 - C++ environment with clangd
 - Removed bluetooth module
 - And many more to come ! Feel free to check the repository issues for more information about the next features to come.
@@ -69,7 +68,7 @@ Other small modifications include:
 
 ## Gallery
 
-![nvim, lazygit](.github/assets/nixy/1.png)
+![nvim, lazygit](.github/assets/nixy/3.png)
 
 ## Architecture
 
