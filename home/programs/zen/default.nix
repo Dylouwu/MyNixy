@@ -1,13 +1,23 @@
 # Zen is a minimalistic web browser.
-{ pkgs, inputs, ... }:
-let
-  zenWithWayland = pkgs.symlinkJoin {
-    name = "zen-browser-wayland";
-    paths = [ inputs.zen-browser.packages."${pkgs.system}".default ];
-    buildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/zen \
-        --set MOZ_ENABLE_WAYLAND 1
-    '';
+{ inputs, ... }: {
+  imports = [ inputs.zen-browser.homeModules.beta ];
+
+  programs.zen-browser = {
+    enable = true;
+    policies = {
+      DisableAppUpdate = true;
+      DisableTelemetry = true;
+
+      AutofillAddressesEnabled = false;
+      AutoFillCreditCardEnabled = false;
+      DisablePocket = true;
+      DisableProfileImport = true;
+      DisableSetDesktopBackground = true;
+      DontCheckDefaultBrowser = true;
+      Homepage = "https://home.dilou.me";
+      SkipTermsOfUse = true;
+      NewTabPage = true;
+      OfferToSaveLogins = false;
+    };
   };
-in { home.packages = [ zenWithWayland ]; }
+}
