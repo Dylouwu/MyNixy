@@ -21,7 +21,7 @@
 
     # System (Desktop environment like stuff)
     ../../home/system/hyprland
-    ../../home/system/hypridle
+    # ../../home/system/hypridle
     ../../home/system/hyprlock
     ../../home/system/hyprpanel
     ../../home/system/hyprpaper
@@ -44,8 +44,6 @@
       discord
       vlc # Video player
       curtail # Compress images
-      vscode
-      resources
       obsidian # Markdown editor
       gnome-text-editor # Text editor
 
@@ -54,12 +52,9 @@
       libcxx
       go
       air
-      nodejs
-      jq
       just
       python3
       pnpm
-      zulu
 
       # Utils
       file
@@ -69,8 +64,9 @@
       fastfetch
       veracrypt
 
-      # Backup browser
+      # Backup
       firefox
+      vscode
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard

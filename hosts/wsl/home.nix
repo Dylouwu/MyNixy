@@ -30,12 +30,9 @@
       libcxx
       go
       air
-      nodejs
-      jq
       just
       python3
       pnpm
-      zulu
 
       # Utils
       file
