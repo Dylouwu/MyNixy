@@ -27,6 +27,7 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    cartographcf.url = "github:Dylouwu/CartographCF";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     glance-minecraft-power.url = "github:Dylouwu/glance-minecraft-power";

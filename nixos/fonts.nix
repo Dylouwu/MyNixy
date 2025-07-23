@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
 
   fonts = {
     packages = with pkgs; [
@@ -15,12 +15,11 @@
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      nerd-fonts.caskaydia-mono
       nerd-fonts.fira-code
-      nerd-fonts.fira-mono
       nerd-fonts.meslo-lg
       openmoji-color
       twemoji-color-font
+      inputs.cartographcf.packages.${pkgs.system}.default
     ];
 
     enableDefaultPackages = false;

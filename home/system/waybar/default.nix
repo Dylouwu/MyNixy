@@ -62,7 +62,7 @@
 
     style = ''
       * {
-          font-family: CartographCF Nerd Font, Caskaydia Mono Nerd Font, Fira Mono Nerd Font, Fira Code Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+          font-family: CartographCF, Caskaydia Mono Nerd Font, Fira Mono Nerd Font, Fira Code Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
           font-size: 13px;
       }
 
