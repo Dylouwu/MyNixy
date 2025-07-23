@@ -6,7 +6,7 @@
     };
     plugins = {
       bufferline = {
-        enable = true;
+        enable = false;
         settings = { options = { always_show_bufferline = false; }; };
       };
       copilot-vim = {

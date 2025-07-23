@@ -48,12 +48,11 @@ in {
       package = nvidiaDriverChannel;
       forceFullCompositionPipeline = true;
       prime = {
-        # offload = {
-        #   enable = true;
-        #   enableOffloadCmd = true;
-        # };
-        #
-        sync.enable = true;
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+        # sync.enable = true;
 
         # CHANGEME: Change those values to match your hardware (if prime is imported)
         amdgpuBusId =
