@@ -5,7 +5,6 @@
     enable = true;
     systemd.enable = true;
     settings.mainBar = {
-      height = 50;
       spacing = 5;
       margin-bottom = -11;
 
@@ -52,11 +51,13 @@
         };
       };
       network = {
-        format-wifi = " ";
-        format-ethernet = "󰈀 ";
-        tooltip-format = "via {gwaddr} {ifname}";
-        format-linked = "{ifname} (No IP)";
-        format-disconnected = "󰖪 ";
+        format = "{ifname}";
+        format-wifi = "{icon} {essid}";
+        format-ethernet = "󰈀 {essid}";
+        format-disconnected = " 󰤭 Disconnected ";
+        tooltip-format = "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}";
+        format-linked = "󰈁 {ifname} (No IP)";
+        format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
       };
     };
 
@@ -224,14 +225,13 @@
       }
 
       #battery.charging, #battery.plugged {
-          background-color: #94e2d5 ;
+          /* background-color: #94e2d5 ; */
       }
 
       #battery {
           background-color: #fff;
           color:#a6e3a1;
           font-weight: bolder;
-          font-size: 20px;
           padding-left: 15px;
           padding-right: 15px;
       }
@@ -294,8 +294,6 @@
           background: linear-gradient(45deg, rgba(243,139,168,1) 0%, rgba(250,179,135,1) 100%); 
           color: #fff;
           font-weight: bolder;
-          padding-top: 3px;
-          padding-right: 11px;
       }
 
       #network.linked, #network.wifi{
