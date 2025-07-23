@@ -3,7 +3,7 @@
     ./nixy
     ./sounds
     ./brightness
-    ./caffeine
+    # ./caffeine
     ./hyprpanel
     ./hyprfocus
     ./night-shift
