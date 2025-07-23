@@ -95,7 +95,7 @@
       showmode = false;
 
       # Always show tabline
-      showtabline = 2;
+      showtabline = 0;
 
       # Show signs column
       signcolumn = "yes";
