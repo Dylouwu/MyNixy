@@ -54,6 +54,7 @@
       libcxx
       go
       air
+      jq
       just
       python3
       pnpm

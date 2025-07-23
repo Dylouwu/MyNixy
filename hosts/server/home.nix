@@ -25,7 +25,6 @@
       clang
       libcxx
       go
-      nodejs
       python3
       jq
       just
