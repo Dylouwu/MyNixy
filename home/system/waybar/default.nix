@@ -23,18 +23,15 @@
       "hyprland/workspaces" = {
         format = "{icon}";
         format-active = " {icon} ";
-        on-click = "activate";
+        all-outputs = true;
       };
 
       tray = { spacing = 10; };
 
       clock = {
         timezone = "Europe/Paris";
-        tooltip-format = ''
-          <big>{:%Y %B}</big>
-          <tt><small>{calendar}</small></tt>'';
+        tooltip-format = "<big>{:%a %d %b}</big>";
         interval = 60;
-        format = "{:%I:%M}";
         max-length = 25;
       };
 
@@ -49,6 +46,7 @@
           "charging" = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
           "plugged" = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
         };
+        on-click = "powerprofilesctl set balanced";
       };
       network = {
         format = "{ifname}";
@@ -58,6 +56,7 @@
         tooltip-format = "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}";
         format-linked = "󰈁 {ifname} (No IP)";
         format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+        on-click = "kitty --class nmtui-float-term nmtui";
       };
     };
 

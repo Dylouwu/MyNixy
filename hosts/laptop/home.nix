@@ -25,7 +25,7 @@
     # ../../home/system/hypridle
     ../../home/system/hyprlock
     #../../home/system/hyprpanel
-    ../../home/system/waybar
+    #../../home/system/waybar
     ../../home/system/hyprpaper
     ../../home/system/wofi
     ../../home/system/zathura
