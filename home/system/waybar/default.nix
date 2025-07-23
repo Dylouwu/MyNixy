@@ -53,7 +53,7 @@
       network = {
         format = "{ifname}";
         format-wifi = "{icon} {essid}";
-        format-ethernet = "󰈀 {essid}";
+        format-ethernet = "󰈀 Ethernet";
         format-disconnected = " 󰤭 Disconnected ";
         tooltip-format = "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}";
         format-linked = "󰈁 {ifname} (No IP)";
