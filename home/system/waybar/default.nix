@@ -31,8 +31,9 @@
 
       clock = {
         timezone = "Europe/Paris";
-        tooltip-format =
-          "<big>{:%Y %B}</big>\\\\n<tt><small>{calendar}</small></tt>";
+        tooltip-format = ''
+          <big>{:%Y %B}</big>
+          <tt><small>{calendar}</small></tt>'';
         interval = 60;
         format = "{:%I:%M}";
         max-length = 25;
@@ -51,17 +52,17 @@
         };
       };
       network = {
-        format-wifi = "";
-        format-ethernet = "󰈀";
-        tooltip-format = "via {gwaddr} {ifname}";
+        format-wifi = " ";
+        format-ethernet = "󰈀 ";
+        tooltip-format = "via {gwaddr} {ifname}";
         format-linked = "{ifname} (No IP)";
-        format-disconnected = "󰖪";
+        format-disconnected = "󰖪 ";
       };
     };
 
     style = ''
-            * {
-          font-family: CartographCF Nerd Font, Fira Code Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+      * {
+          font-family: CartographCF Nerd Font, Caskaydia Mono Nerd Font, Fira Mono Nerd Font, Fira Code Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
           font-size: 13px;
       }
 
@@ -93,7 +94,6 @@
           box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
           text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
           padding-left: 20px;
-          padding-bottom: 3px;
           background: rgb(202,158,230);
           background: linear-gradient(45deg, rgba(202,158,230,1) 0%, rgba(245,194,231,1) 43%, rgba(180,190,254,1) 80%, rgba(137,180,250,1) 100%); 
           background-size: 300% 300%;
