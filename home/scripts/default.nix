@@ -6,10 +6,11 @@
     # ./caffeine
     ./hyprpanel
     # ./hyprfocus
-    ./night-shift
-    ./screenshot
     ./nerdfont-fzf
+    ./night-shift
     ./notification
+    ./powermode
+    ./screenshot
     ./system
   ];
 }
