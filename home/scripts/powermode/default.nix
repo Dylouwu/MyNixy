@@ -1,3 +1,6 @@
+# - ## Powermode-Toggle
+# -
+# - This script toggles between performance and balanced power modes using `powerprofilesctl`.
 { pkgs, ... }:
 let
   powermode-toggle = pkgs.writeShellScriptBin "powermode-toggle" # bash
