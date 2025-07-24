@@ -1,4 +1,7 @@
 {
+
+  #imports = [ ./mako.nix ];
+
   wayland.windowManager.hyprland.settings.exec-once = [ "waybar" ];
 
   programs.waybar = {
@@ -26,6 +29,12 @@
         all-outputs = true;
       };
 
+      "hyprland/window" = {
+        format = "{}";
+        rewrite = { "(.*)" = ""; };
+        icon = true;
+        icon-size = 20;
+      };
       tray = { spacing = 10; };
 
       clock = {
@@ -42,9 +51,9 @@
         };
         format = "{icon} {capacity}%";
         format-icons = {
-          "default" = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
-          "charging" = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
-          "plugged" = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
+          default = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
+          charging = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
+          plugged = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
         };
         on-click = "powerprofilesctl set balanced";
       };
@@ -336,7 +345,7 @@
       }
 
       #tray {
-          background-color: #2980b9;
+          background-color: #1c1816;
       }
 
       #tray > .passive {
