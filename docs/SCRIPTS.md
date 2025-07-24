@@ -65,6 +65,8 @@ Nixy is a simple script that I use to manage my NixOS system. It's a simple scri
 
 
 
+
+
 ## Screenshot
 
 This module provides a script to take screenshots using `grimblast` and `swappy`.
