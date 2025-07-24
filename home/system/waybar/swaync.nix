@@ -51,28 +51,23 @@
         font-size: 14px;
       }
 
-      /* --- Control Center & Widget Layout --- */
       .control-center {
         padding: 5px;
         border-radius: 15px;
       }
 
       .widget-body, .widget-mpris, .widget-dnd, .widget-inhibitors {
-        margin: 4px 5px; /* Reduced vertical margin */
+        margin: 4px 5px; 
       }
 
-      /* --- Universal Notification Styling --- */
 
-      /* This makes the outer container for ALL notifications invisible. */
       .notification-row {
         background: transparent !important;
         border: none !important;
         outline: none !important;
-        /* This margin is now the ONLY one controlling the space around notifications. */
         margin: 8px !important;
       }
 
-      /* Also hide the container for the list of notifications in the control center */
       .widget-notifications {
         background: transparent !important;
         border: none !important;
@@ -80,11 +75,10 @@
         margin: 0 !important;
       }
 
-      /* Style the actual notification content block that you SEE */
       .notification {
-        margin: 0 !important; /* THIS IS THE FIX: It removes the default inner margin. */
+        margin: 0 !important; 
         padding: 14px;
-        border-radius: 12px; /* This rounds the corners of the dark inner box */
+        border-radius: 12px; 
       }
 
       .notification-content {
