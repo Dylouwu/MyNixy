@@ -9,6 +9,11 @@ let
       title=$2
       description=$3
 
+      if [[ -z "$sender_id" || -z "$title" ]]; then
+          echo "Usage: notif \"sender_id\" \"message\" [\"description\"]"
+          exit 1
+      fi
+
       [[ -d "$NOTIF_FOLDER" ]] || mkdir $NOTIF_FOLDER
       [[ -f "$NOTIF_FOLDER/$sender_id" ]] || (echo "0" > "$NOTIF_FOLDER/$sender_id")
 
