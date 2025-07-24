@@ -5,7 +5,7 @@
     ./brightness
     # ./caffeine
     ./hyprpanel
-    ./hyprfocus
+    # ./hyprfocus
     ./night-shift
     ./screenshot
     ./nerdfont-fzf
