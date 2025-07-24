@@ -15,11 +15,10 @@
       #modules-center = [ "custom/dynamic_pill" ];
       modules-right = [
         "tray"
-        #"temperature"
         "network"
         "battery"
         #"custom/cycle_wall"
-        #"cpu"
+        #"group"
         "custom/notification"
         "clock"
       ];
