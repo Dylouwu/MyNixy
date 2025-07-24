@@ -11,7 +11,7 @@
       spacing = 5;
       margin-bottom = -11;
 
-      modules-left = [ "hyprland/workspaces" ];
+      modules-left = [ "hyprland/workspaces" "hyprland/window" ];
       #modules-center = [ "custom/dynamic_pill" ];
       modules-right = [
         "tray"
@@ -31,7 +31,7 @@
 
       "hyprland/window" = {
         format = "{}";
-        rewrite = { "(.*)" = ""; };
+        rewrite = { "^(.*?)[[:space:]]*[-–—|:].*?$" = "$1"; };
         icon = true;
         icon-size = 20;
       };
