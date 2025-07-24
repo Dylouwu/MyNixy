@@ -31,7 +31,7 @@
 
       "hyprland/window" = {
         format = "{}";
-        rewrite = { "^(.*?)[[:space:]]*[-–—|:].*?$" = "$1"; };
+        rewrite = { "^(.*?)[[:space:]]*[-—|].*?$" = "$1"; };
         icon = true;
         icon-size = 20;
       };
