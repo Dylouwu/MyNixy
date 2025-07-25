@@ -3,7 +3,7 @@
   imports = [ ./swaync.nix ./swayosd.nix ];
 
   programs.waybar = {
-    enable = false;
+    enable = true;
     systemd.enable = true;
     settings.mainBar = {
       spacing = 5;
@@ -12,14 +12,18 @@
       modules-left = [ "hyprland/workspaces" "hyprland/window" ];
       #modules-center = [ "custom/dynamic_pill" ];
       modules-right = [
-        "tray"
-        "network"
-        "battery"
         #"custom/cycle_wall"
         "group/extras"
+        "battery"
         "custom/notification"
         "clock"
       ];
+
+      "custom/arrow-toggle" = {
+        format = " {icon} ";
+        format-icons = { default = ""; };
+        tooltip = false;
+      };
 
       "custom/notification" = {
         tooltip = false;
@@ -42,10 +46,14 @@
         escape = true;
       };
 
-      # "group/extras" = {
-      #   modules = {
-      #
-      #   }
+      "group/extras" = {
+        orientation = "inherit";
+        drawer = {
+          transition-duration = 300;
+          transitition-left-to-right = false;
+        };
+        modules = [ "custom/arrow-toggle" "tray" "network" ];
+      };
 
       "hyprland/workspaces" = {
         format = "{icon}";
@@ -58,6 +66,7 @@
         rewrite = { "^(.*?)[[:space:]]*[-—|].*?$" = "$1"; };
         icon = true;
         icon-size = 20;
+        max-length = 30;
       };
       tray = { spacing = 10; };
 
@@ -266,10 +275,6 @@
           padding-left: 20px
       }
 
-      #battery.charging, #battery.plugged {
-          /* background-color: #94e2d5 ; */
-      }
-
       #battery {
           background-color: #fff;
           color:#a6e3a1;
@@ -434,7 +439,22 @@
 
       #keyboard-state > label.locked {
           background: rgba(0, 0, 0, 0.2);
+      }      
+
+      #custom-arrow-toggle {
+          font-size: 16px;
+          color: #516079;
+          opacity: 1; 
+          transition: opacity 0.2s ease-in-out; 
       }
+
+      #extras:hover #custom-arrow-toggle { 
+          opacity: 0;
+      }
+
+      #extras:hover { 
+          background-color: transparent;
+      } 
     '';
   };
 }
