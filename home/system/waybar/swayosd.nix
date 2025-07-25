@@ -21,7 +21,6 @@ let
       }
 
       image {
-        /* Set font-family to render Nerd Font icons correctly */
         font-family: "${nerdFont}";
         font-size: 14px;
         color: ${foreground};
