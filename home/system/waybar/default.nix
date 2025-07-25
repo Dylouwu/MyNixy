@@ -1,8 +1,6 @@
 {
 
-  imports = [ ./swaync.nix ];
-
-  wayland.windowManager.hyprland.settings.exec-once = [ "waybar" ];
+  imports = [ ./swaync.nix ./swayosd.nix ];
 
   programs.waybar = {
     enable = true;
