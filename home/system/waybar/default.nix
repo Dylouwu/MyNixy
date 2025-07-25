@@ -89,6 +89,8 @@
           plugged = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
         };
         on-click = "powermode-toggle";
+        on-click-right = ''
+          notif PowerProfile "Current Powermode : $(powerprofilesctl get)"'';
       };
       network = {
         format = "{ifname}";
