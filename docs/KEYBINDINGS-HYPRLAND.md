@@ -39,5 +39,5 @@
 | Toggle night shift | SUPER + F2 |
 | Move Window (mouse) | SUPER + mouse:272 |
 | Resize Window (mouse) | SUPER + R |
-| Toggle Mute | XF86AudioMute exec |
+| XF86AudioMute, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --output-volume mute-toggle'' | XF86AudioMute exec |
 | XF86AudioRaiseVolume, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --output-volume raise'' | XF86AudioRaiseVolume exec |
