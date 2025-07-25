@@ -1,7 +1,7 @@
 {
   imports = [
     ./nixy
-    ./sounds
+    # ./sounds
     ./brightness
     # ./caffeine
     ./hyprpanel

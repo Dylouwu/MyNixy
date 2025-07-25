@@ -3,7 +3,7 @@
   imports = [ ./swaync.nix ./swayosd.nix ];
 
   programs.waybar = {
-    enable = true;
+    enable = false;
     systemd.enable = true;
     settings.mainBar = {
       spacing = 5;
@@ -16,7 +16,7 @@
         "network"
         "battery"
         #"custom/cycle_wall"
-        #"group"
+        "group/extras"
         "custom/notification"
         "clock"
       ];
@@ -41,6 +41,11 @@
         on-click-right = "swaync-client -d -sw";
         escape = true;
       };
+
+      # "group/extras" = {
+      #   modules = {
+      #
+      #   }
 
       "hyprland/workspaces" = {
         format = "{icon}";
@@ -117,6 +122,10 @@
           color: 	#cba6f7;
       }
 
+      .modules-left #workspaces button {
+          border-bottom: 0px; 
+      }
+
       #workspaces button.active{
           padding-right: 20px;
           box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
@@ -127,6 +136,11 @@
           background-size: 300% 300%;
           animation: gradient 10s ease infinite;
           color: #fff;
+      }
+
+      .modules-left #workspaces button.focused,
+      .modules-left #workspaces button.active {
+          border-bottom: 0px;
       }
 
       @keyframes gradient {

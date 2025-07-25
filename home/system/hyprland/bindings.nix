@@ -47,13 +47,13 @@
 
     bindl = [
       ''
-        ,XF86AudioMute, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --output-volume mute-toggle'' # Toggle Mute
+        ,XF86AudioMute, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --output-volume mute-toggle'' 
       ''
-        ,XF86AudioPlay, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --playerctl play-pause'' # Play/Pause Song
+        ,XF86AudioPlay, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --playerctl play-pause''
       ''
-        ,XF86AudioNext, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --playerctl next'' # Next Song
+        ,XF86AudioNext, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --playerctl next'' 
       ''
-        ,XF86AudioPrev, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --playerctl previous'' # Previous Song
+        ,XF86AudioPrev, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --playerctl previous'' 
       ",switch:Lid Switch, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock when closing Lid
     ];
 
