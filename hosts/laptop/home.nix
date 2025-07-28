@@ -22,7 +22,6 @@
 
     # System (Desktop environment like stuff)
     ../../home/system/hyprland
-    # ../../home/system/hypridle
     ../../home/system/hyprlock
     #../../home/system/hyprpanel # CHANGEME: Uncomment to enable hyprpanel (and comment waybar)
     ../../home/system/waybar
