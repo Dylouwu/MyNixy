@@ -10,7 +10,7 @@
       margin-bottom = -11;
 
       modules-left = [ "hyprland/workspaces" "hyprland/window" ];
-      #modules-center = [ "custom/dynamic_pill" ];
+      modules-center = [ "cava" ];
       modules-right = [
         #"custom/cycle_wall"
         "group/extras"
@@ -34,6 +34,16 @@
         on-click = "powermode-toggle";
         on-click-right =
           ''notif PowerProfile "Current Powermode : $(powerprofilesctl get)"'';
+      };
+
+      cava = {
+        framerate = 240;
+        bars = 16;
+        bar_delimiter = 0;
+        sleep_timer = 2;
+        hide_on_silence = true;
+        higher_cutoff_freq = 5000;
+        format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
       };
 
       clock = {
@@ -108,7 +118,8 @@
         format = "{icon}";
         format-muted = "󰖁";
         format-icons = [ "󰕿" "󰖀" "󰕾" ];
-        on-click = "pavucontrol";
+        on-click = "pavucontrol -t 3";
+        scroll-step = 0.0; # Disable scroll step
       };
 
       tray = { spacing = 10; };
@@ -180,26 +191,16 @@
 
       #clock,
       #battery,
-      #cpu,
-      #memory,
-      #disk,
-      #temperature,
-      #backlight,
       #network,
       #pulseaudio,
-      #custom-media,
       #tray,
-      #mode,
-      #idle_inhibitor,
-      #custom-expand,
+      #cava,
       #custom-cycle_wall,
-      #custom-ss,
-      #custom-dynamic_pill,
       #custom-notification,
       #mpd {
           padding: 0 10px;
           border-radius: 15px;
-          background-color: #cdd6f4;
+          background-color: #fff;
           color: #516079;
           box-shadow: rgba(0, 0, 0, 0.116) 2 2 5 2px;
           margin-top: 10px;
@@ -207,36 +208,7 @@
           margin-right: 10px;
       }
 
-      #custom-dynamic_pill.low{
-          background: rgb(148,226,213);
-          background: linear-gradient(52deg, rgba(148,226,213,1) 0%, rgba(137,220,235,1) 19%, rgba(116,199,236,1) 43%, rgba(137,180,250,1) 56%, rgba(180,190,254,1) 80%, rgba(186,187,241,1) 100%); 
-          background-size: 300% 300%;
-          text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
-          animation: gradient 15s ease infinite;
-          font-weight: bolder;
-          color: #fff;
-      }
-      #custom-dynamic_pill.normal{
-          background: rgb(166,209,137);
-          background: linear-gradient(52deg, rgba(166,209,137,1) 0%, rgba(166,227,161,1) 26%, rgba(148,226,213,1) 65%, rgba(129,200,190,1) 100%); 
-          background-size: 300% 300%;
-          animation: gradient 15s ease infinite;
-          text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
-          font-weight: bolder;
-          color: #fff;
-      }
-      #custom-dynamic_pill.critical{
-          background: rgb(235,160,172);
-          background: linear-gradient(52deg, rgba(235,160,172,1) 0%, rgba(243,139,168,1) 30%, rgba(231,130,132,1) 48%, rgba(250,179,135,1) 77%, rgba(249,226,175,1) 100%); 
-          background-size: 300% 300%;
-          animation: gradient 15s ease infinite;
-          text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
-          font-weight: bolder;
-          color: #fff;
-      }
-
-
-      #custom-dynamic_pill.playing{
+      #cava{
           background: rgb(249,226,175);
           background: linear-gradient(45deg, rgba(249,226,175,1) 0%, rgba(245,194,231,1) 20%, rgba(180,190,254,1) 100%); 
           background-size: 300% 300%;
@@ -244,17 +216,12 @@
           text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
           font-weight: 900;
           color: #fff ;
-      }
-      #custom-dynamic_pill.paused{
-          background: #fff ;
-          font-weight: bolder;
-          color: #b4befe;
+          padding-top: 0px;
+          margin-left: 10px;
       }
 
-      #custom-ss,
       #pulseaudio,
       #pulseaudio.muted{
-          background: #fff;
           color: rgba(203,166,247,1);
           font-size: 20px;
           font-weight:  bolder;
@@ -274,7 +241,6 @@
           border-radius: 15px;
       }
 
-
       #clock {
           background: rgb(245,194,231);
           background: linear-gradient(45deg, rgba(245,194,231,1) 0%, rgba(203,166,247,1) 64%, rgba(202,158,230,1) 100%); 
@@ -291,7 +257,6 @@
       }
 
       #battery {
-          background-color: #fff;
           color:#a6e3a1;
           font-weight: bolder;
           padding-left: 15px;
@@ -313,34 +278,6 @@
           animation-timing-function: linear;
           animation-iteration-count: infinite;
           animation-direction: alternate;
-      }
-
-      label:focus {
-         
-      }
-
-      #cpu {
-          background: rgb(180,190,254);
-          background: linear-gradient(52deg, rgba(180,190,254,1) 0%, rgba(137,220,235,1) 32%, rgba(137,180,250,1) 72%, rgba(166,227,161,1) 100%); 
-          background-size: 300% 300%;
-          animation: gradient 20s ease infinite;
-          text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
-          /* background-color: #b4befe; */
-          color: 	#fff;
-      }
-
-      #memory {
-          background-color: #cba6f7;
-          color: 	#9a75c7;
-          font-weight: bolder;
-      }
-
-      #disk {
-          color: #964B00;
-      }
-
-      #backlight {
-          color: #90b1b1;
       }
 
       #network{
@@ -366,28 +303,6 @@
           background-color:#f9e2af ;
       }
 
-      #custom-media {
-          color: #66cc99;
-      }
-
-      #custom-media.custom-spotify {
-          background-color: #66cc99;
-      }
-
-      #custom-media.custom-vlc {
-          background-color: #ffa000;
-      }
-
-      #temperature {
-          background-color: #f9e2af;
-          color:#96804e;
-      }
-
-      #temperature.critical {
-          background-color: #f38ba8 ;
-          color:#bf5673;
-      }
-
       #tray {
           background-color: #1c1816;
       }
@@ -395,56 +310,6 @@
       #tray > .passive {
           -gtk-icon-effect: dim;
       }
-
-      #idle_inhibitor {
-          background-color: #2d3436;
-      }
-
-      #idle_inhibitor.activated {
-          background-color: #ecf0f1;
-          color: #2d3436;
-      }
-
-      #mpd {
-          background-color: #66cc99;
-          color: #2a5c45;
-      }
-
-      #mpd.disconnected {
-          background-color: #f53c3c;
-      }
-
-      #mpd.stopped {
-          background-color: #90b1b1;
-      }
-
-      #mpd.paused {
-          background-color: #51a37a;
-      }
-
-      #language {
-          background: #00b093;
-          color: #740864;
-          padding: 0 5px;
-          margin: 0 5px;
-          min-width: 16px;
-      }
-
-      #keyboard-state {
-          background: #97e1ad;
-          color: #000000;
-          padding: 0 0px;
-          margin: 0 5px;
-          min-width: 16px;
-      }
-
-      #keyboard-state > label {
-          padding: 0 5px;
-      }
-
-      #keyboard-state > label.locked {
-          background: rgba(0, 0, 0, 0.2);
-      }      
 
       #custom-arrow-toggle {
           font-size: 16px;
