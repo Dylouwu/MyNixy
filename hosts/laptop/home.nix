@@ -24,7 +24,7 @@
     ../../home/system/hyprland
     # ../../home/system/hypridle
     ../../home/system/hyprlock
-    #../../home/system/hyprpanel
+    #../../home/system/hyprpanel # CHANGEME: Uncomment to enable hyprpanel (and comment waybar)
     ../../home/system/waybar
     ../../home/system/hyprpaper
     ../../home/system/wofi
