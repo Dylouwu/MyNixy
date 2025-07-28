@@ -2,9 +2,9 @@
   imports = [
     ./nixy
     # ./sounds
-    ./brightness
+    # ./brightness
     # ./caffeine
-    ./hyprpanel
+    # ./hyprpanel
     # ./hyprfocus
     ./nerdfont-fzf
     ./night-shift
