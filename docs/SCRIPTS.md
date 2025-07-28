@@ -3,15 +3,6 @@
 
 Scripts are located in the 'home/scripts' folder. Home-manager add those in the user's path.
 
-## Brightness
-
-This module provides a set of scripts to control the brightness of the screen.
-
-- `brightness-up` increases the brightness by 5%.
-- `brightness-down` decreases the brightness by 5%.
-- `brightness-set [value]` sets the brightness to the given value.
-- `brightness-change [up|down] [value]` increases or decreases the brightness by the given value.
-
 ## Caffeine
 
 Caffeine is a simple script that toggles hypridle (disable suspend & screenlock).
@@ -20,23 +11,7 @@ Caffeine is a simple script that toggles hypridle (disable suspend & screenlock)
 - `caffeine-status-icon` - Check if hypridle is running. (icon)
 - `caffeine` - Toggle hypridle.
 
-## Hyprfocus
 
-A simple script to toggle focus on few windows in Hyprland.
-(disable gaps, border, shadow, opacity, etc.)
-
-- `hyprfocus-on` - Enable hyprfocus.
-- `hyprfocus-off` - Disable hyprfocus.
-- `hyprfocus-toggle` - Toggle hyprfocus.
-
-## Hyprpanel
-
-Quick scripts to toggle, reload, hide & show hyprpanel.
-
-- `hyprpanel-toggle` - Toggle hyprpanel (hide/show).
-- `hyprpanel-show` - Show hyprpanel.
-- `hyprpanel-hide` - Hide hyprpanel.
-- `hyprpanel-reload` - Reload hyprpanel.
 
 ## Nerdfont FZF
 
@@ -65,24 +40,11 @@ Nixy is a simple script that I use to manage my NixOS system. It's a simple scri
 
 
 
-## Powermode-Toggle
-# -
-This script toggles between performance and balanced power modes using `powerprofilesctl`.
-
 ## Screenshot
 
 This module provides a script to take screenshots using `grimblast` and `swappy`.
 
 - `screenshot [region|window|monitor] [swappy]` - Take a screenshot of the region, window, or monitor. Optionally, use `swappy` to copy the screenshot to the clipboard.
-
-## Sound
-
-This module provides a set of scripts to control the volume of the default audio sink using `wpctl`.
-
-- `sound-up` increases the volume by 5%.
-- `sound-down` decreases the volume by 5%.
-- `sound-set [value]` sets the volume to the given value.
-- `sound-toggle` toggles the mute state of the default audio sink.
 
 ## System
 
@@ -91,4 +53,6 @@ Useful quick scripts
 - `menu` - Open wofi with drun mode. (wofi)
 - `powermenu` - Open power dropdown menu. (wofi)
 - `lock` - Lock the screen. (hyprlock)
+
+
 
