@@ -46,26 +46,18 @@
     ];
 
     bindl = [
-      ''
-        ,XF86AudioMute, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --output-volume mute-toggle'' 
-      ''
-        ,XF86AudioPlay, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --playerctl play-pause''
-      ''
-        ,XF86AudioNext, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --playerctl next'' 
-      ''
-        ,XF86AudioPrev, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --playerctl previous'' 
+      ",XF86AudioMute, exec, sound-toggle" # Toggle Mute
+      ",XF86AudioPlay, exec, ${pkgs.swayosd}/bin/swayosd-client --playerctl play-pause" # Play/Pause Song
+      ",XF86AudioNext, exec, ${pkgs.swayosd}/bin/swayosd-client --playerctl next" # Next Song
+      ",XF86AudioPrev, exec, ${pkgs.swayosd}/bin/swayosd-client --playerctl previous" # Previous Song
       ",switch:Lid Switch, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock when closing Lid
     ];
 
     bindle = [
-      ''
-        ,XF86AudioRaiseVolume, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --output-volume raise''
-      ''
-        ,XF86AudioLowerVolume, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --output-volume lower''
-      ''
-        ,XF86MonBrightnessUp, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --brightness raise''
-      ''
-        ,XF86MonBrightnessDown, exec, ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --brightness lower''
+      ",XF86AudioRaiseVolume, exec, sound-up" # Sound Up
+      ",XF86AudioLowerVolume, exec, sound-down" # Sound Down
+      ",XF86MonBrightnessUp, exec, brightness-up" # Brightness Up
+      ",XF86MonBrightnessDown, exec, brightness-down" # Brightness Down
     ];
 
   };
