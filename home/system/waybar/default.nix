@@ -14,10 +14,34 @@
       modules-right = [
         #"custom/cycle_wall"
         "group/extras"
+        "pulseaudio"
         "battery"
         "custom/notification"
         "clock"
       ];
+
+      battery = {
+        states = {
+          warning = 20;
+          critical = 10;
+        };
+        format = "{icon} {capacity}%";
+        format-icons = {
+          default = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
+          charging = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
+          plugged = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
+        };
+        on-click = "powermode-toggle";
+        on-click-right =
+          ''notif PowerProfile "Current Powermode : $(powerprofilesctl get)"'';
+      };
+
+      clock = {
+        timezone = "Europe/Paris";
+        tooltip-format = "<big>{:%a %d %b}</big>";
+        interval = 60;
+        max-length = 25;
+      };
 
       "custom/arrow-toggle" = {
         format = " {icon} ";
@@ -55,12 +79,6 @@
         modules = [ "custom/arrow-toggle" "tray" "network" ];
       };
 
-      "hyprland/workspaces" = {
-        format = "{icon}";
-        format-active = " {icon} ";
-        all-outputs = true;
-      };
-
       "hyprland/window" = {
         format = "{}";
         rewrite = { "^(.*?)[[:space:]]*[-—|].*?$" = "$1"; };
@@ -68,30 +86,13 @@
         icon-size = 20;
         max-length = 30;
       };
-      tray = { spacing = 10; };
 
-      clock = {
-        timezone = "Europe/Paris";
-        tooltip-format = "<big>{:%a %d %b}</big>";
-        interval = 60;
-        max-length = 25;
+      "hyprland/workspaces" = {
+        format = "{icon}";
+        format-active = " {icon} ";
+        all-outputs = true;
       };
 
-      battery = {
-        states = {
-          warning = 20;
-          critical = 10;
-        };
-        format = "{icon} {capacity}%";
-        format-icons = {
-          default = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
-          charging = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
-          plugged = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
-        };
-        on-click = "powermode-toggle";
-        on-click-right = ''
-          notif PowerProfile "Current Powermode : $(powerprofilesctl get)"'';
-      };
       network = {
         format = "{ifname}";
         format-wifi = "{icon} {essid}";
@@ -102,6 +103,16 @@
         format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
         on-click = "kitty --class nmtui-float-term nmtui";
       };
+
+      pulseaudio = {
+        format = "{icon}";
+        format-muted = "󰖁";
+        format-icons = [ "󰕿" "󰖀" "󰕾" ];
+        on-click = "pavucontrol";
+      };
+
+      tray = { spacing = 10; };
+
     };
 
     style = ''
@@ -240,13 +251,15 @@
           color: #b4befe;
       }
 
-      #custom-ss{
+      #custom-ss,
+      #pulseaudio,
+      #pulseaudio.muted{
           background: #fff;
           color: rgba(203,166,247,1);
+          font-size: 20px;
           font-weight:  bolder;
-          padding: 5px;
-          padding-left: 20px;
-          padding-right: 20px;
+          padding-left: 14px;
+          padding-right: 16px;
           border-radius: 15px;
       }
 
@@ -351,16 +364,6 @@
 
       #network.ethernet{
           background-color:#f9e2af ;
-      }
-
-      #pulseaudio {
-          background-color:  	#fab387;
-          color: #bf7d54;
-          font-weight: bolder;
-      }
-
-      #pulseaudio.muted {
-          background-color: #90b1b1;
       }
 
       #custom-media {
