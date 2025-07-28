@@ -1,6 +1,6 @@
 # - ## Sound
 #-
-#- This module provides a set of scripts to control the volume of the default audio sink using `wpctl`.
+#- This module provides a set of scripts to control the volume of the default audio sink using `swayosd-client`.
 #-
 #- - `sound-up` increases the volume by 5%.
 #- - `sound-down` decreases the volume by 5%.
