@@ -104,7 +104,6 @@ let
 
       # Create the menu options
       options=(
-        "󰅶 Caffeine"
         "󰖔 Night-shift"
         " Nixy"
         "󰈊 Hyprpicker"
@@ -143,9 +142,6 @@ let
       if [[ $selected ]]; then
         selected=''${selected:2}
         case $selected in
-          "Caffeine")
-            caffeine
-            ;;
           "Night-shift")
             night-shift
             ;;
