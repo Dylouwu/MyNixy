@@ -22,7 +22,7 @@
     # System (Desktop environment like stuff)
     ../../home/system/hyprland
     ../../home/system/hyprlock
-    #../../home/system/hyprpanel # CHANGEME: Enable this if you want to use hyprpanel (and comment waybar)
+    #../../home/system/hyprpanel # CHANGEME: Uncomment to enable hyprpanel (and comment waybar)
     ../../home/system/waybar
     ../../home/system/hyprpaper
     ../../home/system/wofi
@@ -44,7 +44,6 @@
       discord
       vlc # Video player
       curtail # Compress images
-      obsidian # Markdown editor
       gnome-text-editor # Text editor
 
       # Dev
