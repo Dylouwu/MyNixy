@@ -41,8 +41,9 @@
         bars = 16;
         bar_delimiter = 0;
         sleep_timer = 2;
+        stereo = true;
         hide_on_silence = true;
-        higher_cutoff_freq = 5000;
+        higher_cutoff_freq = 8000;
         format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
       };
 
