@@ -11,8 +11,6 @@ Caffeine is a simple script that toggles hypridle (disable suspend & screenlock)
 - `caffeine-status-icon` - Check if hypridle is running. (icon)
 - `caffeine` - Toggle hypridle.
 
-
-
 ## Nerdfont FZF
 
 This module provides a script to search for Nerd Fonts icons using fzf.
@@ -53,6 +51,4 @@ Useful quick scripts
 - `menu` - Open wofi with drun mode. (wofi)
 - `powermenu` - Open power dropdown menu. (wofi)
 - `lock` - Lock the screen. (hyprlock)
-
-
 
