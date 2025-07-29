@@ -25,6 +25,8 @@ let
   weather-key = "/home/${config.var.username}/.weather.json";
 
 in {
+  imports = [ ./scripts ];
+
   wayland.windowManager.hyprland.settings.exec-once = [ "hyprpanel" ];
 
   programs.hyprpanel = {
@@ -254,4 +256,6 @@ in {
       wallpaper.enable = false;
     };
   };
+
+  file.".face.icon" = { source = ../../../src/purin.jpg; };
 }
