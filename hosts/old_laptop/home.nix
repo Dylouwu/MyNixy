@@ -71,6 +71,9 @@
       vscode
     ];
 
+    # Import my profile picture, used by the hyprpanel dashboard
+    file.".face.icon" = { source = ../../src/purin.jpg; };
+
     # Don't touch this
     stateVersion = "24.05";
   };

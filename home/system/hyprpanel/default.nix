@@ -256,6 +256,4 @@ in {
       wallpaper.enable = false;
     };
   };
-
-  file.".face.icon" = { source = ../../../src/purin.jpg; };
 }
