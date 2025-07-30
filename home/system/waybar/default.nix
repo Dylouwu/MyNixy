@@ -27,6 +27,7 @@
           default = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
           charging = [ "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅" ];
         };
+        format-full = "󱟢";
         on-click = "powermode-toggle";
         on-click-right =
           ''notif PowerProfile "Current Powermode : $(powerprofilesctl get)"'';
@@ -266,8 +267,8 @@
       #battery {
           color:#a6e3a1;
           font-size: 17px;
-          padding-left: 15px;
-          padding-right: 15px;
+          padding-left: 14px;
+          padding-right: 16px;
           border-radius: 15px;
       }
 
