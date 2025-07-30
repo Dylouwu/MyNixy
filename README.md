@@ -32,7 +32,7 @@
 
 **Nixy features:**
 
-- 💻 Hyprland-centric: Preconfigured Hyprland ecosystem (Hyprlock, Hyprpanel, etc.)
+- 💻 Hyprland-centric: Preconfigured Hyprland ecosystem (Hyprlock, Hyprpaper, etc.)
 - 🏠 Home-manager support
 - 🔏 Secret handling with [sops](https://https://github.com/Mic92/sops-nix)
 - 🏔️ Nvidia GPU support (optimus-manager, nvidia-prime, ...)
@@ -40,10 +40,11 @@
 
 **MyNixy major additions:**
 
+- 💫 Both **waybar** and **hyprpanel** have a configuration, allowing you to choose your preferred panel.
 - 🕹️ **A fully customizable and optimized Minecraft Paper server**, which can be started and stopped directly from the glance dashboard through API calls.
 - 💾 New server modules : Cyberchef, Fail2ban, Autosleep, ...
-- 🎮 Gaming integration with Steam x Proton, Osu-Lazer, Modrinth (Minecraft Open-Source launcher).
 - 📦 **A WSL2 compatible configuration** for Nixy, allowing you to run Nixy on Windows natively.
+- 🎮 Gaming integration with Steam x Proton, Osu-Lazer, Modrinth (Minecraft Open-Source launcher).
 
 Other small modifications include:
 
