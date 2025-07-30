@@ -40,9 +40,11 @@
         framerate = 240;
         bars = 32;
         bar_delimiter = 0;
-        sleep_timer = 2;
         stereo = true;
+        input_delay = 2;
+        sleep_timer = 2;
         hide_on_silence = true;
+        lower_cutoff_freq = 100;
         higher_cutoff_freq = 8000;
         format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
       };
