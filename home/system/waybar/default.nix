@@ -21,15 +21,11 @@
       ];
 
       battery = {
-        states = {
-          warning = 20;
-          critical = 10;
-        };
-        format = "{icon} {capacity}%";
+        states = { critical = 10; };
+        format = "{icon}";
         format-icons = {
-          default = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
-          charging = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
-          plugged = [ "󰂆" "󰂈" "󰂉" "󰂊" "󰂅" ];
+          default = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+          charging = [ "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅" ];
         };
         on-click = "powermode-toggle";
         on-click-right =
@@ -51,7 +47,16 @@
 
       clock = {
         timezone = "Europe/Paris";
-        tooltip-format = "<big>{:%a %d %b}</big>";
+        tooltip-format = "<span>{calendar}</span>";
+        calendar = {
+          mode = "month";
+          format = {
+            today = "<span color='#e7bbe4'><b>{}</b></span>";
+            days = "<span color='#cdd6f4'><b>{}</b></span>";
+            weekdays = "<span color='#7cd37c'><b>{}</b></span>";
+            months = "<b>{}</b>";
+          };
+        };
         interval = 60;
         max-length = 25;
       };
@@ -260,9 +265,10 @@
 
       #battery {
           color:#a6e3a1;
-          font-weight: bolder;
+          font-size: 17px;
           padding-left: 15px;
           padding-right: 15px;
+          border-radius: 15px;
       }
 
       @keyframes blink {
