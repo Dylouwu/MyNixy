@@ -69,7 +69,7 @@ Other small modifications include:
 
 ## Gallery
 
-![nvim, lazygit](.github/assets/nixy/3.png)
+![nvim, lazygit](.github/assets/nixy/1.png)
 
 ## Architecture
 
