@@ -30,7 +30,7 @@ It use hyprsunset to control the screen temperature.
 
 ## Nixy
 
-Nixy is a simple script that I use to manage my NixOS system. It's a simple script that provides a menu to rebuild, upgrade, update, collect garbage, clean boot menu, etc. 
+Nixy is a simple script that I use to manage my NixOS system. It's a simple script that provides a menu to rebuild, test, update, collect garbage, clean boot menu, etc. 
 
 - `nixy` - UI wizard to manage the system.
 - `nixy rebuild` - Rebuild the system.
