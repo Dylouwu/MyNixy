@@ -35,7 +35,6 @@ in {
 
   nixpkgs.config = {
     nvidia.acceptLicense = true;
-    allowUnfree = true;
   };
   hardware = {
     nvidia = {

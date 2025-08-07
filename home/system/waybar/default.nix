@@ -35,7 +35,7 @@
 
       cava = {
         framerate = 240;
-        bars = 32;
+        bars = 20;
         bar_delimiter = 0;
         stereo = true;
         input_delay = 2;
