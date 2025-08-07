@@ -371,10 +371,6 @@ in {
                               {{ findMatch "^([^.]+)" (.String "name") }}
                             </span>
                             <div class="indicators-container">
-                              {{ if (.Bool "updateAvailable") }}
-                              <span class="update-indicator" data-popover-type="text" data-popover-text="Update Available"></span>
-                              {{ end }}
-
                               {{ $lastSeen := .String "lastSeen" | parseTime "rfc3339" }}
                               {{ if not ($lastSeen.After (offsetNow "-10s")) }}
                               {{ $lastSeenTimezoned := $lastSeen.In now.Location }}
