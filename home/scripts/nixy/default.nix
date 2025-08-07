@@ -1,6 +1,6 @@
 # - ## Nixy
 #- 
-#- Nixy is a simple script that I use to manage my NixOS system. It's a simple script that provides a menu to rebuild, upgrade, update, collect garbage, clean boot menu, etc. 
+#- Nixy is a simple script that I use to manage my NixOS system. It's a simple script that provides a menu to rebuild, test, update, collect garbage, clean boot menu, etc. 
 #-
 #- - `nixy` - UI wizard to manage the system.
 #- - `nixy rebuild` - Rebuild the system.
@@ -24,7 +24,7 @@ let
         # "icon;name;command"[]
         apps=(
           "󰑓;Rebuild;nixy rebuild"
-          "󰦗;Upgrade;nixy upgrade"
+          "󰐊;Test;nixy test"
           "󰚰;Update;nixy update"
           ";Collect Garbage;nixy gc"
           "󰍜;Clean Boot Menu;nixy cb"
@@ -50,9 +50,9 @@ let
       [[ $1 == "" ]] && ui
 
       if [[ $1 == "rebuild" ]];then
-        cd ${configDirectory} && git add . && sudo nixos-rebuild switch --flake ${configDirectory}#${hostname}
-      elif [[ $1 == "upgrade" ]];then
-        cd ${configDirectory} && git add . && sudo nixos-rebuild switch --upgrade --flake ${configDirectory}#${hostname}
+        cd ${configDirectory} && git add . && sudo nixos-rebuild switch --flake
+      elif [[ $1 == "test" ]];then
+        cd ${configDirectory} && git add . && sudo nixos-rebuild test --flake
       elif [[ $1 == "update" ]];then
         cd ${configDirectory} && nix flake update
       elif [[ $1 == "gc" ]];then
