@@ -1,7 +1,7 @@
 # Nixvim is a NixOS module that installs and configures Neovim
 { inputs, ... }: {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     ./plugins/cmp.nix
     ./plugins/floaterm.nix
     ./plugins/git.nix
