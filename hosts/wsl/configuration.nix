@@ -8,7 +8,6 @@
     ../../nixos/tailscale.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
-    ../../nixos/xserver.nix
 
     # You should let those lines as is
     ./hardware-configuration.nix
