@@ -19,7 +19,7 @@ let
       title="󰖔  Night-Shift Activated"
       description="Night-Shift is now activated! Your screen will be warmer and easier on the eyes."
 
-      notif "night-shift" "$title" "$description"
+      #notif "night-shift" "$title" "$description"
     '';
 
   night-shift-off = pkgs.writeShellScriptBin "night-shift-off"
@@ -29,7 +29,7 @@ let
       title="󰖕  Night-Shift Deactivated"
       description="Night-Shift is now deactivated! Your screen will return to normal."
 
-      notif "night-shift" "$title" "$description"
+      #notif "night-shift" "$title" "$description"
     '';
 
   night-shift = pkgs.writeShellScriptBin "night-shift"
