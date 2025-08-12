@@ -15,8 +15,8 @@ in {
 
     blacklistedKernelModules = [ "nouveau" ];
 
-    initrd.kernelModules = # for early KMS support with nvidia
-      [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
+    initrd.kernelModules = # for early KMS support with nvidia and ntsync
+      [ "ntsync" "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
   };
 
   environment.variables = {
@@ -33,9 +33,7 @@ in {
     XDG_SESSION_TYPE = "wayland";
   };
 
-  nixpkgs.config = {
-    nvidia.acceptLicense = true;
-  };
+  nixpkgs.config = { nvidia.acceptLicense = true; };
   hardware = {
     nvidia = {
       open = false;
