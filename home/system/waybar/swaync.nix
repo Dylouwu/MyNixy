@@ -2,9 +2,6 @@
   services.swaync = {
     enable = true;
     settings = {
-      positionX = "right";
-      positionY = "top";
-
       control-center-layer = "top";
       control-center-width = 400;
       control-center-height = 400;
