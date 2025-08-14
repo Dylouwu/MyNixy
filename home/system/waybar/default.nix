@@ -253,7 +253,7 @@
           background: rgb(245,194,231);
           background: linear-gradient(45deg, rgba(245,194,231,1) 0%, rgba(203,166,247,1) 64%, rgba(202,158,230,1) 100%); 
           margin-right: 25px;
-          color: #fff ;
+          color: #fff;
           background-size: 300% 300%;
           text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
           animation: gradient 20s ease infinite;
