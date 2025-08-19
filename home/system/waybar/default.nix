@@ -1,6 +1,11 @@
 {
 
-  imports = [ ./scripts ./swaync.nix ./swayosd.nix ];
+  imports = [
+    ./scripts
+    ./dunst.nix
+    #./swaync.nix 
+    ./swayosd.nix
+  ];
 
   programs.waybar = {
     enable = true;
@@ -16,7 +21,7 @@
         "group/extras"
         "pulseaudio"
         "battery"
-        "custom/notification"
+        #"custom/notification"
         "clock"
       ];
 
