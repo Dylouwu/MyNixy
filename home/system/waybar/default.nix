@@ -38,7 +38,7 @@
         bars = 20;
         bar_delimiter = 0;
         stereo = true;
-        input_delay = 2;
+        input_delay = 4;
         sleep_timer = 2;
         hide_on_silence = true;
         lower_cutoff_freq = 100;
@@ -234,7 +234,7 @@
           font-size: 20px;
           font-weight:  bolder;
           padding-left: 14px;
-          padding-right: 16px;
+          padding-right: 15px;
           border-radius: 15px;
       }
 
@@ -267,7 +267,7 @@
       #battery {
           color:#a6e3a1;
           font-size: 17px;
-          padding-left: 15px;
+          padding-left: 14px;
           padding-right: 15px;
           border-radius: 15px;
       }
