@@ -55,6 +55,7 @@
       just
       python3
       pnpm
+      zulu
 
       # Utils
       file
