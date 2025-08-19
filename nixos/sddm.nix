@@ -1,8 +1,14 @@
 { pkgs, inputs, ... }:
 let
   sddm-astronaut = pkgs.sddm-astronaut.override {
-    embeddedTheme = "pixel_sakura";
-    themeConfig = { };
+    embeddedTheme = "hyprland_kath";
+    themeConfig = {
+      ScreenWidth = 2560;
+      ScreenHeight = 1440;
+      HideVirtualKeyboard = true;
+      HideSystemButtons = false;
+      HideLoginButton = true;
+    };
   };
 in {
   services.displayManager = {
