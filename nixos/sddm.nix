@@ -1,10 +1,10 @@
-{ pkgs, inputs, ... }:
+{ pkgs, config, inputs, ... }:
 let
   sddm-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "hyprland_kath";
     themeConfig = {
-      ScreenWidth = 2560;
-      ScreenHeight = 1440;
+      ScreenWidth = config.var.monitors.monitor1.width;
+      ScreenHeight = config.var.monitors.monitor1.height;
       HideVirtualKeyboard = true;
       HideSystemButtons = false;
       HideLoginButton = true;

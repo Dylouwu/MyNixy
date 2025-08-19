@@ -9,6 +9,7 @@ let
   rounding = config.theme.rounding;
   blur = config.theme.blur;
   keyboardLayout = config.var.keyboardLayout;
+  monitors = config.var.monitors;
 in {
 
   imports = [ ./animations.nix ./bindings.nix ./polkitagent.nix ];
@@ -40,7 +41,6 @@ in {
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
-    # withUWSM = true; # One day, but not today
     systemd.variables = [ "--all" ];
 
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
@@ -55,8 +55,16 @@ in {
       exec-once = [ "night-shift-on" ];
 
       monitor = [
-        "eDP-2,2560x1440@240,0x0,1.25"
-        "HDMI-A-1,2560x1440@360,-2048x0,1.25,bitdepth,10"
+        "${monitors.monitor2.id},${toString monitors.monitor2.width}x${
+          toString monitors.monitor2.height
+        }@${toString monitors.monitor2.fps},0x0,${
+          toString monitors.monitor2.scale
+        }"
+        "${monitors.monitor1.id},${toString monitors.monitor1.width}x${
+          toString monitors.monitor1.height
+        }@${toString monitors.monitor1.fps},-${
+          toString (monitors.monitor1.width * monitors.monitor1.scale)
+        }x0,${toString monitors.monitor1.scale},bitdepth,10"
         ",prefered,auto,1"
       ];
 
@@ -87,7 +95,7 @@ in {
 
       cursor = {
         no_hardware_cursors = true;
-        default_monitor = "HDMI-A-1";
+        default_monitor = "${monitors.monitor1.id}";
       };
 
       general = {
@@ -98,9 +106,7 @@ in {
         layout = "master";
       };
 
-      render = {
-        cm_fs_passthrough = true;
-      };
+      render = { cm_fs_passthrough = true; };
 
       windowrulev2 = [
         "float, tag:modal"
