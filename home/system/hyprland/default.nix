@@ -10,6 +10,8 @@ let
   blur = config.theme.blur;
   keyboardLayout = config.var.keyboardLayout;
   monitors = config.var.monitors;
+  monitor1 = monitors.monitor1;
+  monitor2 = monitors.monitor2;
 in {
 
   imports = [ ./animations.nix ./bindings.nix ./polkitagent.nix ];
@@ -55,16 +57,14 @@ in {
       exec-once = [ "night-shift-on" ];
 
       monitor = [
-        "${monitors.monitor2.id},${toString monitors.monitor2.width}x${
-          toString monitors.monitor2.height
-        }@${toString monitors.monitor2.fps},0x0,${
-          toString monitors.monitor2.scale
-        }"
-        "${monitors.monitor1.id},${toString monitors.monitor1.width}x${
-          toString monitors.monitor1.height
-        }@${toString monitors.monitor1.fps},-${
-          toString (monitors.monitor1.width * monitors.monitor1.scale)
-        }x0,${toString monitors.monitor1.scale},bitdepth,10"
+        "${monitor2.id},${toString monitor2.width}x${
+          toString monitor2.height
+        }@${toString monitor2.fps},0x0,${toString monitor2.scale}"
+        "${monitor1.id},${toString monitor1.width}x${
+          toString monitor1.height
+        }@${toString monitor1.fps},-${
+          toString (monitor1.width * monitor1.scale)
+        }x0,${toString monitor1.scale},bitdepth,10"
         ",prefered,auto,1"
       ];
 
@@ -91,11 +91,16 @@ in {
         "AQ_DRM_DEVICES,/dev/dri/card2:/dev/dri/card1" # CHANGEME: Related to the GPU
       ];
 
+      ecosystem = {
+        no_update_news = true;
+        no_donation_nag = true;
+      };
+
       debug = { full_cm_proto = true; };
 
       cursor = {
         no_hardware_cursors = true;
-        default_monitor = "${monitors.monitor1.id}";
+        default_monitor = "${monitor1.id}";
       };
 
       general = {
