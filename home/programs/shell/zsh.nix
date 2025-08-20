@@ -184,6 +184,8 @@ in {
       tmp = "nvim /tmp/$(date | sed 's/ //g;s/\\.//g').md";
       wireguard-import = "nmcli connection import type wireguard file";
 
+      n = "nixy";
+      nr = "nixy rebuild";
       nix-shell = "nix-shell --command zsh";
       nix-develop = "nix develop --command zsh";
 
