@@ -64,7 +64,7 @@ in {
           toString monitor1.height
         }@${toString monitor1.fps},-${
           toString (monitor1.width / monitor1.scale)
-        }x0,${toString monitor1.scale}, vrr, 2, bitdepth,10"
+        }x0,${toString monitor1.scale}, vrr, 1, bitdepth,10"
         ",prefered,auto,1"
       ];
 
