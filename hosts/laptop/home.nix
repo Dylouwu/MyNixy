@@ -67,6 +67,7 @@
       btop
       pavucontrol
       fastfetch
+      openvpn 
       veracrypt
 
       # Backup
