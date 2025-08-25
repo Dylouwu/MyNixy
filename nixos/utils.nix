@@ -11,8 +11,6 @@ in {
   networking.hostName = hostname;
 
   networking.networkmanager.enable = true;
-  programs.nm-applet.enable = true;
-  programs.nm-applet.indicator = true;
   systemd.services.NetworkManager-wait-online.enable = false;
 
   system.autoUpgrade = {
