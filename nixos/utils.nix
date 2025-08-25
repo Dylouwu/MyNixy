@@ -11,6 +11,8 @@ in {
   networking.hostName = hostname;
 
   networking.networkmanager.enable = true;
+  programs.nm-applet.enable = true;
+  programs.nm-applet.indicator = true;
   systemd.services.NetworkManager-wait-online.enable = false;
 
   system.autoUpgrade = {
@@ -46,7 +48,6 @@ in {
     BROWSER = "zen";
   };
 
-  services.libinput.enable = true;
   programs.dconf.enable = true;
   services = {
     dbus = {
@@ -55,9 +56,14 @@ in {
       packages = with pkgs; [ gcr gnome-settings-daemon ];
     };
     gvfs.enable = true;
-    upower.enable = true;
+    libinput.enable = true;
+    scx = {
+      enable = true;
+      scheduler = "scx_lavd";
+    };
     power-profiles-daemon.enable = true;
     udisks2.enable = true;
+    upower.enable = true;
   };
 
   # enable zsh autocompletion for system packages (systemd, etc)
