@@ -161,8 +161,6 @@ in {
       vi = "nvim";
       v = "nvim";
       c = "clear";
-      clera = "clear";
-      celar = "clear";
       e = "exit";
       cd = "z";
       ls = "eza --icons=always --no-quotes";
@@ -192,6 +190,9 @@ in {
       j = "just";
       open = "${pkgs.xdg-utils}/bin/xdg-open";
       icat = "${pkgs.kitty}/bin/kitty +kitten icat";
+
+      cl =
+        "clang++ -std=c++26 -ggdb -pedantic-errors -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Werror";
 
       # git
       g = "lazygit";
