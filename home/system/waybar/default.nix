@@ -131,7 +131,7 @@
         format = "{icon}";
         format-muted = "󰖁";
         format-icons = [ "󰕿" "󰖀" "󰕾" ];
-        on-click = "pavucontrol -t 3";
+        on-click = "pwvucontrol";
         scroll-step = 0.0; # Disable scroll step
       };
 

@@ -65,7 +65,7 @@
       zip
       unzip
       btop
-      pavucontrol
+      pwvucontrol
       fastfetch
       openvpn 
       veracrypt

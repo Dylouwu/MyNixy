@@ -62,7 +62,7 @@
       zip
       unzip
       btop
-      pavucontrol
+      pwvucontrol
       fastfetch
       veracrypt
 
