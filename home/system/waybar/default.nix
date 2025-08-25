@@ -272,7 +272,7 @@
       #battery {
           color:#a6e3a1;
           font-size: 17px;
-          padding-left: 14px;
+          padding-left: 15px;
           padding-right: 15px;
           border-radius: 15px;
       }

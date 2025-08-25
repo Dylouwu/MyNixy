@@ -4,12 +4,12 @@
     ../../nixos/audio.nix
     ../../nixos/docker.nix
     ../../nixos/fonts.nix
-    ../../nixos/grub.nix
     ../../nixos/home-manager.nix
     ../../nixos/nix.nix
     ../../nixos/nvidia.nix # CHANGEME : remove this line if you don't have an Nvidia GPU
     ../../nixos/sddm.nix
     ../../nixos/steam.nix
+    ../../nixos/systemd-boot.nix
     ../../nixos/tailscale.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
