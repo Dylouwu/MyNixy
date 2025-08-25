@@ -2,7 +2,6 @@
 { pkgs, config, ... }:
 let user = config.var.username;
 in {
-  # ctrl + m to toggle the menubar
   home = {
     file = {
       ".config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml".text = ''
