@@ -6,6 +6,8 @@
       "ctrl+shift+j" = "neighboring_window down";
       "ctrl+shift+k" = "neighboring_window up";
       "ctrl+shift+l" = "neighboring_window right";
+      "ctrl+shift+t" = "new_tab_with_cwd";
+      "ctrl+shift+enter" = "new_window_with_cwd";
       "ctrl+f2" = "detach_window";
     };
     settings = {
