@@ -25,8 +25,6 @@ let
   weather-key = "/home/${config.var.username}/.weather.json";
 
 in {
-  imports = [ ./scripts ];
-
   wayland.windowManager.hyprland.settings.exec-once = [ "hyprpanel" ];
 
   programs.hyprpanel = {

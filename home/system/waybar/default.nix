@@ -1,11 +1,8 @@
-{
+{ config, pkgs, ... }: {
+  imports = [ ./swaync.nix ./swayosd.nix ];
 
-  imports = [
-    ./scripts
-    ./dunst.nix
-    #./swaync.nix 
-    ./swayosd.nix
-  ];
+  wayland.windowManager.hyprland.settings.exec-once =
+    [ "${pkgs.networkmanagerapplet}/bin/nm-applet" ];
 
   programs.waybar = {
     enable = true;
@@ -16,14 +13,8 @@
 
       modules-left = [ "hyprland/workspaces" "hyprland/window" ];
       modules-center = [ "cava" ];
-      modules-right = [
-        #"custom/cycle_wall"
-        "group/extras"
-        "pulseaudio"
-        "battery"
-        #"custom/notification"
-        "clock"
-      ];
+      modules-right =
+        [ "group/extras" "pulseaudio" "battery" "custom/notification" "clock" ];
 
       battery = {
         states = { critical = 10; };
@@ -34,8 +25,8 @@
         };
         format-full = "󱟢";
         on-click = "powermode-toggle";
-        on-click-right =
-          ''notif PowerProfile "Current Powermode : $(powerprofilesctl get)"'';
+        on-click-right = ''
+          ${pkgs.swayosd}/bin/swayosd-client --custom-message="Powermode is set to $(powerprofilesctl get)" --custom-icon="emblem-default"'';
       };
 
       cava = {

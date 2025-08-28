@@ -5,6 +5,7 @@
     ./nerdfont-fzf
     ./night-shift
     ./notification
+    ./powermode
     ./screenshot
     ./system
   ];
