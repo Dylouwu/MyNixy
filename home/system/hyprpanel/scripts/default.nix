@@ -1,1 +1,1 @@
-{ imports = [ ./brightness.nix ./hyprpanel.nix ./hyprfocus.nix ./sounds.nix ]; }
+{ imports = [ ./brightness.nix ./hyprpanel.nix ./sounds.nix ]; }
