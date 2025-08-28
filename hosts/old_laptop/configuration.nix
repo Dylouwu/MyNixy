@@ -5,6 +5,7 @@
     ../../nixos/docker.nix
     ../../nixos/fonts.nix
     ../../nixos/home-manager.nix
+    ../../nixos/hyprland.nix
     ../../nixos/nix.nix
     ../../nixos/nvidia.nix # CHANGEME : remove this line if you don't have an Nvidia GPU
     ../../nixos/sddm.nix

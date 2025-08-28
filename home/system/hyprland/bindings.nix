@@ -1,12 +1,12 @@
 { pkgs, ... }: {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "$mod,RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
-      "$mod,E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
-      "$mod,B, exec, zen" # Zen Browser
-      "$mod,L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
-      "$mod,D, exec, ${pkgs.discord}/bin/discord" # Discord
-      "$mod,S, exec, steam" # Steam
+      "$mod,RETURN, exec, uwsm app -- ${pkgs.kitty}/bin/kitty" # Kitty
+      "$mod,E, exec, uwsm app -- ${pkgs.xfce.thunar}/bin/thunar" # Thunar
+      "$mod,B, exec, uwsm app -- zen" # Zen Browser
+      "$mod,L, exec, uwsm app -- ${pkgs.hyprlock}/bin/hyprlock" # Lock
+      "$mod,D, exec, uwsm app -- ${pkgs.discord}/bin/discord" # Discord
+      "$mod,S, exec, uwsm app -- steam" # Steam
       "$mod,X, exec, powermenu" # Powermenu
       "$mod,SPACE, exec, menu" # Launcher
       "$mod,C, exec, quickmenu" # Quickmenu
@@ -29,7 +29,6 @@
       "$shiftMod,PRINT, exec, screenshot window" # Screenshot window
       "ALT,PRINT, exec, screenshot region swappy" # Screenshot region then edit
 
-      "$shiftMod,T, exec, hyprpanel-toggle" # Toggle hyprpanel
       "$shiftMod,C, exec, clipboard" # Clipboard picker with wofi
       "$shiftMod,E, exec, ${pkgs.wofi-emoji}/bin/wofi-emoji" # Emoji picker with wofi
       "$mod,F2, exec, night-shift" # Toggle night shift
@@ -46,19 +45,7 @@
     ];
 
     bindl = [
-      ",XF86AudioMute, exec, sound-toggle" # Toggle Mute
-      ",XF86AudioPlay, exec, ${pkgs.swayosd}/bin/swayosd-client --playerctl play-pause" # Play/Pause Song
-      ",XF86AudioNext, exec, ${pkgs.swayosd}/bin/swayosd-client --playerctl next" # Next Song
-      ",XF86AudioPrev, exec, ${pkgs.swayosd}/bin/swayosd-client --playerctl previous" # Previous Song
       ",switch:Lid Switch, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock when closing Lid
     ];
-
-    bindle = [
-      ",XF86AudioRaiseVolume, exec, sound-up" # Sound Up
-      ",XF86AudioLowerVolume, exec, sound-down" # Sound Down
-      ",XF86MonBrightnessUp, exec, brightness-up" # Brightness Up
-      ",XF86MonBrightnessDown, exec, brightness-down" # Brightness Down
-    ];
-
   };
 }

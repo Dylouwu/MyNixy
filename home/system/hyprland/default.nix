@@ -45,16 +45,19 @@ in {
     systemd.enable = true;
     systemd.variables = [ "--all" ];
 
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+    package = null;
 
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    portalPackage = null;
 
     settings = {
       "$mod" = "SUPER";
       "$shiftMod" = "SUPER_SHIFT";
 
-      exec-once = [ "night-shift-on" ];
+      exec-once = [
+        "night-shift-on &"
+        "dbus-update-activation-environment --systemd --all &"
+        "systemctl --user enable --now hyprpaper.service &"
+      ];
 
       monitor = [
         "${monitor2.id},${toString monitor2.width}x${
@@ -200,6 +203,4 @@ in {
 
     };
   };
-  systemd.user.targets.hyprland-session.Unit.Wants =
-    [ "xdg-desktop-autostart.target" ];
 }
