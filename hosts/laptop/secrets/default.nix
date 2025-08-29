@@ -10,12 +10,11 @@ in {
     secrets = {
       ssh-config = { path = "/home/${username}/.ssh/config"; };
       github-key = { path = "/home/${username}/.ssh/github"; };
+      hyrule-key = { path = "/home/${username}/.ssh/hyrule"; };
       weather-key = { path = "/home/${username}/.weather.json"; };
       github-token = { path = "/home/${username}/.config/nix/nix.conf"; };
       signing-key = { path = "/home/${username}/.ssh/signing-key"; };
       signing-key-pub = { path = "/home/${username}/.ssh/signing-key.pub"; };
-      #gitlab-key = { path = "/home/${username}/.ssh/gitlab"; };
-      #pia = { path = "/home/${username}/.config/pia/pia.ovpn"; };
 
     };
   };
