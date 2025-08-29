@@ -10,7 +10,7 @@ in {
     secrets = {
       ssh-config = { path = "/home/${username}/.ssh/config"; };
       github-key = { path = "/home/${username}/.ssh/github"; };
-      hyrule-key = { path = "/home/${username}/.ssh/hyrule"; };
+      hyrule-key = { path = "/home/${username}/.ssh/id_ed25519"; };
       weather-key = { path = "/home/${username}/.weather.json"; };
       github-token = { path = "/home/${username}/.config/nix/nix.conf"; };
       signing-key = { path = "/home/${username}/.ssh/signing-key"; };
