@@ -1,7 +1,7 @@
 { lib, pkgs, config, ... }:
 let
   nvidiaDriverChannel =
-    config.boot.kernelPackages.nvidiaPackages.beta; # stable, latest, beta, etc.
+    config.boot.kernelPackages.nvidiaPackages.production; # stable, latest, beta, etc.
 in {
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ]; # or "nvidiaLegacy470 etc.
@@ -20,12 +20,12 @@ in {
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     __GL_GSYNC_ALLOWED = "1";
     __GL_VRR_ALLOWED = "0";
-    GBM_BACKEND = "nvidia-drm"; # If crash in firefox, remove this line
+    GBM_BACKEND = "nvidia-drm";
     LIBVA_DRIVER_NAME = "nvidia"; # hardware acceleration
     NVD_BACKEND = "direct";
     WLR_NO_HARDWARE_CURSORS = "1"; # Fix for cursors on Wayland
     NIXOS_OZONE_WL = "1"; # Wayland support for Electron apps
-    WLR_DRM_NO_ATOMIC = "1"; # Fix for some issues with Hyprland
+    WLR_DRM_NO_ATOMIC = "1";
     MOZ_ENABLE_WAYLAND = "1"; # Wayland support for firefox
     XDG_SESSION_TYPE = "wayland";
   };
@@ -78,10 +78,5 @@ in {
     ];
   };
 
-  # Additional useful packages
-  environment.systemPackages = with pkgs; [
-    vulkan-tools
-    glxinfo
-    libva-utils # VA-API debugging tools
-  ];
+  environment.systemPackages = with pkgs; [ vulkan-tools glxinfo ];
 }
