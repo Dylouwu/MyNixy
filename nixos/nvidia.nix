@@ -14,9 +14,6 @@ in {
     ]);
 
     blacklistedKernelModules = [ "nouveau" ];
-
-    initrd.kernelModules = # for early KMS support with nvidia and ntsync
-      [ "ntsync" "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
   };
 
   environment.variables = {
