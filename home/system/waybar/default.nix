@@ -1,9 +1,6 @@
 { config, pkgs, ... }: {
   imports = [ ./swaync.nix ./swayosd.nix ];
 
-  wayland.windowManager.hyprland.settings.exec-once =
-    [ "${pkgs.networkmanagerapplet}/bin/nm-applet" ];
-
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -26,7 +23,7 @@
         format-full = "󱟢";
         on-click = "powermode-toggle";
         on-click-right = ''
-          ${pkgs.swayosd}/bin/swayosd-client --custom-message="Powermode is set to $(powerprofilesctl get)" --custom-icon="emblem-default"'';
+          ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --custom-message="Powermode is set to $(powerprofilesctl get)" --custom-icon="emblem-default"'';
       };
 
       cava = {

@@ -16,14 +16,14 @@ let
     # bash 
     ''
       ${pkgs.hyprsunset}/bin/hyprsunset -t ${value} &
-      ${pkgs.swayosd}/bin/swayosd-client --custom-message="Night-Shift On" --custom-icon="emblem-default"
+      ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --custom-message="Night-Shift On" --custom-icon="emblem-default"
     '';
 
   night-shift-off = pkgs.writeShellScriptBin "night-shift-off"
     # bash 
     ''
       pkill hyprsunset
-      ${pkgs.swayosd}/bin/swayosd-client --custom-message="Night-Shift Off" --custom-icon="emblem-default"
+      ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --custom-message="Night-Shift Off" --custom-icon="emblem-default"
     '';
 
   night-shift = pkgs.writeShellScriptBin "night-shift"

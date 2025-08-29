@@ -19,10 +19,10 @@ let
   caffeine = pkgs.writeShellScriptBin "caffeine" ''
     if [[ $(pidof "hypridle") ]]; then
       ${pkgs.systemctl}/bin/systemctl --user stop hypridle.service
-      ${pkgs.swayosd}/bin/swayosd-client --custom-message="Caffeine On" --custom-icon="emblem-default"
+      ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --custom-message="Caffeine On" --custom-icon="emblem-default"
     else
       ${pkgs.systemctl}/bin/systemctl --user start hypridle.service
-      ${pkgs.swayosd}/bin/swayosd-client --custom-message="Caffeine Off" --custom-icon="emblem-default"
+      ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --custom-message="Caffeine Off" --custom-icon="emblem-default"
     fi
 
     ${pkgs.notif}/bin/notif "caffeine" "$title" "$description"
