@@ -4,7 +4,7 @@
     maxretry = 5;
     ignoreIP = [
       "100.104.157.94" # CHANGEME: Add your own IPs to ignore
-      "100.104.210.42"
+      "100.76.101.14"
       "100.116.106.93"
     ];
     bantime = "24h";
