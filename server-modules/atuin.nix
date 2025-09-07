@@ -14,7 +14,7 @@ in {
     forceSSL = true;
     locations."/" = {
       proxyPass =
-        "http://127.0.0.1:${toString config.services.adguardhome.port}";
+        "http://127.0.0.1:${toString config.services.atuin.port}";
     };
   };
 }
