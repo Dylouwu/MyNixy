@@ -9,6 +9,7 @@
 
     ../../server-modules/adguardhome.nix
     ../../server-modules/api.nix
+    ../../server-modules/atuin.nix
     ../../server-modules/autosleep.nix
     ../../server-modules/bitwarden.nix
     ../../server-modules/cloudflare.nix
