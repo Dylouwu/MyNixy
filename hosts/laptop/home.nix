@@ -67,12 +67,7 @@
       btop
       pwvucontrol
       fastfetch
-      openvpn 
-      veracrypt
-
-      # Backup
-      firefox
-      vscode
+      openvpn
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard
