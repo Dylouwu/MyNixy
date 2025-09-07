@@ -113,7 +113,7 @@
       splitright = true;
 
       # Number of spaces to represent a <Tab>
-      tabstop = 2;
+      tabstop = 4;
 
       # Enables 24-bit RGB color
       termguicolors = true;
