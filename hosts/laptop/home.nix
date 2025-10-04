@@ -45,7 +45,7 @@
       discord
       vlc # Video player
       curtail # Compress images
-      modrinth-app
+      prismlauncher
       osu-lazer-bin
       gnome-text-editor # Text editor
 

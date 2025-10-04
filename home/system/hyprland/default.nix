@@ -82,7 +82,6 @@ in {
         "QT_QPA_PLATFORM=wayland,xcb"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
-        "WEBKIT_DISABLE_COMPOSITING_MODE,1" # CHANGEME: Temp fix for modrinth
         "DISABLE_QT5_COMPAT,0"
         "DIRENV_LOG_FORMAT,"
         "WLR_DRM_NO_ATOMIC,1"
@@ -98,8 +97,6 @@ in {
         no_update_news = true;
         no_donation_nag = true;
       };
-
-      debug = { full_cm_proto = true; };
 
       cursor = {
         no_hardware_cursors = true;
