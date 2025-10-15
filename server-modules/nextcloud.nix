@@ -12,7 +12,7 @@ in {
     nextcloud = {
       enable = true;
       hostName = domain;
-      package = pkgs.nextcloud31;
+      package = pkgs.nextcloud32;
       database.createLocally = true;
       configureRedis = true;
       maxUploadSize = "64G";
