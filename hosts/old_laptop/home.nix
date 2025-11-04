@@ -40,7 +40,7 @@
 
     packages = with pkgs; [
       # Apps
-      bitwarden # Password manager
+      bitwarden-desktop # Password manager
       discord
       vlc # Video player
       curtail # Compress images
