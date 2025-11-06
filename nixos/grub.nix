@@ -24,7 +24,7 @@
             {
               name = "windows";
               lineTop = "Windows 11";
-              lineBottom = "Survival Mode, No Cheats, Version: 24H2";
+              lineBottom = "Survival Mode, No Cheats, Version: 25H2";
               imgName = "windows";
               customImg = builtins.path {
                 path = ../src/blue.png;
