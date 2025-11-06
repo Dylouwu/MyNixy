@@ -17,17 +17,6 @@ in {
         enable = true;
         settings = { completions.lsp.enabled = true; };
       };
-
-      mkdnflow = {
-        enable = true;
-        settings.mappings = {
-          MkdnTableNextCell = {
-            key = "<S-Tab>";
-            modes = "i";
-          };
-          MkdnTablePrevCell = false;
-        };
-      };
     };
   };
 }
