@@ -26,7 +26,7 @@
           player-idle-timeout = 30;
           simulation-distance = 8;
           spawn-protection = 0;
-          view-distance = 12;
+          view-distance = 16;
           white-list = true;
         };
 
