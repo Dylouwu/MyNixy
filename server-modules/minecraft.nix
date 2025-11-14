@@ -8,7 +8,7 @@
     dataDir = "/var/lib/minecraft";
 
     servers = {
-      skyblock = {
+      multi = {
         autoStart = false;
         enable = true;
         enableReload = true;
