@@ -40,8 +40,8 @@
         };
 
         symlinks = {
-          "cache/mojang_1.21.5.jar" =
-            "${pkgs.vanillaServers.vanilla-1_21_5}/lib/minecraft/server.jar";
+          "cache/mojang_1.21.10.jar" =
+            "${pkgs.vanillaServers.vanilla-1_21_10}/lib/minecraft/server.jar";
           # "plugins/worldedit.jar" = pkgs.fetchurl {
           #   url =
           #     "https://cdn.modrinth.com/data/1u6JkXh5/versions/Jk1z2u7n/worldedit-bukkit-7.3.16.jar";
