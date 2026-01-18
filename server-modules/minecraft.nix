@@ -24,7 +24,7 @@
           gamemode = "survival";
           max-chained-neighbor-updates = 100000;
           player-idle-timeout = 30;
-          simulation-distance = 8;
+          simulation-distance = 6;
           spawn-protection = 0;
           view-distance = 16;
           white-list = true;
@@ -32,11 +32,27 @@
 
         whitelist = {
           Pur1rin = "97f095e9-0b9d-4435-a65c-2285461bacbe";
-          Azrabin = "901ea57e-865d-4a02-b5dc-0179fcc44881";
-          PabloVVV = "8b6c93fa-a7df-4cc8-9cb5-d708af59bad5";
+          Pikimo = "ee7137da-817a-4c59-81b9-965f03b723e9";
+          PabloV = "8b6c93fa-a7df-4cc8-9cb5-d708af59bad5";
+          Ayzvenx = "47882024-633f-4df6-8fd8-7d9eb02a72b7";
+          iimapinguin = "45ba223f-1a1a-49b9-a140-0b9a03473fad";
+          ThomTheom = "fdbd4b7e-b6a5-4176-8e31-dea3629795ef";
+          Shrekommunist = "99c55b33-26c6-43ed-a134-f02f0a3ca75e";
+          BriocheSucree = "554c22ba-e518-4206-8e1a-8d99d067d720";
           HadrienAka = "5d65b248-a2da-4109-bfdf-9051417d9a6a";
+          warrameur12 = "bf4d52a5-53ef-4b1b-9ac0-b805db20b537";
+          Rettleti = "bf4d52a5-53ef-4b1b-9ac0-b805db20b537";
+          lulu5587 = "f15a6b3d-93bf-4c00-ac87-3e911ea9bb37";
+          Cinyu202 = "8b94b50d-136e-4477-b240-58aae8e957b0";
+          Jujuhilo = "251b583b-4a2f-40ed-92df-8f3f7ad701a7";
+          PablitoChangJose = "029a7510-65b1-4f48-a5f4-2482b62a2f4d";
+          qmiho = "a5b83881-bc45-449e-9136-09209ac42c86";
+          Baiocch = "e89c1a21-7fea-4599-907c-c1f1b03bed94";
+          Arc_a_Nain = "97938b8f-4390-42da-ba8c-a93d33444e22";
+          zouu = "cf4c6d5e-0cbc-4574-b839-7c2efc3ee6d1";
+          Evo_Termii = "62fb868b-4031-451b-a8f7-5eec12a48c10";
+          Pinpinnation = "fa98e9f9-c3b4-46c9-8540-bbab5157b3a4";
           Cemajaloo = "0be4a818-7e38-4936-925c-3ca74cabc417";
-          GucciFlipFlop742 = "69272274-86e7-4c9e-91f5-b6fe0eea8102";
         };
 
         symlinks = {
