@@ -19,7 +19,7 @@
       nerd-fonts.meslo-lg
       openmoji-color
       twemoji-color-font
-      inputs.cartographcf.packages.${pkgs.system}.default
+      inputs.cartographcf.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     enableDefaultPackages = false;

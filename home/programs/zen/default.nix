@@ -3,7 +3,7 @@
 let
   zenWithWayland = pkgs.symlinkJoin {
     name = "zen-browser-wayland";
-    paths = [ inputs.zen-browser.packages."${pkgs.system}".default ];
+    paths = [ inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default ];
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/zen \
