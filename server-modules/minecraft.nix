@@ -53,6 +53,7 @@
           Evo_Termii = "62fb868b-4031-451b-a8f7-5eec12a48c10";
           Pinpinnation = "fa98e9f9-c3b4-46c9-8540-bbab5157b3a4";
           Cemajaloo = "0be4a818-7e38-4936-925c-3ca74cabc417";
+          smotbwf = "38e90645-4a82-4509-9023-ca9a5777e846";
         };
 
         symlinks = {
