@@ -2,11 +2,27 @@
 # Display informations like workspaces, battery, wifi, ...
 { config, lib, ... }:
 let
-  inherit (config.lib.stylix.colors) base00 base01 base03 base05 base0D;
+  inherit (config.lib.stylix.colors)
+    base00
+    base01
+    base03
+    base05
+    base0D
+    ;
   inherit (config.stylix.fonts) serif;
-  inherit (config.theme.bar) floating transparent position transparentButtons;
+  inherit (config.theme.bar)
+    floating
+    transparent
+    position
+    transparentButtons
+    ;
   inherit (config.theme)
-    rounding border-size gaps-out gaps-in textColorOnWallpaper;
+    rounding
+    border-size
+    gaps-out
+    gaps-in
+    textColorOnWallpaper
+    ;
 
   accent = "#${base0D}";
   accent-alt = "#${base03}";
@@ -22,16 +38,17 @@ let
   weather-key = "/home/${config.var.username}/.weather.json";
 
   noOpacity = "00";
-  barBg = background
-    + (if transparentButtons && transparent then noOpacity else "");
-  buttonBg = (if transparent then background else background-alt)
+  barBg = background + (if transparentButtons && transparent then noOpacity else "");
+  buttonBg =
+    (if transparent then background else background-alt)
     + (if transparentButtons then noOpacity else "");
-  buttonText = if transparent && transparentButtons then
-    foregroundOnWallpaper
-  else
-    foreground;
+  buttonText = if transparent && transparentButtons then foregroundOnWallpaper else foreground;
 
-in {
+in
+{
+  imports = [
+    ../../misc
+  ];
   wayland.windowManager.hyprland.settings.exec-once = [ "hyprpanel" ];
 
   programs.hyprpanel = {
@@ -49,10 +66,8 @@ in {
           outer_spacing = if floating && transparent then "0px" else "8px";
           inherit floating transparent position;
           location = position;
-          margin_top =
-            (if position == "top" then toString (gaps-in * 2) else "0") + "px";
-          margin_bottom =
-            (if position == "top" then "0" else toString (gaps-in * 2)) + "px";
+          margin_top = (if position == "top" then toString (gaps-in * 2) else "0") + "px";
+          margin_bottom = (if position == "top" then "0" else toString (gaps-in * 2)) + "px";
           margin_sides = toString gaps-out + "px";
           border_radius = toString rounding + "px";
           dropdownGap = "4.5em";
@@ -61,10 +76,7 @@ in {
           buttons = lib.mkForce {
             y_margins = if floating && transparent then "0px" else "8px";
             spacing = "0.3em";
-            radius = (if transparent then
-              toString rounding
-            else
-              toString (rounding - 8)) + "px";
+            radius = (if transparent then toString rounding else toString (rounding - 8)) + "px";
             padding_x = "0.8rem";
             padding_y = "0.4rem";
             style = "default";
@@ -88,8 +100,7 @@ in {
           };
 
           menus = lib.mkForce {
-            shadow =
-              if transparent then "0 0 0 0" else "0px 0px 3px 1px #16161e";
+            shadow = if transparent then "0 0 0 0" else "0px 0px 3px 1px #16161e";
             monochrome = true;
             card_radius = toString rounding + "px";
             background = background;
@@ -171,8 +182,15 @@ in {
       bar = {
         layouts = {
           "*" = {
-            "left" = [ "dashboard" "workspaces" "windowtitle" ];
-            "middle" = [ "media" "cava" ];
+            "left" = [
+              "dashboard"
+              "workspaces"
+              "windowtitle"
+            ];
+            "middle" = [
+              "media"
+              "cava"
+            ];
             "right" = [
               "systray"
               "volume"
@@ -241,7 +259,7 @@ in {
               };
               shortcut3 = {
                 icon = "󰖔";
-                command = "night-shift";
+                command = "nightshift-toggle";
                 tooltip = "Night-shift";
               };
               shortcut4 = {

@@ -1,5 +1,10 @@
-{ config, pkgs, ... }: {
-  imports = [ ./swaync.nix ./swayosd.nix ];
+{ pkgs, ... }:
+{
+  imports = [
+    ../../misc
+    ./swaync.nix
+    ./swayosd.nix
+  ];
 
   programs.waybar = {
     enable = true;
@@ -8,22 +13,53 @@
       spacing = 5;
       margin-bottom = -11;
 
-      modules-left = [ "hyprland/workspaces" "hyprland/window" ];
+      modules-left = [
+        "hyprland/workspaces"
+        "hyprland/window"
+      ];
       modules-center = [ "cava" ];
-      modules-right =
-        [ "group/extras" "pulseaudio" "battery" "custom/notification" "clock" ];
+      modules-right = [
+        "group/extras"
+        "pulseaudio"
+        "battery"
+        "custom/notification"
+        "clock"
+      ];
 
       battery = {
-        states = { critical = 10; };
+        states = {
+          critical = 10;
+        };
         format = "{icon}";
         format-icons = {
-          default = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-          charging = [ "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅" ];
+          default = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+          charging = [
+            "󰢜"
+            "󰂆"
+            "󰂇"
+            "󰂈"
+            "󰢝"
+            "󰂉"
+            "󰢞"
+            "󰂊"
+            "󰂋"
+            "󰂅"
+          ];
         };
         format-full = "󱟢";
         on-click = "powermode-toggle";
-        on-click-right = ''
-          ${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --custom-message="Powermode is set to $(powerprofilesctl get)" --custom-icon="emblem-default"'';
+        on-click-right = ''${pkgs.swayosd}/bin/swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --custom-message="Powermode is set to $(powerprofilesctl get)" --custom-icon="emblem-default"'';
       };
 
       cava = {
@@ -36,7 +72,16 @@
         hide_on_silence = true;
         lower_cutoff_freq = 100;
         higher_cutoff_freq = 8000;
-        format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+        format-icons = [
+          "▁"
+          "▂"
+          "▃"
+          "▄"
+          "▅"
+          "▆"
+          "▇"
+          "█"
+        ];
       };
 
       clock = {
@@ -57,7 +102,9 @@
 
       "custom/arrow-toggle" = {
         format = " {icon} ";
-        format-icons = { default = ""; };
+        format-icons = {
+          default = "";
+        };
         tooltip = false;
       };
 
@@ -87,12 +134,18 @@
           transition-duration = 300;
           transitition-left-to-right = false;
         };
-        modules = [ "custom/arrow-toggle" "tray" "network" ];
+        modules = [
+          "custom/arrow-toggle"
+          "tray"
+          "network"
+        ];
       };
 
       "hyprland/window" = {
         format = "{}";
-        rewrite = { "^(.*?)[[:space:]]*[-—|].*?$" = "$1"; };
+        rewrite = {
+          "^(.*?)[[:space:]]*[-—|].*?$" = "$1";
+        };
         icon = true;
         icon-size = 20;
         max-length = 30;
@@ -111,19 +164,31 @@
         format-disconnected = " 󰤭 Disconnected ";
         tooltip-format = "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}";
         format-linked = "󰈁 {ifname} (No IP)";
-        format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+        format-icons = [
+          "󰤯"
+          "󰤟"
+          "󰤢"
+          "󰤥"
+          "󰤨"
+        ];
         on-click = "kitty --class nmtui-float-term nmtui";
       };
 
       pulseaudio = {
         format = "{icon}";
         format-muted = "󰖁";
-        format-icons = [ "󰕿" "󰖀" "󰕾" ];
+        format-icons = [
+          "󰕿"
+          "󰖀"
+          "󰕾"
+        ];
         on-click = "pwvucontrol";
         scroll-step = 0.0; # Disable scroll step
       };
 
-      tray = { spacing = 10; };
+      tray = {
+        spacing = 10;
+      };
 
     };
 
