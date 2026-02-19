@@ -1,0 +1,47 @@
+{ pkgs, ... }: {
+  wayland.windowManager.hyprland.settings = {
+    bind = [
+      "$mod,RETURN, exec, uwsm app -- ${pkgs.kitty}/bin/kitty" # Kitty
+      "$mod,E, exec, uwsm app -- ${pkgs.xfce.thunar}/bin/thunar" # Thunar
+      "$mod,B, exec, uwsm app -- zen" # Zen Browser
+      "$mod,L, exec, uwsm app -- ${pkgs.hyprlock}/bin/hyprlock" # Lock
+      "$mod,D, exec, uwsm app -- ${pkgs.discord}/bin/discord" # Discord
+      "$mod,S, exec, uwsm app -- steam" # Steam
+      "$mod,X, exec, powermenu" # Powermenu
+      "$mod,SPACE, exec, menu" # Launcher
+      "$mod,C, exec, quickmenu" # Quickmenu
+
+      "$mod,Q, killactive," # Close window
+      "$mod,T, togglefloating," # Toggle Floating
+      "$mod,F, fullscreen" # Toggle Fullscreen
+      ",F11, fullscreen" # Toggle Fullscreen
+      "$mod,left, movefocus, l" # Move focus left
+      "$mod,right, movefocus, r" # Move focus Right
+      "$mod,up, movefocus, u" # Move focus Up
+      "$mod,down, movefocus, d" # Move focus Down
+
+      "$mod,PRINT, exec, screenshot region" # Screenshot region
+      ",PRINT, exec, screenshot monitor" # Screenshot monitor
+      "$shiftMod,PRINT, exec, screenshot window" # Screenshot window
+      "ALT,PRINT, exec, screenshot region swappy" # Screenshot region then edit
+
+      "$shiftMod,C, exec, clipboard" # Clipboard picker with wofi
+      "$shiftMod,E, exec, ${pkgs.wofi-emoji}/bin/wofi-emoji" # Emoji picker with wofi
+      "$mod,F2, exec, nightshift-toggle" # Toggle night shift
+    ] ++ (builtins.concatLists (builtins.genList (i:
+      let ws = i + 1;
+      in [
+        "$mod,code:1${toString i}, workspace, ${toString ws}"
+        "$mod SHIFT,code:1${toString i}, movetoworkspace, ${toString ws}"
+      ]) 9));
+
+    bindm = [
+      "$mod,mouse:272, movewindow" # Move Window (mouse)
+      "$mod,R, resizewindow" # Resize Window (mouse)
+    ];
+
+    bindl = [
+      ",switch:Lid Switch, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock when closing Lid
+    ];
+  };
+}
