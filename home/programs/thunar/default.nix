@@ -1,7 +1,14 @@
 # Thunar is a file explorer
-{ pkgs, config, ... }:
-let user = config.var.username;
-in {
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+let
+  user = config.var.username;
+in
+{
   home = {
     file = {
       ".config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml".text = ''
@@ -81,26 +88,33 @@ in {
       thunar-media-tags-plugin
       p7zip
       xarchiver
+      papirus-icon-theme
+      material-icons
+      material-design-icons
+      material-symbols
     ];
     sessionVariables = {
-      XDG_ICON_DIR = "${pkgs.whitesur-icon-theme}/share/icons/WhiteSur";
+      XDG_ICON_DIR = "${pkgs.papirus-icon-theme}/share/icons/Papirus";
+      QS_ICON_THEME = "Papirus";
+      QT_STYLE_OVERRIDE = lib.mkForce "Fusion";
     };
   };
 
   gtk = {
+    enable = true;
     iconTheme = {
-      name = "WhiteSur";
-      package = pkgs.whitesur-icon-theme.override {
-        boldPanelIcons = true;
-        alternativeIcons = true;
-      };
+      name = "Papirus Dark";
+      package = pkgs.papirus-icon-theme;
     };
+
     gtk3.bookmarks = [
       "file:///home/${user}/Documents Documents"
       "file:///home/${user}/Downloads Downloads"
       "file:///home/${user}/.config/nixos NixOS"
     ];
   };
+
+  qt.enable = true;
 
   xdg.configFile."Thunar/uca.xml".text = ''
     <?xml version="1.0" encoding="UTF-8"?>
