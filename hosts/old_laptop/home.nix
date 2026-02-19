@@ -1,4 +1,5 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
 
   imports = [
     # Mostly user-specific configuration
@@ -14,6 +15,7 @@
     ../../home/programs/lazygit
     ../../home/programs/zen
     ../../home/programs/tailscale
+    ../../home/programs/zathura
     ../../home/programs/zellij
 
     # scripts
@@ -21,15 +23,13 @@
 
     # System (Desktop environment like stuff)
     ../../home/system/hyprland
-    ../../home/system/hyprlock
-    #../../home/system/hyprpanel # CHANGEME: Uncomment to enable hyprpanel (and comment waybar)
-    ../../home/system/waybar
-    ../../home/system/hyprpaper
-    ../../home/system/wofi
-    ../../home/system/zathura
     ../../home/system/mime
     ../../home/system/udiskie
-    ../../home/system/clipman
+
+    # CHANGEME : Hyprland panels, you should only have one of these enabled at a time
+    #../../home/system/caelestia
+    #../../home/system/hyprpanel
+    ../../home/system/waybar
 
     ./secrets # CHANGEME: You should probably remove this line, this is where I store my secrets
   ];
@@ -64,10 +64,13 @@
       btop
       pwvucontrol
       fastfetch
+      openvpn
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard
-    file.".face.icon" = { source = ../../src/purin.jpg; };
+    file.".face.icon" = {
+      source = ../../src/purin.jpg;
+    };
 
     # Don't touch this
     stateVersion = "24.05";
