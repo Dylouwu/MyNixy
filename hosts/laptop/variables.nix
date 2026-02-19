@@ -1,7 +1,7 @@
 { config, lib, ... }: {
   imports = [
     # Import your stylix theme
-    ../../themes/nixy.nix
+    ../../themes/rose-pine.nix
   ];
 
   config.var = {
@@ -19,14 +19,14 @@
         width = 2560;
         height = 1440;
         fps = 360;
-        scale = 1.25;
+        scale = 1;
       };
       monitor2 = { # Laptop screen, which is always active
         id = "eDP-2";
         width = 2560;
         height = 1440;
         fps = 240;
-        scale = 1.25;
+        scale = 1;
       };
     };
     git = {
