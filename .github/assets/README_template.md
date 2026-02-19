@@ -39,11 +39,10 @@
 
 **MyNixy major additions:**
 
-- 💫 Both **waybar** and **hyprpanel** have a configuration, allowing you to choose your preferred panel.
+- 💫 **Caelestia**, **waybar** and **hyprpanel** have a configuration, allowing you to choose your preferred panel.
 - 🕹️ **A fully customizable and optimized Minecraft Paper server**, which can be started and stopped directly from the glance dashboard through API calls.
 - 💾 New server modules : Cyberchef, Fail2ban, Autosleep, ...
 - 📦 **A WSL2 compatible configuration** for Nixy, allowing you to run Nixy on Windows natively.
-- 🎮 Gaming integration with Steam x Proton, Osu-Lazer, Modrinth (Minecraft Open-Source launcher).
 
 Other small modifications include:
 
@@ -69,6 +68,7 @@ Contains **dotfiles and settings** that apply to your user environment.
 
 **Subfolders:**
 
+- `misc` is for tools needed for a better UX that are not provided with waybar or hyprpanel
 - `programs` is a collection of apps configured with home-manager
 - `scripts` is a folder full of bash scripts (see [SCRIPTS.md](docs/SCRIPTS.md))
 - `system` is some "desktop environment" configuration
@@ -101,15 +101,15 @@ Those are the server modules that are used to add features to the server. These 
 > nix-shell -p <package-name>
 > ```
 
-2. [Fork](https://github.com/Dylouwu/MyNixy/fork) this repository and clone it to your machine:
+1. [Fork](https://github.com/Dylouwu/MyNixy/fork) this repository and clone it to your machine:
 
 ```sh
 git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 ```
 
-3. Update `variables.nix` with your device settings.
-4. Copy your `hardware-configuration.nix` into your new host's folder to ensure proper hardware support.
-5. Register your new host in `flake.nix` by adding it under nixosConfigurations.
+1. Update `variables.nix` with your device settings.
+2. Copy your `hardware-configuration.nix` into your new host's folder to ensure proper hardware support.
+3. Register your new host in `flake.nix` by adding it under nixosConfigurations.
 
 > [!Note]
 > `# CHANGEME` comments are placed throughout the configuration to indicate necessary modifications.
@@ -122,13 +122,13 @@ git clone https://github.com/Dylouwu/MyNixy ~/.config/nixos
 > [!TIP]
 > When you add new files, don't forget to run `git add .` to add them to the git repository
 
-6. Build the system
+1. Build the system
 
 ```sh
 sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
 ```
 
-7. Reboot your system.
+1. Reboot your system.
 
 > [!TIP]
 > Recommended things to do after the installation:
