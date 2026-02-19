@@ -143,7 +143,7 @@ let
         selected=''${selected:2}
         case $selected in
           "Night-shift")
-            night-shift
+            nightshift-toggle
             ;;
           "Nixy")
             kitty zsh -c nixy
