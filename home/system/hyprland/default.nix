@@ -1,5 +1,10 @@
 # So best window tiling manager
-{ pkgs, config, inputs, ... }:
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}:
 let
   border-size = config.theme.border-size;
   gaps-in = config.theme.gaps-in;
@@ -12,9 +17,13 @@ let
   monitors = config.var.monitors;
   monitor1 = monitors.monitor1;
   monitor2 = monitors.monitor2;
-in {
+in
+{
 
-  imports = [ ./animations.nix ./bindings.nix ./polkitagent.nix ];
+  imports = [
+    ./animations.nix
+    ./polkitagent.nix
+  ];
 
   home.packages = with pkgs; [
     qt5.qtwayland
@@ -54,17 +63,13 @@ in {
       "$shiftMod" = "SUPER_SHIFT";
 
       exec-once = [
-        "night-shift-on &"
+        "nightshift-toggle &"
         "dbus-update-activation-environment --systemd --all &"
       ];
 
       monitor = [
-        "${monitor2.id},${toString monitor2.width}x${
-          toString monitor2.height
-        }@${toString monitor2.fps},0x0,${toString monitor2.scale}"
-        "${monitor1.id},${toString monitor1.width}x${
-          toString monitor1.height
-        }@${toString monitor1.fps},-${
+        "${monitor2.id},${toString monitor2.width}x${toString monitor2.height}@${toString monitor2.fps},0x0,${toString monitor2.scale}"
+        "${monitor1.id},${toString monitor1.width}x${toString monitor1.height}@${toString monitor1.fps},-${
           toString (monitor1.width / monitor1.scale)
         }x0,${toString monitor1.scale}, vrr, 1, bitdepth,10"
         ",prefered,auto,1"
@@ -79,6 +84,7 @@ in {
         "XDG_SESSION_DESKTOP,Hyprland"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_QPA_PLATFORM=wayland,xcb"
+        "QT_QPA_PLATFORMTHEME=gtk3"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         "DISABLE_QT5_COMPAT,0"
@@ -110,7 +116,9 @@ in {
         layout = "master";
       };
 
-      render = { cm_fs_passthrough = true; };
+      render = {
+        cm_fs_passthrough = true;
+      };
 
       decoration = {
         active_opacity = active-opacity;
@@ -143,7 +151,9 @@ in {
         on_focus_under_fullscreen = 2;
       };
 
-      xwayland = { force_zero_scaling = true; };
+      xwayland = {
+        force_zero_scaling = true;
+      };
 
       input = {
         kb_layout = keyboardLayout;
