@@ -10,11 +10,17 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     stylix.url = "github:danth/stylix";
-    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
-    zen-browser.url =
-      "github:0xc000022070/zen-browser-flake";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake/dc0483a6e3ff1ffb04ad77d26c1a4458f4cf82d6";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
