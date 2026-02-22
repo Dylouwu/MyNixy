@@ -7,7 +7,18 @@ let
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/zen \
-        --set MOZ_ENABLE_WAYLAND 1
+        --set MOZ_ENABLE_WAYLAND 1 \
+        --prefix LD_LIBRARY_PATH : "${
+          pkgs.lib.makeLibraryPath [
+            pkgs.libpulseaudio
+            pkgs.alsa-lib
+            pkgs.pipewire
+            pkgs.libjack2
+          ]
+        }"
     '';
   };
-in { home.packages = [ zenWithWayland ]; }
+in
+{
+  home.packages = [ zenWithWayland ];
+}
