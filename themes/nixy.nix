@@ -81,6 +81,7 @@
         };
       };
 
+      polarity = "dark";
       image = pkgs.fetchurl {
         url = "https://raw.githubusercontent.com/anotherhadi/nixy-wallpapers/refs/heads/main/wallpapers/3.png";
         sha256 = "sha256-fT2ah18IAxoy3hzlLl9SkqhchzfVvZneUrZWzntMo40=";
