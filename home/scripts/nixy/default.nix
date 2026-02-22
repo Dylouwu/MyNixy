@@ -63,8 +63,6 @@ let
         nix-collect-garbage -d && \
         echo "Collecting garbage from Nix store..." && \
         nix-store --gc && \
-        echo "Optimizing Nix store..." && \
-        nix-store --optimise
         echo "Nix garbage collection complete."
       elif [[ $1 == "cb" ]];then
         sudo /run/current-system/bin/switch-to-configuration boot
