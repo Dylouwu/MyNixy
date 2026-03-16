@@ -56,6 +56,8 @@ in {
           "PCI:1:0:0"; # Set this to the bus ID of your Nvidia GPU if you have one
       };
     };
+
+    nvidia-container-toolkit.enable = true;
     graphics = {
       enable = true;
       enable32Bit = true;

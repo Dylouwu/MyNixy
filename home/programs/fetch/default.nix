@@ -1,1 +1,6 @@
-{ imports = [ ./neofetch ./nerdfetch ]; }
+{
+  imports = [
+    # ./neofetch
+    ./nerdfetch
+  ];
+}

@@ -175,7 +175,7 @@ in {
       df = "duf";
 
       ssh = "kitty +kitten ssh";
-      fetch = "clear && neofetch";
+      fetch = "clear && nerdfetch";
       ip4 = "curl ifconfig.me; echo";
       ports = "ss -tuln";
       pysrv = "python3 -m http.server";
