@@ -184,6 +184,7 @@ in {
 
       n = "nixy";
       nr = "nixy rebuild";
+      nu = "nixy update";
       nix-shell = "nix-shell --command zsh";
       nix-develop = "nix develop --command zsh";
 
