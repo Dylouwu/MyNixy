@@ -25,6 +25,8 @@
     group = "nginx";
     dnsProvider = "cloudflare";
     dnsPropagationCheck = true;
-    credentialsFile = config.sops.secrets.cloudflare-dns-token.path;
+    credentialFiles = {
+      CF_DNS_API_TOKEN_FILE = config.sops.secrets.cloudflare-dns-token.path;
+    };
   };
 }
