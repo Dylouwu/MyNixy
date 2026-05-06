@@ -21,6 +21,7 @@
     ../../server-modules/minecraft.nix
     ../../server-modules/nextcloud.nix
     ../../server-modules/nginx.nix
+    ../../server-modules/ollama.nix
     ../../server-modules/ssh.nix
 
     # You should let those lines as is
