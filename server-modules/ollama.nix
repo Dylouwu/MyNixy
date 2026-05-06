@@ -11,8 +11,11 @@ in
 
     ollama = {
       enable = true;
-      package = pkgs.ollama-rocm;
+      package = pkgs.ollama-vulkan;
       loadModels = [ "gemma4:e4b" ];
+      environmentVariables = {
+        OLLAMA_CONTEXT_LENGTH = "128000";
+      };
     };
 
     nginx.virtualHosts = {

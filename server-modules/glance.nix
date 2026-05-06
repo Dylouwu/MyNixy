@@ -164,6 +164,11 @@ in {
                       icon = "si:nextcloud";
                     }
                     {
+                      title = "Ollama";
+                      url = "https://ai.${domain}";
+                      icon = "si:ollama";
+                    }
+                    {
                       title = "Adguard";
                       url = "https://adguard.${domain}";
                       icon = "si:adguard";
