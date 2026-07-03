@@ -1,6 +1,5 @@
 { pkgs, lib, ... }: {
   boot = {
-    bootspec.enable = true;
     loader = {
       efi = {
         canTouchEfiVariables = true;
