@@ -1,6 +1,11 @@
 # Caelestia Shell Home Manager Configuration
 # See https://github.com/caelestia-dots/shell
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 {
   imports = [
     inputs.caelestia-shell.homeManagerModules.default
@@ -49,11 +54,28 @@
     };
   };
 
-  home.packages = with pkgs; [ gpu-screen-recorder ];
+  xdg.configFile = {
+    "caelestia/shell.json".force = true;
+    "caelestia/cli.json".force = true;
+  };
+
+  home = {
+    packages = with pkgs; [ gpu-screen-recorder ];
+    activation.caelestiaMutableConfig = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+      for f in shell.json cli.json; do
+        target="$HOME/.config/caelestia/$f"
+        if [ -L "$target" ]; then
+          run cp --remove-destination "$(readlink "$target")" "$target"
+          run chmod u+w "$target"
+        fi
+      done
+    '';
+  };
 
   wayland.windowManager.hyprland.settings.exec-once = [
     "uwsm app -- caelestia resizer -d"
     "uwsm app -- caelestia shell -d"
     "caelestia scheme set --name dynamic -m dark -v tonalspot"
   ];
+
 }
