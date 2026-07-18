@@ -116,10 +116,6 @@ in
         layout = "master";
       };
 
-      render = {
-        cm_fs_passthrough = true;
-      };
-
       decoration = {
         active_opacity = active-opacity;
         inactive_opacity = inactive-opacity;
@@ -142,7 +138,6 @@ in
       };
 
       misc = {
-        vfr = true;
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         disable_autoreload = true;
