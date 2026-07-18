@@ -7,7 +7,7 @@ in
     bind = [
       "$mod,RETURN, exec, uwsm app -- ${pkgs.kitty}/bin/kitty" # Kitty
       "$mod,E, exec, uwsm app -- ${pkgs.thunar}/bin/thunar" # Thunar
-      "$mod,B, exec, uwsm app -- zen" # Zen Browser
+      "$mod,B, exec, uwsm app -- zen-beta" # Zen Browser
       "$mod,S, exec, uwsm app -- steam" # Steam
       "$mod,SPACE, global, caelestia:launcher" # Launcher
       "$mod,X, global, caelestia:session" # Powermenu

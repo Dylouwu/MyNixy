@@ -20,7 +20,13 @@
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zen-browser.url = "github:0xc000022070/zen-browser-flake/dc0483a6e3ff1ffb04ad77d26c1a4458f4cf82d6";
+    zen-browser = {
+     url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+    };
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,55 +48,57 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, ... }: {
-    nixosConfigurations = {
-      # This is my laptop configuration
-      nixy = nixpkgs.lib.nixosSystem {
-        modules = [
-          { _module.args = { inherit inputs; }; }
-          inputs.nixos-hardware.nixosModules.omen-16-n0005ne # CHANGEME: check https://github.com/NixOS/nixos-hardware
-          inputs.home-manager.nixosModules.home-manager
-          inputs.minegrub-world-sel-theme.nixosModules.default
-          inputs.stylix.nixosModules.stylix
-          inputs.sops-nix.nixosModules.sops
-          ./hosts/laptop/configuration.nix # CHANGEME: change the path to match your host folder
-        ];
-      };
-      # This is my server configuration
-      hyrule = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          { _module.args = { inherit inputs; }; }
-          inputs.home-manager.nixosModules.home-manager
-          inputs.stylix.nixosModules.stylix
-          inputs.sops-nix.nixosModules.sops
-          inputs.glance-minecraft-power.nixosModules.glance-minecraft-power
-          ./hosts/server/configuration.nix # CHANGEME: change the path to match your host folder
-        ];
-      };
-      # This is for my old laptop
-      old_nixy = nixpkgs.lib.nixosSystem {
-        modules = [
-          { _module.args = { inherit inputs; }; }
-          inputs.home-manager.nixosModules.home-manager
-          inputs.minegrub-world-sel-theme.nixosModules.default
-          inputs.stylix.nixosModules.stylix
-          inputs.sops-nix.nixosModules.sops
-          ./hosts/old_laptop/configuration.nix # CHANGEME: change the path to match your host folder
-        ];
-      };
-      # This is for my wsl config
-      wsl = nixpkgs.lib.nixosSystem {
-        modules = [
-          { _module.args = { inherit inputs; }; }
-          inputs.home-manager.nixosModules.home-manager
-          inputs.stylix.nixosModules.stylix
-          inputs.sops-nix.nixosModules.sops
-          inputs.nixos-wsl.nixosModules.default
-          ./hosts/wsl/configuration.nix # CHANGEME: change the path to match your host folder
-        ];
-      };
+  outputs =
+    inputs@{ nixpkgs, ... }:
+    {
+      nixosConfigurations = {
+        # This is my laptop configuration
+        nixy = nixpkgs.lib.nixosSystem {
+          modules = [
+            { _module.args = { inherit inputs; }; }
+            inputs.nixos-hardware.nixosModules.omen-16-n0005ne # CHANGEME: check https://github.com/NixOS/nixos-hardware
+            inputs.home-manager.nixosModules.home-manager
+            inputs.minegrub-world-sel-theme.nixosModules.default
+            inputs.stylix.nixosModules.stylix
+            inputs.sops-nix.nixosModules.sops
+            ./hosts/laptop/configuration.nix # CHANGEME: change the path to match your host folder
+          ];
+        };
+        # This is my server configuration
+        hyrule = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            { _module.args = { inherit inputs; }; }
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+            inputs.sops-nix.nixosModules.sops
+            inputs.glance-minecraft-power.nixosModules.glance-minecraft-power
+            ./hosts/server/configuration.nix # CHANGEME: change the path to match your host folder
+          ];
+        };
+        # This is for my old laptop
+        old_nixy = nixpkgs.lib.nixosSystem {
+          modules = [
+            { _module.args = { inherit inputs; }; }
+            inputs.home-manager.nixosModules.home-manager
+            inputs.minegrub-world-sel-theme.nixosModules.default
+            inputs.stylix.nixosModules.stylix
+            inputs.sops-nix.nixosModules.sops
+            ./hosts/old_laptop/configuration.nix # CHANGEME: change the path to match your host folder
+          ];
+        };
+        # This is for my wsl config
+        wsl = nixpkgs.lib.nixosSystem {
+          modules = [
+            { _module.args = { inherit inputs; }; }
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+            inputs.sops-nix.nixosModules.sops
+            inputs.nixos-wsl.nixosModules.default
+            ./hosts/wsl/configuration.nix # CHANGEME: change the path to match your host folder
+          ];
+        };
 
+      };
     };
-  };
 }

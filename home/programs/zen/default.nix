@@ -6,7 +6,7 @@ let
     paths = [ inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default ];
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
-      wrapProgram $out/bin/zen \
+      wrapProgram $out/bin/zen-beta \
         --set MOZ_ENABLE_WAYLAND 1 \
         --prefix LD_LIBRARY_PATH : "${
           pkgs.lib.makeLibraryPath [
