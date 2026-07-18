@@ -8,28 +8,24 @@ in
   programs.caelestia.settings = {
     appearance = {
       transparency = {
-        enable = true;
         base = 0.85;
         layers = 0.4;
       };
-      font.family = {
-        material = "Material Symbols Rounded";
-        mono = fonts.monospace.name;
-        sans = fonts.sansSerif.name;
+      font = {
+        headline.family = fonts.sansSerif.name;
+        title.family = fonts.sansSerif.name;
+        body.family = fonts.sansSerif.name;
+        label.family = fonts.sansSerif.name;
+        mono.family = fonts.monospace.name;
       };
     };
     border.thickness = 8;
-    controlCenter.sizes.heightMult = 0.6;
     dashboard = {
       showOnHover = false;
     };
     lock = {
       recolourLogo = true;
       enableFprint = false;
-      sizes = {
-        heightMult = 0.7;
-        centerWidth = 600;
-      };
     };
     paths = {
       mediaGif = ./src/gifs/bongocat.gif;
@@ -51,10 +47,6 @@ in
         nowPlaying = false;
         kbLayoutChanged = false;
         vpnChanged = true;
-      };
-      wInfo.sizes = {
-        heightMult = 0.6;
-        centerWidth = 520;
       };
     };
   };

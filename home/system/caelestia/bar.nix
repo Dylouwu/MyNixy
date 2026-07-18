@@ -20,7 +20,6 @@
       occupiedBg = false;
       occupiedLabel = " ";
       perMonitorWorkspaces = true;
-      rounded = true;
       showWindows = false;
       shown = 5;
     };
