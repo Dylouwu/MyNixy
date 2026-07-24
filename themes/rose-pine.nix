@@ -81,9 +81,9 @@
     };
 
     polarity = "dark";
-    image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/pink-clouds.png";
-      sha256 = "sha256-h/AY6BzaJfSq3M++0vSiDE/JMQZltqcoKT10ejaZTWk=";
-    };
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/pink-clouds.png";
+    #   sha256 = "sha256-h/AY6BzaJfSq3M++0vSiDE/JMQZltqcoKT10ejaZTWk=";
+    # };
   };
 }
