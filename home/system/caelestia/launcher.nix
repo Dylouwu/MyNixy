@@ -12,7 +12,7 @@
       ];
       hibernate = [
         "systemctl"
-        "hibernate"
+        "sleep"
       ];
       reboot = [
         "systemctl"
@@ -104,10 +104,10 @@
         {
           name = "Sleep";
           icon = "bedtime";
-          description = "Suspend then hibernate";
+          description = "zZz";
           command = [
             "systemctl"
-            "suspend-then-hibernate"
+            "sleep"
           ];
           enabled = true;
           dangerous = false;
