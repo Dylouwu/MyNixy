@@ -67,6 +67,8 @@
       openvpn
     ];
 
+    pointerCursor.enable = true;
+
     # Import my profile picture, used by the hyprpanel dashboard
     file.".face.icon" = {
       source = ../../src/purin.jpg;
