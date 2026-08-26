@@ -9,7 +9,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/36b2e0cfe0c6094dbc47bd42a437431315bb3087";
     stylix.url = "github:danth/stylix";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     caelestia-shell = {
