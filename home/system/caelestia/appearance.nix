@@ -26,6 +26,7 @@ in
     lock = {
       recolourLogo = true;
       enableFprint = false;
+      hideNotifs = true;
     };
     paths = {
       mediaGif = ./src/gifs/bongocat.gif;
