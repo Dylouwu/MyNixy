@@ -2,7 +2,6 @@
   programs.caelestia.settings.bar = {
     clock.showIcon = false;
     popouts.activeWindow = false;
-    persistent = true;
     status = {
       showBattery = true;
       showMicrophone = false;
@@ -12,6 +11,21 @@
       showKbLayout = false;
       showNetwork = true;
     };
+    statusIcons = [
+      {
+        id = "lockStatus";
+        enabled = false;
+      }
+      {
+        id = "audio";
+        enabled = false;
+      }
+      {
+        id = "bluetooth";
+        enabled = false;
+      }
+    ];
+
     workspaces = {
       activeIndicator = true;
       activeLabel = " ";
