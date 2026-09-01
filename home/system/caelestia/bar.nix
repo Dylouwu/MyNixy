@@ -18,14 +18,21 @@
       }
       {
         id = "audio";
-        enabled = false;
+        enabled = true;
       }
       {
         id = "bluetooth";
         enabled = false;
       }
+      {
+        id = "network";
+        enabled = true;
+      }
+      {
+        id = "battery";
+        enabled = true;
+      }
     ];
-
     workspaces = {
       activeIndicator = true;
       activeLabel = " ";
