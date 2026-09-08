@@ -43,6 +43,8 @@
       # Apps
       # bitwarden-desktop # Password manager
       discord
+      element-desktop
+      signal-desktop
       mpv # Video player
       curtail # Compress images
       prismlauncher
