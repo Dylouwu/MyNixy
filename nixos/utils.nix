@@ -51,7 +51,7 @@ in {
     dbus = {
       enable = true;
       implementation = "broker";
-      packages = with pkgs; [ gcr gnome-settings-daemon ];
+      packages = with pkgs; [ gnome-settings-daemon ];
     };
     gvfs.enable = true;
     libinput.enable = true;

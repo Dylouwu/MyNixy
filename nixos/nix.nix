@@ -13,7 +13,6 @@ in {
     allowBroken = true;
   };
   nix = {
-    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
     channel.enable = false;
     extraOptions = ''
       warn-dirty = false
@@ -22,6 +21,7 @@ in {
       auto-optimise-store = true;
       download-buffer-size = 524288000;
       experimental-features = [ "nix-command" "flakes" ];
+      nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
       substituters = [
         "https://cache.nixos.org/?priority=10"
         "https://hyprland.cachix.org"
